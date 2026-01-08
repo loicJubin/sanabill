@@ -1,5 +1,5 @@
 home:
-  fr: Home
+  fr: Accueil
   en: Home
 services: 
   fr: Services
@@ -11,9 +11,8 @@ zero:
   fr: ZERO
   en: ZERO
 about: 
-  fr: About
+  fr: À propos
   en: About
 contact: 
   fr: Contact
   en: Contact
-

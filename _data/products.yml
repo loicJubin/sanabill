@@ -1,47 +1,28 @@
 tagline: 
-  fr: "Featured Product"
-  fr: "Featured Product"
+  fr: "Produit phare"
 title: 
-  fr: "ZERO: Insurance Refusal Management Reimagined"
-  en: "ZERO: Insurance Refusal Management Reimagined"
+  fr: "ZERO : la gestion des refus d’assurance réinventée"
 description: 
-  fr: "ZERO revolutionizes how healthcare organizations handle insurance refusals. Our intelligent platform structures and automates refusal treatment processes while providing crystal-clear visibility into your invoice pipeline."
-  en: "ZERO revolutionizes how healthcare organizations handle insurance refusals. Our intelligent platform structures and automates refusal treatment processes while providing crystal-clear visibility into your invoice pipeline."
+  fr: "ZERO révolutionne la manière dont les organisations de santé traitent les refus d’assurance. Notre plateforme intelligente structure et automatise les processus de gestion des refus tout en offrant une visibilité claire et complète sur le cycle de facturation."
 cta_button: 
-  fr: "Learn More About ZERO"
-  en: "Learn More About ZERO"
+  fr: "En savoir plus sur ZERO"
 features:
   fr:
-    - "Automated refusal processing and categorization"
-    - "Intelligent workflow routing and task assignment"
-    - "Comprehensive invoice tracking dashboard"
-    - "Real-time analytics and reporting"
-    - "Seamless integration with existing billing systems"
-    - "Reduced processing time and manual errors"
-  en:
-    - "Automated refusal processing and categorization"
-    - "Intelligent workflow routing and task assignment"
-    - "Comprehensive invoice tracking dashboard"
-    - "Real-time analytics and reporting"
-    - "Seamless integration with existing billing systems"
-    - "Reduced processing time and manual errors"
+    - "Traitement et catégorisation automatisés des refus"
+    - "Routage intelligent des flux de travail et attribution des tâches"
+    - "Tableau de bord complet de suivi des factures"
+    - "Analyses et rapports en temps réel"
+    - "Intégration transparente avec les systèmes de facturation existants"
+    - "Réduction des délais de traitement et des erreurs manuelles"
 
 stats:
   fr:
-    - number: "67%"
-      label: "Faster Refusal Processing"
-    - number: "92%"
-      label: "User Satisfaction Rate"
-    - number: "45%"
-      label: "Reduction in Manual Work"
-    - number: "99.8%"
-      label: "Data Accuracy"
-  en:
-    - number: "67%"
-      label: "Faster Refusal Processing"
-    - number: "92%"
-      label: "User Satisfaction Rate"
-    - number: "45%"
-      label: "Reduction in Manual Work"
-    - number: "99.8%"
-      label: "Data Accuracy"
+    - number: "25%"
+      label: "Traitement des refus plus rapide"
+    - number: "87%"
+      label: "Taux de satisfaction des utilisateurs"
+    - number: "99%"
+      label: "Réduction du temps passé au suivi"
+    - number: "97%"
+      label: "Précision des données"
+

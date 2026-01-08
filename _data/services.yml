@@ -1,41 +1,23 @@
 title: 
-  fr: "Notre Expertise"
-  en: "Our Expertise"
+  fr: "Notre expertise"
 
 subtitle: 
-  fr: "Empowering healthcare organizations with technology that transforms administrative complexity into operational excellence"
-  en: "Empowering healthcare organizations with technology that transforms administrative complexity into operational excellence"
+  fr: "Donner aux organisations de santé les moyens de transformer la complexité administrative en excellence opérationnelle grâce à la technologie open source"
 
 items:
   fr:
     - icon: "💻"
-      title: "Healthcare Application Development"
-      description: "Custom web applications tailored for healthcare administration. We build intuitive platforms for insurance management, billing workflows, and administrative automation that integrate seamlessly with your existing systems."
+      title: "Développement d’applications"
+      description: "Applications web sur mesure adaptées à l’administration des soins de santé, de plateformes intuitives pour la gestion des contestations d'assurances à de l’automatisation administrative en tenant compte des contraintes de vos systèmes existants."
     
     - icon: "📊"
-      title: "Process Optimization & Consulting"
-      description: "Expert analysis and strategic guidance to streamline your administrative operations. We identify bottlenecks, design efficient workflows, and implement automation solutions that reduce manual work and improve accuracy."
+      title: "Optimisation des processus & conseil"
+      description: "Analyse experte et accompagnement stratégique pour rationaliser vos opérations administratives. Nous identifions les points de friction, concevons des flux de travail efficaces et mettons en œuvre des solutions d’automatisation qui réduisent le travail manuel et améliorent la précision."
     
     - icon: "📝"
-      title: "Data Capture & Integration"
-      description: "Sophisticated web forms and data collection tools that push information directly into your existing systems. Eliminate duplicate data entry and ensure data consistency across your organization."
+      title: "Collecte et intégration des données"
+      description: "Formulaires web avancés et outils de collecte de données permettant d’injecter directement les informations dans vos systèmes existants. Éliminez les doubles saisies et garantissez la cohérence des données au sein de votre organisation."
     
     - icon: "🔄"
-      title: "Workflow Automation"
-      description: "Transform repetitive administrative tasks into automated processes. From invoice tracking to insurance claim management, we help you reclaim valuable time for your team to focus on what matters most."
-  en:
-    - icon: "💻"
-      title: "Healthcare Application Development"
-      description: "Custom web applications tailored for healthcare administration. We build intuitive platforms for insurance management, billing workflows, and administrative automation that integrate seamlessly with your existing systems."
-    
-    - icon: "📊"
-      title: "Process Optimization & Consulting"
-      description: "Expert analysis and strategic guidance to streamline your administrative operations. We identify bottlenecks, design efficient workflows, and implement automation solutions that reduce manual work and improve accuracy."
-    
-    - icon: "📝"
-      title: "Data Capture & Integration"
-      description: "Sophisticated web forms and data collection tools that push information directly into your existing systems. Eliminate duplicate data entry and ensure data consistency across your organization."
-    
-    - icon: "🔄"
-      title: "Workflow Automation"
-      description: "Transform repetitive administrative tasks into automated processes. From invoice tracking to insurance claim management, we help you reclaim valuable time for your team to focus on what matters most."
+      title: "Automatisation des flux de travail"
+      description: "Transformez les tâches administratives répétitives en processus automatisés. Du suivi des factures à la gestion des demandes d’assurance, nous vous aidons à libérer un temps précieux pour que vos équipes se concentrent sur l’essentiel."

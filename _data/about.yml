@@ -1,28 +1,16 @@
 title: 
-  fr: "About Sanabill"
-  en: "About Sanabill"
+  fr: "À propos de Sanabill"
 paragraphs:
   fr:
-  - "Sanabill Sàrl is a Swiss technology company dedicated to transforming healthcare administration through innovative software solutions and strategic consulting. Founded with a vision to eliminate administrative burden in healthcare organizations, we combine deep industry expertise with cutting-edge technology."
-  - "Our team understands the unique challenges healthcare administrators face: complex insurance processes, regulatory requirements, and the constant pressure to do more with less. We don't just build software; we partner with our clients to design solutions that truly address their pain points."
-  - "Whether you're struggling with insurance refusals, drowning in manual data entry, or seeking to optimize your administrative workflows, Sanabill brings the expertise and technology to make meaningful change possible."
-  en:
-  - "Sanabill Sàrl is a Swiss technology company dedicated to transforming healthcare administration through innovative software solutions and strategic consulting. Founded with a vision to eliminate administrative burden in healthcare organizations, we combine deep industry expertise with cutting-edge technology."
-  - "Our team understands the unique challenges healthcare administrators face: complex insurance processes, regulatory requirements, and the constant pressure to do more with less. We don't just build software; we partner with our clients to design solutions that truly address their pain points."
-  - "Whether you're struggling with insurance refusals, drowning in manual data entry, or seeking to optimize your administrative workflows, Sanabill brings the expertise and technology to make meaningful change possible."
-
+  - "Sanabill Sàrl est une entreprise technologique suisse dédiée à la transformation de l’administration des soins de santé grâce à des solutions logicielles innovantes et à du conseil stratégique. Fondée avec la vision d’éliminer la charge administrative au sein des organisations de santé, nous combinons une expertise approfondie du secteur avec des technologies de pointe."
+  - "Notre équipe comprend les défis uniques auxquels sont confrontés les administrateurs de la santé : des processus d’assurance complexes, des exigences réglementaires strictes et une pression constante pour faire plus avec moins. Nous ne nous contentons pas de développer des logiciels ; nous collaborons étroitement avec nos clients pour concevoir des solutions qui répondent réellement à leurs problématiques."
+  - "Que vous soyez confronté à des refus d’assurance, submergé par la saisie manuelle de données ou à la recherche d’une optimisation de vos flux de travail administratifs, Sanabill met à votre disposition l’expertise et la technologie nécessaires pour rendre le changement concret et durable."
 values:
   fr:
   - title: "Innovation"
-    description: "We leverage the latest technologies to solve real-world administrative challenges"
-  - title: "Partnership"
-    description: "Your success is our success. We work alongside you every step of the way"
+    description: "Nous exploitons les technologies open sources pour résoudre des défis administratifs concrets"
+  - title: "Partenariat"
+    description: "Votre succès est notre succès. Nous travaillons à vos côtés à chaque étape"
   - title: "Excellence"
-    description: "We deliver solutions that exceed expectations in quality, reliability, and impact"
-  en:
-  - title: "Innovation"
-    description: "We leverage the latest technologies to solve real-world administrative challenges"
-  - title: "Partnership"
-    description: "Your success is our success. We work alongside you every step of the way"
-  - title: "Excellence"
-    description: "We deliver solutions that exceed expectations in quality, reliability, and impact"
+    description: "Nous fournissons des solutions qui dépassent les attentes en matière de qualité, de fiabilité et d’impact"
+

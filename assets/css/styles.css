@@ -454,7 +454,7 @@ footer p {
 .dropdown-menu {
     position: absolute;
     top: 100%;
-    left: 0;
+    right: 0;
     background: white;
     min-width: 200px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
@@ -475,6 +475,7 @@ footer p {
 
 .dropdown-menu li {
     list-style: none;
+    width: 100%;
 }
 
 .dropdown-menu a {
