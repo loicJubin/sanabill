@@ -1,0 +1,41 @@
+title: 
+  fr: "Notre Expertise"
+  en: "Our Expertise"
+
+subtitle: 
+  fr: "Empowering healthcare organizations with technology that transforms administrative complexity into operational excellence"
+  en: "Empowering healthcare organizations with technology that transforms administrative complexity into operational excellence"
+
+items:
+  fr:
+    - icon: "💻"
+      title: "Healthcare Application Development"
+      description: "Custom web applications tailored for healthcare administration. We build intuitive platforms for insurance management, billing workflows, and administrative automation that integrate seamlessly with your existing systems."
+    
+    - icon: "📊"
+      title: "Process Optimization & Consulting"
+      description: "Expert analysis and strategic guidance to streamline your administrative operations. We identify bottlenecks, design efficient workflows, and implement automation solutions that reduce manual work and improve accuracy."
+    
+    - icon: "📝"
+      title: "Data Capture & Integration"
+      description: "Sophisticated web forms and data collection tools that push information directly into your existing systems. Eliminate duplicate data entry and ensure data consistency across your organization."
+    
+    - icon: "🔄"
+      title: "Workflow Automation"
+      description: "Transform repetitive administrative tasks into automated processes. From invoice tracking to insurance claim management, we help you reclaim valuable time for your team to focus on what matters most."
+  en:
+    - icon: "💻"
+      title: "Healthcare Application Development"
+      description: "Custom web applications tailored for healthcare administration. We build intuitive platforms for insurance management, billing workflows, and administrative automation that integrate seamlessly with your existing systems."
+    
+    - icon: "📊"
+      title: "Process Optimization & Consulting"
+      description: "Expert analysis and strategic guidance to streamline your administrative operations. We identify bottlenecks, design efficient workflows, and implement automation solutions that reduce manual work and improve accuracy."
+    
+    - icon: "📝"
+      title: "Data Capture & Integration"
+      description: "Sophisticated web forms and data collection tools that push information directly into your existing systems. Eliminate duplicate data entry and ensure data consistency across your organization."
+    
+    - icon: "🔄"
+      title: "Workflow Automation"
+      description: "Transform repetitive administrative tasks into automated processes. From invoice tracking to insurance claim management, we help you reclaim valuable time for your team to focus on what matters most."

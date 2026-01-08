@@ -1,0 +1,28 @@
+title: 
+  fr: "About Sanabill"
+  en: "About Sanabill"
+paragraphs:
+  fr:
+  - "Sanabill Sàrl is a Swiss technology company dedicated to transforming healthcare administration through innovative software solutions and strategic consulting. Founded with a vision to eliminate administrative burden in healthcare organizations, we combine deep industry expertise with cutting-edge technology."
+  - "Our team understands the unique challenges healthcare administrators face: complex insurance processes, regulatory requirements, and the constant pressure to do more with less. We don't just build software; we partner with our clients to design solutions that truly address their pain points."
+  - "Whether you're struggling with insurance refusals, drowning in manual data entry, or seeking to optimize your administrative workflows, Sanabill brings the expertise and technology to make meaningful change possible."
+  en:
+  - "Sanabill Sàrl is a Swiss technology company dedicated to transforming healthcare administration through innovative software solutions and strategic consulting. Founded with a vision to eliminate administrative burden in healthcare organizations, we combine deep industry expertise with cutting-edge technology."
+  - "Our team understands the unique challenges healthcare administrators face: complex insurance processes, regulatory requirements, and the constant pressure to do more with less. We don't just build software; we partner with our clients to design solutions that truly address their pain points."
+  - "Whether you're struggling with insurance refusals, drowning in manual data entry, or seeking to optimize your administrative workflows, Sanabill brings the expertise and technology to make meaningful change possible."
+
+values:
+  fr:
+  - title: "Innovation"
+    description: "We leverage the latest technologies to solve real-world administrative challenges"
+  - title: "Partnership"
+    description: "Your success is our success. We work alongside you every step of the way"
+  - title: "Excellence"
+    description: "We deliver solutions that exceed expectations in quality, reliability, and impact"
+  en:
+  - title: "Innovation"
+    description: "We leverage the latest technologies to solve real-world administrative challenges"
+  - title: "Partnership"
+    description: "Your success is our success. We work alongside you every step of the way"
+  - title: "Excellence"
+    description: "We deliver solutions that exceed expectations in quality, reliability, and impact"

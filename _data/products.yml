@@ -1,0 +1,47 @@
+tagline: 
+  fr: "Featured Product"
+  fr: "Featured Product"
+title: 
+  fr: "ZERO: Insurance Refusal Management Reimagined"
+  en: "ZERO: Insurance Refusal Management Reimagined"
+description: 
+  fr: "ZERO revolutionizes how healthcare organizations handle insurance refusals. Our intelligent platform structures and automates refusal treatment processes while providing crystal-clear visibility into your invoice pipeline."
+  en: "ZERO revolutionizes how healthcare organizations handle insurance refusals. Our intelligent platform structures and automates refusal treatment processes while providing crystal-clear visibility into your invoice pipeline."
+cta_button: 
+  fr: "Learn More About ZERO"
+  en: "Learn More About ZERO"
+features:
+  fr:
+    - "Automated refusal processing and categorization"
+    - "Intelligent workflow routing and task assignment"
+    - "Comprehensive invoice tracking dashboard"
+    - "Real-time analytics and reporting"
+    - "Seamless integration with existing billing systems"
+    - "Reduced processing time and manual errors"
+  en:
+    - "Automated refusal processing and categorization"
+    - "Intelligent workflow routing and task assignment"
+    - "Comprehensive invoice tracking dashboard"
+    - "Real-time analytics and reporting"
+    - "Seamless integration with existing billing systems"
+    - "Reduced processing time and manual errors"
+
+stats:
+  fr:
+    - number: "67%"
+      label: "Faster Refusal Processing"
+    - number: "92%"
+      label: "User Satisfaction Rate"
+    - number: "45%"
+      label: "Reduction in Manual Work"
+    - number: "99.8%"
+      label: "Data Accuracy"
+  en:
+    - number: "67%"
+      label: "Faster Refusal Processing"
+    - number: "92%"
+      label: "User Satisfaction Rate"
+    - number: "45%"
+      label: "Reduction in Manual Work"
+    - number: "99.8%"
+      label: "Data Accuracy"

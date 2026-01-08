@@ -1,0 +1,15 @@
+<section id="services" class="services bg-grey-to-white">
+    <div class="container">
+        <h2 class="section-title">{{ site.data.services.title[page.lang] }}</h2>
+        <p class="section-subtitle">{{ site.data.services.subtitle[page.lang] }}</p>
+        <div class="services-grid">
+            {% for service in site.data.services.items[page.lang] %}
+            <div class="service-card">
+                <div class="service-icon">{{ service.icon }}</div>
+                <h3>{{ service.title }}</h3>
+                <p>{{ service.description }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

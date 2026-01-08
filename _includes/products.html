@@ -1,0 +1,26 @@
+<section id="zero" class="zero-product bg-white-to-grey">
+    <div class="zero-content">
+        <div class="zero-text">
+            <div class="tagline">{{ site.data.products.tagline[page.lang] }}</div>
+            <h2>{{ site.data.products.title[page.lang] }}</h2>
+            <p>{{ site.data.products.description[page.lang] }}</p>
+            
+            <ul class="features-list">
+                {% for feature in site.data.products.features[page.lang] %}
+                <li>{{ feature }}</li>
+                {% endfor %}
+            </ul>
+            
+            <a href="#contact" class="cta-button">{{ site.data.products.cta_button[page.lang] }}</a>
+        </div>
+        
+        <div class="stats-grid">
+            {% for stat in site.data.products.stats[page.lang] %}
+            <div class="stat-card">
+                <div class="stat-number">{{ stat.number }}</div>
+                <div class="stat-label">{{ stat.label }}</div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

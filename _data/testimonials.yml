@@ -1,0 +1,29 @@
+title: 
+  fr : "What Our Clients Say"
+  en : "What Our Clients Say"
+items:
+  fr:
+  - text: "ZERO has completely transformed our insurance refusal workflow. What used to take our team days now happens in hours, and we have full visibility into every case."
+    author: "Dr. Marie Lefebvre"
+    role: "Administrative Director, Clinique du Lac"
+  
+  - text: "The consulting team at Sanabill identified inefficiencies we didn't even know existed. Their process optimization saved us countless hours and significantly reduced errors."
+    author: "Thomas Müller"
+    role: "CFO, Gesundheitszentrum Zürich"
+  
+  - text: "Their data integration solution seamlessly connected our various systems. No more duplicate entry, no more reconciliation headaches. Just smooth, automated workflows."
+    author: "Sophie Dubois"
+    role: "Operations Manager, Centre Médical Vaud"
+
+  en:
+  - text: "ZERO has completely transformed our insurance refusal workflow. What used to take our team days now happens in hours, and we have full visibility into every case."
+    author: "Dr. Marie Lefebvre"
+    role: "Administrative Director, Clinique du Lac"
+  
+  - text: "The consulting team at Sanabill identified inefficiencies we didn't even know existed. Their process optimization saved us countless hours and significantly reduced errors."
+    author: "Thomas Müller"
+    role: "CFO, Gesundheitszentrum Zürich"
+  
+  - text: "Their data integration solution seamlessly connected our various systems. No more duplicate entry, no more reconciliation headaches. Just smooth, automated workflows."
+    author: "Sophie Dubois"
+    role: "Operations Manager, Centre Médical Vaud"

@@ -1,0 +1,19 @@
+<section id="about" class="about bg-white-to-grey">
+    <div class="container">
+        <div class="about-content">
+            <h2 class="section-title">{{ site.data.about.title[page.lang] }}</h2>
+            {% for paragraph in site.data.about.paragraphs[page.lang] %}
+            <p>{{ paragraph }}</p>
+            {% endfor %}
+        </div>
+        
+        <div class="values-grid">
+            {% for value in site.data.about.values[page.lang] %}
+            <div class="value-card">
+                <h3>{{ value.title }}</h3>
+                <p>{{ value.description }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

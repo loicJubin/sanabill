@@ -1,0 +1,14 @@
+<section class="testimonials bg-grey-to-white">
+    <div class="container">
+        <h2 class="section-title">{{ site.data.testimonials.title[page.lang] }}</h2>
+        <div class="testimonials-grid">
+            {% for testimonial in site.data.testimonials.items[page.lang] %}
+            <div class="testimonial-card">
+                <p class="testimonial-text">"{{ testimonial.text }}"</p>
+                <p class="testimonial-author">{{ testimonial.author }}</p>
+                <p class="testimonial-role">{{ testimonial.role }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
