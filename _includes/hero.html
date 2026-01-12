@@ -2,13 +2,14 @@
     <div class="hero-content">
         <h1>{{ site.data.hero.title[page.lang] }}</h1>
         <p>{{ site.data.hero.description[page.lang] }}</p>
-        <a href="#contact" class="cta-button">{{ site.data.hero.cta_button[page.lang] }}</a>
-        
-        <a href="#zero" style="text-decoration: none; color:white;">
-          <div class="product-highlight">
-              <h3>{{ site.data.hero.product_title[page.lang] }}</h3>
-              <p>{{ site.data.hero.product_description[page.lang] }}</p>
-          </div>
-        </a>
+        <a href="{{ '/fr/zero/' | relative_url }}" class="cta-button">{{ site.data.hero.cta_button[page.lang] }}</a>
+      <div class="partners">
+        <p class="partners-title">{{  site.data.hero.partner_title[page.lang] }}</p>
+            <div class="partners-logos">
+                <!-- Add your partner logos here -->
+                <img src="partner1-logo.png" alt="Partner 1" class="partner-logo">
+                <img src="partner2-logo.png" alt="Partner 2" class="partner-logo">
+            </div>
+        </div>
     </div>
 </section>

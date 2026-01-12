@@ -1,7 +1,6 @@
-<section id="zero" class="zero-product bg-white-to-grey">
+<section id="zero" class="zero-product bg-grey-to-white">
     <div class="zero-content">
         <div class="zero-text">
-            <div class="tagline">{{ site.data.products.tagline[page.lang] }}</div>
             <h2>{{ site.data.products.title[page.lang] }}</h2>
             <p>{{ site.data.products.description[page.lang] }}</p>
             
@@ -22,5 +21,34 @@
             </div>
             {% endfor %}
         </div>
+    </div>
+</section>
+
+<section class="bg-white-to-grey">
+    <!-- Product Features Showcase -->
+    <div class="product-features">
+        <h3 class="features-section-title">Découvrez les fonctionnalités clés de ZERO</h3>
+        {% for feat in site.data.products.features_showcase[page.lang] %}
+        <div class="feature-showcase {% cycle '', 'reverse' %}">
+            <div class="feature-info">
+              <h4>{{ feat.title }}</h4>
+              <p>{{ feat.description }}</p>
+            </div>
+            <div class="feature-snapshot">
+                <div class="snapshot-placeholder">
+                  <img style="width:100%" src="{{ feat.image_path }}"></img>
+                  <p>{{ feat.image_desription }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<section id="contact" class="contact bg-grey-to-white">
+    <div class="container">
+        <h2 class="section-title">{{ site.data.products.contact[page.lang].title }}</h2>
+        <p>{{ site.data.products.contact[page.lang].description }}</p>
+        <a href="mailto:{{ site.data.products.contact[page.lang].email }}">{{ site.data.products.contact[page.lang].email }}</a>
     </div>
 </section>

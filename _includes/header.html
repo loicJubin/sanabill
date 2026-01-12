@@ -9,16 +9,11 @@
             <span></span>
         </div>
         <ul id="navMenu">
-          <li><a href="#hero" onclick="closeMenu()">{{ site.data.header.home[page.lang] }}</a></li>
-          <li><a href="#services" onclick="closeMenu()">{{ site.data.header.services[page.lang] }}</a></li>
-            <li class="dropdown" onclick="toggleDropdown(event)">
-                <span class="dropdown-toggle">{{ site.data.header.products[page.lang] }}</span>
-                <ul class="dropdown-menu">
-                    <li><a href="#zero" onclick="closeMenu()">{{ site.data.header.zero[page.lang] }}</a></li>
-                </ul>
-            </li>
-            <li><a href="#about" onclick="closeMenu()">{{ site.data.header.about[page.lang] }}</a></li>
-            <li><a href="#contact" onclick="closeMenu()">{{ site.data.header.contact[page.lang] }}</a></li>
+          <li><a href="{{ '/' | relative_url }}" onclick="closeMenu()">{{ site.data.header.home[page.lang] }}</a></li>
+          <li><a href="{{ '/fr/zero/' | relative_url }}" onclick="closeMenu()">{{ site.data.header.zero[page.lang] }}</a></li>
+          <li><a href="{{ '/fr/services/' | relative_url }}" onclick="closeMenu()">{{ site.data.header.services[page.lang] }}</a></li>
+            <li><a href="{{ '/fr/about/' | relative_url }}" onclick="closeMenu()">{{ site.data.header.about[page.lang] }}</a></li>
+            <li><a href="{{ '/fr/contact/' | relative_url }}" onclick="closeMenu()">{{ site.data.header.contact[page.lang] }}</a></li>
         </ul>
     </nav>
 </header>

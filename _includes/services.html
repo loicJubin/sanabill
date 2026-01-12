@@ -5,8 +5,13 @@
         <div class="services-grid">
             {% for service in site.data.services.items[page.lang] %}
             <div class="service-card">
-                <div class="service-icon">{{ service.icon }}</div>
-                <h3>{{ service.title }}</h3>
+                <div class="service-icon">
+                  <img src="{{ service.icon}}" style="max-width: 150px;"></img>
+                  <h3 style="margin-left:1em">{{ service.title }}</h3>
+                </div>
+              {% comment %}
+              <img src="/assets/images/software.png" style="max-width: 100px;"></img>
+              {% endcomment %}
                 <p>{{ service.description }}</p>
             </div>
             {% endfor %}
