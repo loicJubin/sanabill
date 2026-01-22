@@ -1,20 +1,62 @@
-<section id="services" class="services bg-grey-to-white">
-    <div class="container">
-        <h2 class="section-title">{{ site.data.services.title[page.lang] }}</h2>
-        <p class="section-subtitle">{{ site.data.services.subtitle[page.lang] }}</p>
-        <div class="services-grid">
-            {% for service in site.data.services.items[page.lang] %}
-            <div class="service-card">
-                <div class="service-icon">
-                  <img src="{{ service.icon}}" style="max-width: 150px;"></img>
-                  <h3 style="margin-left:1em">{{ service.title }}</h3>
-                </div>
-              {% comment %}
-              <img src="/assets/images/software.png" style="max-width: 100px;"></img>
-              {% endcomment %}
-                <p>{{ service.description }}</p>
-            </div>
-            {% endfor %}
-        </div>
+{% assign text = site.data.services[page.lang] %}
+
+<!-- Hero Section -->
+<section class="hero-banner" style="padding-bottom:2rem;">
+    <div class="container text-center">
+        <h1 class="display-1">{{ text.title }}</h1>
+        <p>{{ text.subtitle }}</p>
     </div>
 </section>
+
+<!-- Services Section -->
+<section class="services-main">
+    <div class="container">
+        {% for service in text.sections %}
+        <!-- Service {{ forloop.index }}: {{ service.id }} -->
+        <article id="{{ service.id }}" class="service">
+            <div class="service__header">
+                <div class="service__number">0{{ forloop.index }}</div>
+                <h2 class="service__title">{{ service.title }}</h2>
+                <p class="service__tagline">{{ service.tagline }}</p>
+            </div>
+            
+            <div class="service__content {% if service.id == 'zero' %}service__content--highlighted{% endif %}">
+                <p class="service__intro">{{ service.description }}</p>
+                
+                <ul class="service__list">
+                    {% for bullet in service.bullets %}
+                    <li class="service__list-item">{{ bullet }}</li>
+                    {% endfor %}
+                </ul>
+                
+                <p class="service__conclusion">{{ service.conclusion }}</p>
+                
+                {% if service.link %}
+                <div class="service__cta text-center">
+                    <a href="{{ service.link.url }}" class="btn btn-primary">{{ service.link.label }}</a>
+                </div>
+                {% endif %}
+            </div>
+        </article>
+        {% endfor %}
+    </div>
+</section>
+
+<!-- Closing Statement -->
+<section class="container">
+  <div class="services-closing__content">
+      <p class="services-closing__text">{{ text.closing.text }}</p>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="services-cta">
+    <div class="container" style="padding-bottom:3rem;">
+        <h2 class="services-cta__title display-2">Prêt à optimiser vos processus ?</h2>
+        <a href="{{ text.cta.url }}" class="btn btn--white">{{ text.cta.label }}</a>
+    </div>
+    <div style="padding:1rem;">
+      {% include footer.html %}
+    </div>
+</section>
+

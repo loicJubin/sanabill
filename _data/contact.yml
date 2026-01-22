@@ -2,16 +2,15 @@ fr:
   hero:
     title: "Contactez-nous"
     subtitle: "Nous serions ravis d'avoir de vos nouvelles. Contactez-nous pour toute question."
-  
-  map_title: "Nous trouver"
-  info_title: "Informations de Contact"
-  
+  map_title: "Formulaire"
+
+  info_title: "Informations"
+
   address:
-    title: "📍 Adresse"
-    line1: "Avenue d'Echallens 61"
-    line2: "1004 Lausanne"
-    line3: "Suisse"
+    line1: "Sanabill Sàrl"
+    line2: "Avenue d'Echallens 61"
+    line3: "1004 Lausanne"
+    line4: "Suisse"
   
   email:
-    title: "📧 Email"
     address: "contact@sanabill.ch"

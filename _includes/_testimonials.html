@@ -1,0 +1,166 @@
+<section aria-labelledby="testimonials-title">
+    <div class="container">
+        <h2 id="testimonials-title" class="text-center display-2">{{ text.testimonial.title }}</h2>
+        
+        <div class="carousel">
+            <div class="carousel__inner">
+                <!-- Testimonial slides -->
+                <div class="carousel__track">
+                    {% for testimony in text.testimonial.items %}
+                    <div class="carousel__slide">
+
+                        <blockquote class="testimonial-card">
+                            <p class="testimonial-text">{{ testimony.description }}</p>
+                            <div class="testimonial-author">
+                                <cite>{{ testimony.person }}</cite>
+                            </div>
+                        </blockquote>
+
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            
+            <!-- Navigation dots -->
+            <div class="carousel__dots">
+                {% for testimony in text.testimonial.items %}
+                <button class="carousel__dot" data-slide="{{ forloop.index0 }}" aria-label="Go to slide {{ forloop.index }}"></button>
+                {% endfor %}
+            </div>
+            
+            <!-- Navigation arrows -->
+            <div class="carousel__nav">
+                <button class="carousel__button carousel__button--prev" aria-label="Previous slide">
+                    <span class="carousel__arrow"></span>
+                </button>
+                <button class="carousel__button carousel__button--next" aria-label="Next slide">
+                    <span class="carousel__arrow"></span>
+                </button>
+            </div>
+            
+            <!-- Play/Pause button -->
+            <button class="carousel__control" aria-label="Pause auto-rotation">
+              <span class="carousel__control-icon carousel__control-icon--play"><small>Play</small></span>
+              <span class="carousel__control-icon carousel__control-icon--pause"><small>Pause</small></span>
+            </button>
+        </div>
+    </div>
+</section>
+
+<script>
+(function() {
+    const carousel = document.querySelector('.carousel');
+    if (!carousel) return;
+    
+    const track = carousel.querySelector('.carousel__track');
+    const slides = carousel.querySelectorAll('.carousel__slide');
+    const dots = carousel.querySelectorAll('.carousel__dot');
+    const prevBtn = carousel.querySelector('.carousel__button--prev');
+    const nextBtn = carousel.querySelector('.carousel__button--next');
+    const controlBtn = carousel.querySelector('.carousel__control');
+    
+    const totalSlides = slides.length;
+    let currentSlide = 0;
+    let autoRotateInterval;
+    let isPlaying = true;
+    
+    function goToSlide(index) {
+        currentSlide = index;
+        
+        // Update slide position
+        track.style.transform = `translateX(-${currentSlide * 100}%)`;
+        
+        // Update active dot
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('carousel__dot--active', i === currentSlide);
+        });
+        
+        // Update arrow states
+        prevBtn.disabled = currentSlide === 0;
+        nextBtn.disabled = currentSlide === totalSlides - 1;
+    }
+    
+    function nextSlide() {
+        if (currentSlide < totalSlides - 1) {
+            goToSlide(currentSlide + 1);
+        } else {
+            goToSlide(0);
+        }
+    }
+    
+    function prevSlide() {
+        if (currentSlide > 0) {
+            goToSlide(currentSlide - 1);
+        }
+    }
+    
+    function startAutoRotate() {
+        if (autoRotateInterval) clearInterval(autoRotateInterval);
+        autoRotateInterval = setInterval(nextSlide, 5000);
+        isPlaying = true;
+        controlBtn.classList.remove('carousel__control--paused');
+        controlBtn.setAttribute('aria-label', 'Pause auto-rotation');
+    }
+    
+    function stopAutoRotate() {
+        clearInterval(autoRotateInterval);
+        isPlaying = false;
+        controlBtn.classList.add('carousel__control--paused');
+        controlBtn.setAttribute('aria-label', 'Play auto-rotation');
+    }
+    
+    // Navigation arrows
+    prevBtn.addEventListener('click', () => {
+        prevSlide();
+        if (isPlaying) {
+            stopAutoRotate();
+            setTimeout(startAutoRotate, 8000);
+        }
+    });
+    
+    nextBtn.addEventListener('click', () => {
+        nextSlide();
+        if (isPlaying) {
+            stopAutoRotate();
+            setTimeout(startAutoRotate, 8000);
+        }
+    });
+    
+    // Dots navigation
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            goToSlide(index);
+            if (isPlaying) {
+                stopAutoRotate();
+                setTimeout(startAutoRotate, 8000);
+            }
+        });
+    });
+    
+    // Play/Pause button
+    controlBtn.addEventListener('click', () => {
+        if (isPlaying) {
+            stopAutoRotate();
+        } else {
+            startAutoRotate();
+        }
+    });
+    
+    // Pause on hover (desktop only)
+    carousel.addEventListener('mouseenter', () => {
+        if (window.innerWidth > 768 && isPlaying) {
+            clearInterval(autoRotateInterval);
+        }
+    });
+    
+    carousel.addEventListener('mouseleave', () => {
+        if (window.innerWidth > 768 && isPlaying) {
+            startAutoRotate();
+        }
+    });
+    
+    // Initialize
+    goToSlide(0);
+    startAutoRotate();
+})();
+</script>

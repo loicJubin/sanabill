@@ -1,0 +1,29 @@
+.btn {
+  display: inline-block;
+  background: $bg-primary;
+  color: var(--white);
+  padding: 1rem 2.5rem;
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  font-size: 1.1rem;
+
+  &--white {
+    background: var(--white);
+    color: var(--bill-blue);
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-xl);
+  }
+
+  &:focus-visible {
+    outline: 3px solid var(--white);
+    outline-offset: 4px;
+  }
+
+
+}
+

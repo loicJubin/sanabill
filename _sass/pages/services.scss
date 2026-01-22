@@ -1,0 +1,229 @@
+.services-hero {
+    background: var(--gradient-primary);
+    color: var(--white);
+    padding: 5rem 5% 4rem;
+    text-align: center;
+}
+
+.services-hero__title {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.services-hero__subtitle {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.7;
+    opacity: 0.95;
+}
+
+/* Block: services-main */
+.services-main {
+    padding: 3rem 5%;
+}
+
+/* Block: service */
+.service {
+    margin-bottom: 5rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.service:last-child {
+    margin-bottom: 0;
+}
+
+@media (min-width: 1024px) {
+    .service {
+        grid-template-columns: 300px 1fr;
+        gap: 4rem;
+    }
+}
+
+/* Element: service__header */
+.service__header {
+    position: relative;
+    text-align: center;
+    @include lg {
+      text-align: left;
+    }
+}
+
+@media (min-width: 1024px) {
+    .service__header {
+        position: sticky;
+        top: 120px;
+    }
+}
+
+/* Element: service__number */
+.service__number {
+    width: 60px;
+    height: 60px;
+    background: var(--gradient-primary);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    margin: 1.5rem auto;
+
+    @include lg {
+      margin: 1.5rem 0;
+    }
+}
+
+/* Element: service__title */
+.service__title {
+    font-size: 1.75rem;
+    color: var(--dark);
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+/* Element: service__tagline */
+.service__tagline {
+    font-size: 1.125rem;
+    color: var(--text-tertiary);
+    font-style: italic;
+    line-height: 1.5;
+}
+
+/* Element: service__content */
+.service__content {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+
+/* Modifier: service__content--highlighted */
+.service__content--highlighted {
+    border-left: 4px solid $bg-primary;
+}
+
+/* Element: service__intro */
+.service__intro {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+/* Element: service__list */
+.service__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Element: service__list-item */
+.service__list-item {
+    padding: 0.5rem 0 0.5rem 2rem;
+    position: relative;
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+.service__list-item::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0.68rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: var(--gradient-primary);
+    color: var(--white);
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Element: service__conclusion */
+.service__conclusion {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(69, 13, 253, 0.1);
+}
+
+/* Element: service__cta */
+.service__cta {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+/* Block: services-closing */
+.services-closing {
+
+    &__content {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 0 3rem 3rem;
+    }
+
+    &__text {
+      font-size: 1.15rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin: 0;
+    }
+
+}
+
+/* Block: services-cta */
+.services-cta {
+    background: linear-gradient(91deg, var(--sana-blue) 0%, var(--bill-blue) 100%);
+    color: var(--white);
+    padding: 5rem 5% 0rem;
+    text-align: center;
+}
+
+/* Element: services-cta__title */
+.services-cta__title {
+    margin-bottom: 2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .services-hero__title {
+        font-size: 2rem;
+    }
+    
+    .services-hero__subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .service__title {
+        font-size: 1.5rem;
+    }
+    
+    .service__number {
+        width: 50px;
+        height: 50px;
+        font-size: 1.25rem;
+    }
+    
+    .service__content {
+        padding: 2rem;
+    }
+    
+    .services-cta__title {
+        font-size: 1.5rem;
+    }
+}

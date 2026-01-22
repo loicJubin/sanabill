@@ -1,0 +1,66 @@
+// ============================================
+// TYPOGRAPHY SPACING
+// ============================================
+
+.display {
+  &-1 {
+    font-size: $font-5xl;
+    font-weight: $font-medium;
+    line-height: $leading-tight;
+  }
+  &-2 {
+    font-size: $font-4xl;
+    font-weight: $font-medium;
+    line-height: $leading-tight;
+    margin-bottom: $spacing-lg;
+  }
+ &-3 {
+    font-size: $font-3xl;
+    font-weight: $font-medium;
+    line-height: $leading-tight;
+    margin-bottom: $spacing-lg;
+  }
+
+}
+
+.fw {
+  &-semibold{
+    font-weight: $font-semibold;
+  }
+}
+
+// Flow content - only bottom margins
+// (This creates predictable vertical rhythm)
+
+//h1 {
+//  font-size: $font-5xl;
+//  font-weight: $font-bold;
+//  line-height: $leading-tight;
+//  margin-bottom: $spacing-xl;
+//}
+//
+//h2 {
+//  font-size: $font-4xl;
+//  font-weight: $font-bold;
+//  line-height: $leading-tight;
+//  margin-bottom: $spacing-lg;
+//}
+//
+//h3 {
+//  font-size: $font-3xl;
+//  font-weight: $font-semibold;
+//  line-height: $leading-tight;
+//  margin-bottom: $spacing-md;
+//}
+//
+//h4 {
+//  font-size: $font-2xl;
+//  font-weight: $font-semibold;
+//  margin-bottom: $spacing-sm;
+//}
+//
+//h5,h6 {
+//  font-size: $font-lg;
+//  font-weight: $font-medium;
+//  margin-bottom: $spacing-sm;
+//}

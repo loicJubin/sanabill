@@ -1,0 +1,316 @@
+// ============================================
+// ZERO PRODUCT SECTION
+// ============================================
+
+
+.zero-text {
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+.zero-product {
+  padding: $spacing-2xl 5% $spacing-xl;
+
+  &__zero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-2xl;
+    align-items: center;
+
+    @include md {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    &__text {
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+  }
+}
+
+.d-flex {
+  display: flex;
+  justify-content: center;
+  padding: 0 $spacing-md
+}
+
+.features-list {
+  list-style: none;
+  padding: 0;
+
+  li {
+    padding: $spacing-xs 0 $spacing-xs $spacing-lg;
+    position: relative;
+    color: $text-secondary;
+    line-height: $leading-relaxed;
+    transition: transform $transition-fast;
+
+    &::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0.68rem;
+      width: $spacing-md;
+      height: $spacing-md;
+      background: $gradient-primary;
+      color: $white;
+      font-weight: $font-bold;
+      font-size: $font-base;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-lg;
+
+  @include lg {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+.stat-card {
+  background: $white;
+  padding: $spacing-md $spacing-lg;
+  border-radius: $radius-lg;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: $shadow-md;
+  transition: all $transition-base $ease-in-out-cubic;
+  border: 1px solid rgba(69, 13, 253, 0.08);
+
+  // Gradient accent on top
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: $gradient-primary;
+  }
+
+}
+
+.stat-number {
+  font-size: $font-4xl;
+  font-weight: $font-bold;
+  background: $gradient-primary;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: $spacing-xs;
+  line-height: $leading-tight;
+}
+
+.stat-label {
+  font-size: 1rem;
+}
+
+// ============================================
+// PRODUCT FEATURES
+// ============================================
+
+#product-features {
+  padding: 0 5%;
+}
+
+.product-features {
+  max-width: 1200px;
+  margin: 1rem auto 0;
+  padding-top: 1rem;
+  border-top: 2px solid rgba(69, 13, 253, 0.1);
+}
+
+.features-section-title {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--dark);
+  margin-bottom: 4rem;
+}
+
+// ============================================
+// FEATURE SHOWCASE - Alternating Layout
+// ============================================
+
+.feature-showcase {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-2xl;
+  align-items: center;
+  padding: $spacing-lg 0;
+  margin-bottom: 0;
+  position: relative;
+
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: 1fr 2fr;
+    gap: $spacing-3xl;
+    padding: $spacing-xl 0;
+  }
+
+  // Alternating layout for visual interest
+  &.reverse {
+    @media (min-width: $breakpoint-md) {
+      direction: rtl;
+      
+      > * {
+        direction: ltr;
+      }
+    }
+  }
+
+  // Subtle separator between features
+  &:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      $border-color-light 20%,
+      $border-color-light 80%,
+      transparent
+    );
+  }
+}
+
+.feature-info {
+  padding: 0 $spacing-md;
+  h4 {
+    position: relative;
+    display: inline-block;
+
+    // Subtle underline accent
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: $gradient-primary;
+      border-radius: $radius-full;
+    }
+  }
+
+  p {
+    color: $text-secondary;
+  }
+}
+
+.feature-snapshot {
+  position: relative;
+  border-radius: $radius-lg;
+  overflow: hidden;
+}
+
+.snapshot-placeholder {
+  border: 2px dashed $border-color-light;
+  border-radius: $radius-lg;
+  padding: $spacing-sm;
+  text-align: center;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all $transition-base;
+
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: $radius-md;
+    margin-bottom: $spacing-md;
+    box-shadow: $shadow-md;
+  }
+
+  p {
+    color: $text-tertiary;
+    font-size: $font-sm;
+    font-style: italic;
+    margin: 0;
+  }
+}
+
+// ============================================
+// TESTIMONIALS SECTION
+// ============================================
+
+#temoignages {
+  padding: $spacing-3xl $spacing-container-padding;
+  background: $gradient-light-reverse;
+  
+  .container {
+    max-width: $container-max-width;
+    margin: 0 auto;
+  }
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-lg;
+  margin-top: $spacing-2xl;
+
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-xl;
+  }
+}
+
+.testimonial-card {
+  background: $white;
+  padding: $spacing-xl;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-md;
+  border-left: 4px solid transparent;
+  border-image: $gradient-primary 1;
+  position: relative;
+  margin: 0;
+  transition: all $transition-base;
+
+  &::before {
+    content: '"';
+    position: absolute;
+    top: $spacing-md;
+    left: $spacing-md;
+    font-size: 4rem;
+    line-height: 1;
+    color: rgba(69, 13, 253, 0.1);
+    font-family: Georgia, serif;
+  }
+}
+
+.testimonial-text {
+  color: $text-secondary;
+  margin-bottom: $spacing-md;
+  position: relative;
+  z-index: 1;
+}
+
+.testimonial-author {
+  font-size: $font-base;
+  color: $text-tertiary;
+  font-weight: $font-medium;
+  margin-top: $spacing-md;
+  padding-top: $spacing-md;
+  border-top: 1px solid $border-color-light;
+
+  cite {
+    font-style: normal;
+    font-weight: $font-semibold;
+  }
+}
+

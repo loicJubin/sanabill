@@ -1,0 +1,95 @@
+{% comment %} Production section {% endcomment %}
+{% assign text = site.data.zero[page.lang] %}
+
+<section class="zero-product">
+    <div class="zero-product__zero-content">
+        <div>
+            <h1 class="display-2">{{ text.title }}</h1>
+            <p class="zero-product__zero-content__text m-0">{{ text.description }}</p>
+        </div>
+        <div>
+          <div class="stats-grid" style="padding-bottom: 1rem;">
+              {% for stat in text.stats %}
+              <div class="stat-card">
+                  <div class="stat-number">{{ stat.number }}</div>
+                  <div class="stat-label">{{ stat.label }}</div>
+              </div>
+              {% endfor %}
+          </div>
+          <p class="text-secondary"><small><i>{{ text.stats_disclaimers }}</i></small></p>
+        </div>
+    </div>
+    <div class="container container--no-padding">
+      <a href="#contact" class="btn btn-primary mt-5">{{ text.cta_button }}</a>
+    </div>
+</section>
+
+<section class="product-features">
+    <h2 class="display-2 text-center">{{ text.features.title }}</h2>
+    <div class="d-flex" style="padding-bottom: 2rem;">
+      <div class="card card">
+        <div class="card__title text-secondary">{{ text.features.features_summary.description }}</div>
+        <ul class="features-list">
+          {% for items in text.features.features_summary.list %}
+            <li>{{ items }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+
+    {% comment %} Feature Showcases {% endcomment %}
+    {% for feat in text.features_showcase %}
+    <article class="feature-showcase {% cycle '', 'reverse' %}">
+        <div class="feature-info">
+            <h4 class="display-3">{{ feat.title }}</h4>
+            <p>{{ feat.description }}</p>
+        </div>
+        
+        <div class="feature-snapshot">
+            <figure class="snapshot-placeholder">
+                <img 
+                    src="{{ feat.image_path }}" 
+                    alt="{{ feat.title }}" 
+                    loading="lazy"
+                    width="600"
+                    height="400"
+                />
+                {% if feat.image_desription %}
+                <figcaption>{{ feat.image_desription }}</figcaption>
+                {% endif %}
+            </figure>
+        </div>
+    </article>
+    {% endfor %}
+</section>
+
+
+{% comment %} 
+<section aria-labelledby="testimonials-title">
+    <div class="container">
+        <h2 class="text-center display-2">{{ text.testimonial.title }}</h2>
+        <div class="testimonials-grid">
+            {% for testimony in text.testimonial.items %}
+            <blockquote class="testimonial-card">
+                <p class="testimonial-text">{{ testimony.description }}</p>
+                <div class="testimonial-author">
+                    <cite>{{ testimony.person }}</cite>
+                </div>
+            </blockquote>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+Testimonials Section {% endcomment %}
+
+{% include _testimonials.html %}
+
+<section id="contact" class="container text-center" style="max-width: 800px;">
+  <h2 class="display-2">{{ text.contact.title }}</h2>
+  <p class="text-secondary">{{ text.contact.description }}</p>
+  <iframe data-tally-src="https://tally.so/embed/jalexE?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="200" frameborder="0" marginheight="0" marginwidth="0" title="Contact ZERO (fr)">
+    <link href="/assets/css/style.css" rel="stylesheet"></link>
+  </iframe>
+  <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+</section>
+

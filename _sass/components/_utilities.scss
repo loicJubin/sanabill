@@ -1,0 +1,55 @@
+// ============================
+// Margin utilities
+// ============================
+.mt-md {
+  margin-top: $spacing-md;
+}
+
+.mt {
+  &-1 {
+    margin-top: $spacing-3xl;
+  }
+  &-5 {
+    margin-top: $spacing-lg;
+  }
+}
+
+.m {
+  &-0{
+    margin: 0;
+  }
+}
+
+.p {
+  &b-2 {
+      padding-bottom: $spacing-lg;
+    }
+}
+
+.pt {
+  &-2 {
+      padding-top: $spacing-lg;
+    }
+}
+
+
+.text-center {
+  text-align: center;
+}
+
+.hover-available {
+  pointer-events: none;
+  @media (any-hover: hover) {
+      pointer-events: auto;
+     }
+}
+
+
+.hide-hover-available {
+    display: inherit;
+    pointer-events: auto;
+
+    @media (any-hover: hover) {
+      display: none;
+    }
+}

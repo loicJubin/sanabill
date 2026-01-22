@@ -1,0 +1,268 @@
+// ============================================
+// COLOR FUNCTIONS
+// ============================================
+
+/// Lighten a color by mixing it with white
+/// @param {Color} $color - Color to lighten
+/// @param {Number} $percentage - Percentage of white to mix (0-100)
+/// @return {Color} - Lightened color
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+/// Darken a color by mixing it with black
+/// @param {Color} $color - Color to darken
+/// @param {Number} $percentage - Percentage of black to mix (0-100)
+/// @return {Color} - Darkened color
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+
+/// Get color with adjusted opacity
+/// @param {Color} $color - Base color
+/// @param {Number} $opacity - Opacity value (0-1)
+/// @return {Color} - Color with opacity
+@function alpha-color($color, $opacity) {
+  @return rgba($color, $opacity);
+}
+
+// ============================================
+// SPACING FUNCTIONS
+// ============================================
+
+/// Convert pixels to rem
+/// @param {Number} $pixels - Pixel value
+/// @param {Number} $base [16] - Base font size in pixels
+/// @return {Number} - Value in rem
+@function rem($pixels, $base: 16) {
+  @return #{$pixels / $base}rem;
+}
+
+/// Convert pixels to em
+/// @param {Number} $pixels - Pixel value
+/// @param {Number} $base [16] - Base font size in pixels
+/// @return {Number} - Value in em
+@function em($pixels, $base: 16) {
+  @return #{$pixels / $base}em;
+}
+
+/// Get spacing value from spacing scale
+/// @param {String} $size - Size key (xs, sm, md, lg, xl, 2xl, 3xl)
+/// @return {Number} - Spacing value
+@function spacing($size) {
+  $spacings: (
+    'xs': $spacing-xs,
+    'sm': $spacing-sm,
+    'md': $spacing-md,
+    'lg': $spacing-lg,
+    'xl': $spacing-xl,
+    '2xl': $spacing-2xl,
+    '3xl': $spacing-3xl
+  );
+  
+  @return map-get($spacings, $size);
+}
+
+// ============================================
+// STRING FUNCTIONS
+// ============================================
+
+/// Replace substring in a string
+/// @param {String} $string - String to modify
+/// @param {String} $search - Substring to search for
+/// @param {String} $replace [''] - Replacement string
+/// @return {String} - Modified string
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+  
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+  
+  @return $string;
+}
+
+// ============================================
+// MAP FUNCTIONS
+// ============================================
+
+/// Deep get value from nested map
+/// @param {Map} $map - Map to search
+/// @param {Arglist} $keys - Keys to traverse
+/// @return {*} - Value from map
+@function map-deep-get($map, $keys...) {
+  @each $key in $keys {
+    $map: map-get($map, $key);
+  }
+  @return $map;
+}
+
+/// Check if map has nested key
+/// @param {Map} $map - Map to check
+/// @param {Arglist} $keys - Keys to check
+/// @return {Bool} - True if key exists
+@function map-has-nested-keys($map, $keys...) {
+  @each $key in $keys {
+    @if not map-has-key($map, $key) {
+      @return false;
+    }
+    $map: map-get($map, $key);
+  }
+  @return true;
+}
+
+// ============================================
+// MATH FUNCTIONS
+// ============================================
+
+/// Calculate percentage
+/// @param {Number} $value - Value
+/// @param {Number} $total - Total value
+/// @return {Number} - Percentage
+@function percentage($value, $total) {
+  @return ($value / $total) * 100%;
+}
+
+/// Clamp value between min and max
+/// @param {Number} $value - Value to clamp
+/// @param {Number} $min - Minimum value
+/// @param {Number} $max - Maximum value
+/// @return {Number} - Clamped value
+@function clamp-value($value, $min, $max) {
+  @return min(max($value, $min), $max);
+}
+
+/// Get golden ratio
+/// @return {Number} - Golden ratio
+@function golden-ratio() {
+  @return 1.618;
+}
+
+// ============================================
+// Z-INDEX FUNCTIONS
+// ============================================
+
+/// Get z-index value
+/// @param {String} $layer - Layer name
+/// @return {Number} - Z-index value
+@function z($layer) {
+  $z-indexes: (
+    'dropdown': $z-dropdown,
+    'sticky': $z-sticky,
+    'modal': $z-modal,
+    'tooltip': $z-tooltip
+  );
+  
+  @return map-get($z-indexes, $layer);
+}
+
+// ============================================
+// RESPONSIVE FUNCTIONS
+// ============================================
+
+/// Get breakpoint value
+/// @param {String} $name - Breakpoint name
+/// @return {Number} - Breakpoint value
+@function breakpoint($name) {
+  $breakpoints: (
+    'xs': $breakpoint-xs,
+    'sm': $breakpoint-sm,
+    'md': $breakpoint-md,
+    'lg': $breakpoint-lg,
+    'xl': $breakpoint-xl,
+    '2xl': $breakpoint-2xl,
+    'mobile': $breakpoint-mobile,
+    'tablet': $breakpoint-tablet,
+    'desktop': $breakpoint-desktop
+  );
+  
+  @return map-get($breakpoints, $name);
+}
+
+// ============================================
+// SHADOW FUNCTIONS
+// ============================================
+
+/// Get shadow value
+/// @param {String} $size - Shadow size (sm, md, lg, xl)
+/// @return {String} - Shadow value
+@function shadow($size) {
+  $shadows: (
+    'sm': $shadow-sm,
+    'md': $shadow-md,
+    'lg': $shadow-lg,
+    'xl': $shadow-xl,
+    'button': $shadow-button
+  );
+  
+  @return map-get($shadows, $size);
+}
+
+// ============================================
+// BORDER RADIUS FUNCTIONS
+// ============================================
+
+/// Get border radius value
+/// @param {String} $size - Radius size (sm, md, lg, full)
+/// @return {Number} - Radius value
+@function radius($size) {
+  $radii: (
+    'sm': $radius-sm,
+    'md': $radius-md,
+    'lg': $radius-lg,
+    'full': $radius-full
+  );
+  
+  @return map-get($radii, $size);
+}
+
+// ============================================
+// FONT SIZE FUNCTIONS
+// ============================================
+
+/// Get font size value
+/// @param {String} $size - Font size name
+/// @return {Number} - Font size value
+@function font-size($size) {
+  $sizes: (
+    'xs': $font-xs,
+    'sm': $font-sm,
+    'base': $font-base,
+    'lg': $font-lg,
+    'xl': $font-xl,
+    '2xl': $font-2xl,
+    '3xl': $font-3xl,
+    '4xl': $font-4xl,
+    '5xl': $font-5xl
+  );
+  
+  @return map-get($sizes, $size);
+}
+
+// ============================================
+// CONTRAST FUNCTION
+// ============================================
+
+/// Choose contrasting color (black or white) based on background
+/// @param {Color} $color - Background color
+/// @param {Color} $light [white] - Light color to return
+/// @param {Color} $dark [black] - Dark color to return
+/// @return {Color} - Contrasting color
+@function contrast-color($color, $light: white, $dark: black) {
+  @if (lightness($color) > 50) {
+    @return $dark;
+  } @else {
+    @return $light;
+  }
+}
+
+// ============================================
+// STRIP UNIT FUNCTION
+// ============================================
+
+/// Remove unit from value
+/// @param {Number} $value - Value with unit
+/// @return {Number} - Value without unit
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}

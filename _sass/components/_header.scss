@@ -1,0 +1,121 @@
+header {
+  background: var(--white);
+  padding: 1rem 5%;
+  position: sticky;
+  box-shadow: $shadow-md;
+  top: 0;
+  z-index: $z-sticky;
+
+  nav {
+    @include container($container-max-width, 0px);
+    @include flex-between;
+
+    ul {
+      position: absolute;
+      display: none;
+      list-style: none;
+      margin: 0;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--white);
+      flex-direction: column;
+      padding: 2rem;
+      gap: 1rem;
+      box-shadow: var(--shadow-sm);
+
+
+      &.active {
+        display: flex;
+      }
+
+      @include md{
+        position: static;
+        flex-direction: row;
+        box-shadow: none;
+        margin: 0;
+        padding:0;
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--text-primary);
+      font-weight: $font-medium;
+      display: block;
+      text-align: center;
+      width: 100%;
+      transition: color var(--transition-base);
+
+      @include md {
+        display: inherit;
+        width: auto;
+      }
+
+
+      &:hover {
+        color: var(--sana-blue);
+      }
+
+      &:focus-visible {
+        outline: 2px solid var(--sana-blue);
+        outline-offset: 2px;
+        border-radius: 4px;
+      }
+    }
+  }
+}
+
+.logo {
+  font-size: $font-3xl;
+  font-weight: $font-bold;
+
+  .sana {
+    color: var(--sana-blue);
+  }
+
+  .bill {
+    color: var(--bill-blue);
+  }
+}
+
+// Mobile Menu Toggle
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+
+  @include md {
+    display: none
+  }
+
+
+  span {
+    width: 25px;
+    height: 3px;
+    background: var(--dark);
+    border-radius: 3px;
+    transition: all var(--transition-base);
+  }
+
+  &.active {
+    span:nth-child(1) {
+      transform: rotate(45deg) translate(8px, 8px);
+    }
+
+    span:nth-child(2) {
+      opacity: 0;
+    }
+
+    span:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -7px);
+    }
+  }
+
+}
+
+

@@ -1,19 +1,57 @@
-<section id="about" class="about bg-grey-to-white">
-    <div class="container">
-        <div class="about-content">
-            <h2 class="section-title">{{ site.data.about.title[page.lang] }}</h2>
-            {% for paragraph in site.data.about.paragraphs[page.lang] %}
-            <p>{{ paragraph }}</p>
-            {% endfor %}
-        </div>
-        
-        <div class="values-grid">
-            {% for value in site.data.about.values[page.lang] %}
-            <div class="value-card">
-                <h3>{{ value.title }}</h3>
-                <p>{{ value.description }}</p>
-            </div>
-            {% endfor %}
-        </div>
+  {% assign text = site.data.about[page.lang] %}
+
+  <!-- Hero Section -->
+  <section class="hero-banner text-center" style="padding-bottom:2rem;">
+      <h1 class="display-1">{{ text.title }}</h1>
+      <p>{{ text.subtitle }}</p>
+  </section>
+
+  <!-- Story Section -->
+  <section class="about-story">
+    <div class="about-story__container">
+      <p class="about-story__intro">{{ text.story_intro }}</p>
+        {% for paragraph in text.paragraphs %}
+          <p class="about-story__paragraph">{{ paragraph }}</p>
+        {% endfor %}
     </div>
+  </section>
+
+  <!-- Values Section -->
+<section class="about-values">
+  <div class="about-values__container">
+    <div class="about-values__header">
+      <h2 class="about-values__title">{{ text.values_title }}</h2>
+      <p class="about-values__subtitle">{{ text.values_subtitle }}</p>
+    </div>
+    <div class="about-values__timeline">
+      {% for value in text.values %}
+      <div class="value-card">
+        <div class="value-card__empty"></div>
+        <div class="value-card__marker">
+          <div class="value-card__dot">
+            <span class="value-card__number">{{ forloop.index }}</span>
+          </div>
+        </div>
+        <div class="value-card__content">
+          <h3 class="value-card__title text-center text-secondary">
+            {{ value.title }}
+          </h3>
+          <p class="value-card__description">{{ value.description }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
 </section>
+
+  <!-- CTA Section -->
+  <section class="about-cta">
+    <div class="about-cta__container" style="padding-bottom:3rem;">
+      <h2 class="about-cta__title">{{ text.cta.title }}</h2>
+      <p class="about-cta__text">{{ text.cta.subtitle }}</p>
+      <a href="/{{ page.lang }}/contact/" class="btn btn--white">{{ text.cta.link_value }}</a>
+    </div>
+    <div style="padding:1rem;">
+      {% include footer.html %}
+    </div>
+  </section>

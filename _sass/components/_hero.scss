@@ -1,0 +1,21 @@
+.hero-banner {
+  background: var(--gradient-primary);
+  clip-path: ellipse(180% 64% at 50% 33%);
+  color: var(--white);
+  padding: 4rem 5% 4rem;
+
+  h1 {
+    margin-bottom: 1.5rem;
+  }
+
+  p {
+    font-size: $font-lg;
+    margin-bottom: 3rem;
+  }
+}
+
+.hero-content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}

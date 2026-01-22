@@ -1,0 +1,57 @@
+fr: 
+  hero:
+    title: "Simplifiez la gestion de vos refus d’assurances"
+    description: >
+      Nous accompagnons les organisations de santé dans l’analyse et l’optimisation de la gestion des contestations d’assurances.<br>
+      Grâce à notre expertise métier et à ZERO, vous structurez et pilotez vos refus de manière plus efficace.
+    cta_button: "Découvrez ZERO"
+
+  partners:
+    partner_title: "Ils nous font confiance :"
+
+  expertises:
+    title: "Notre expertise"
+    blocs:
+      - title: "Consulting en contestations"
+        description: "Analyse de votre situation actuelle, identification des causes de refus et recommandations concrètes pour améliorer vos processus."
+        link: "/fr/services/#consulting-contestations"
+        link_value : "En savoir plus"
+
+      - title: "ZERO – Gestion des refus d’assurances"
+        description: "Une solution clé en main pour structurer, suivre et piloter efficacement vos contestations d’assurances."
+        link: "/fr/zero/"
+        link_value : "En savoir plus"
+
+      - title: "Optimisation & automatisation administrative"
+        description: "Simplification et automatisation de vos flux administratifs afin de réduire le travail manuel et les erreurs."
+        link: "/fr/services/#optimisation-automatisation"
+        link_value : "En savoir plus"
+
+  why_us:
+    title: "Pourquoi Sanabill ?"
+    reasons:
+      - title: "Une expertise ancrée dans la réalité du terrain"
+        description: >
+          La gestion des refus d’assurances est avant tout un enjeu administratif et organisationnel.<br>
+          Nous comprenons les contraintes des équipes et construisons des réponses adaptées
+          à votre contexte et à vos pratiques existantes.
+
+      - title: "Le métier avant la technologie"
+        description: >
+          Nous analysons vos processus avant de proposer des solutions.<br>
+          Le conseil et la plateforme ZERO s’inscrivent dans une même logique :
+          améliorer concrètement la gestion des contestations, sans surcouche inutile.
+
+      - title: "Des solutions simples et pragmatiques"
+        description: >
+          Pas de projets lourds ni d’outils complexes.<br>
+          Nous privilégions des améliorations ciblées, progressives
+          et directement utiles pour vos équipes administratives.
+
+      - title: "Un accompagnement à votre rythme"
+        description: >
+          Diagnostic ponctuel ou démarche plus globale,
+          nous avançons avec vous, étape par étape,
+          en collaboration avec vos équipes sans mobilisations lourdes ni projets interminables.
+
+    contact: "Une question ou un enjeu spécifique ?<br>Échangeons sur votre situation."

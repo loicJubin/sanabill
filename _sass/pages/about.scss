@@ -1,0 +1,359 @@
+.about-hero {
+  background: var(--gradient-primary);
+  color: var(--white);
+  padding: 5rem 5% 4rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -10%;
+  width: 120%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+  animation: pulse 8s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.1); opacity: 0.3; }
+}
+
+.about-hero__content {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-hero__title {
+  font-size: 2.75rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+.about-hero__subtitle {
+  font-size: 1.25rem;
+  opacity: 0.95;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+/* About Story Section */
+.about-story {
+  padding: 3rem 5%;
+  background: var(--white);
+}
+
+.about-story__container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-story__intro {
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  line-height: 1.9;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 2rem;
+}
+
+.about-story__intro::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--gradient-primary);
+  border-radius: 2px;
+}
+
+
+.about-story__paragraph {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  text-align: center;
+  padding: 1rem 0 1rem;
+  margin: 0;
+  line-height: 1.85;
+}
+
+/* About CTA Section */
+.about-cta {
+  background: var(--gradient-primary);
+  color: var(--white);
+  padding: 5rem 5% 0rem;
+  text-align: center;
+}
+
+.about-cta__container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-cta__title {
+  font-size: 2.25rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.about-cta__text {
+  font-size: 1.2rem;
+  margin-bottom: 2.5rem;
+  opacity: 0.95;
+  line-height: 1.7;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .about-hero__title {
+    font-size: 2rem;
+  }
+
+  .about-hero__subtitle {
+    font-size: 1.1rem;
+  }
+
+  .about-story__intro {
+    font-size: 1.1rem;
+  }
+
+  .about-story__paragraph {
+    font-size: 1.05rem;
+  }
+
+  .about-values__title {
+    font-size: 2rem;
+  }
+
+  .value-card {
+    padding: 2rem;
+  }
+
+  .value-card__title {
+    font-size: 1.25rem;
+  }
+
+  .about-cta__title {
+    font-size: 1.75rem;
+  }
+
+  .about-cta__text {
+    font-size: 1.1rem;
+  }
+}
+
+/* About Values Section - Alternative Design */
+.about-values {
+  padding: 0 5% 3rem;
+  background: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-values::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 300px;
+  z-index: 0;
+}
+
+.about-values__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.about-values__header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.about-values__title {
+  font-size: 2rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.about-values__subtitle {
+  font-size: 1.125rem;
+  color: var(--text-tertiary);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.about-values__timeline {
+  position: relative;
+}
+
+.about-values__timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, var(--sana-blue), var(--bill-blue));
+  transform: translateX(-50%);
+}
+
+.value-card {
+  position: relative;
+  padding: 0 2rem;
+
+  @include md {
+    display: grid;
+    grid-template-columns: 1fr 60px 1fr;
+    gap: 3rem;
+  }
+
+  &__empty {
+    display: none;
+  }
+}
+
+.value-card:nth-child(even) .value-card__content {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.value-card:nth-child(even) .value-card__marker {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.value-card:nth-child(even) .value-card__empty {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.value-card:nth-child(odd) .value-card__empty {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.value-card:nth-child(odd) .value-card__marker {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.value-card:nth-child(odd) .value-card__content {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.value-card__marker {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  padding: 3rem 0 3rem 0;
+
+  @include md {
+    padding: 0;
+  }
+}
+
+.value-card__dot {
+  width: 60px;
+  height: 60px;
+  background: var(--white);
+  border: 4px solid var(--sana-blue);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  transition: all var(--transition-base);
+  box-shadow: 0 0 0 0 rgba(13, 169, 223, 0.4);
+}
+
+.value-card:nth-child(even) .value-card__dot {
+  border-color: var(--bill-blue);
+}
+
+.value-card:hover .value-card__dot {
+  transform: scale(1.15);
+  box-shadow: 0 0 0 15px rgba(13, 169, 223, 0.1);
+}
+
+.value-card__number {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.value-card__content {
+  background: var(--white);
+  padding: 2.5rem;
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(13, 169, 223, 0.1);
+  transition: all var(--transition-base);
+  position: relative;
+}
+
+.value-card__content::before {
+  display: none;
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 4rem;
+  height: 3px;
+  background: linear-gradient(to right, var(--sana-blue), transparent);
+  @include md {
+    display: inherit;
+  }
+}
+
+.value-card:nth-child(odd) .value-card__content::before {
+  left: -4rem;
+}
+
+.value-card:nth-child(even) .value-card__content::before {
+  right: -4rem;
+  background: linear-gradient(to left, var(--bill-blue), transparent);
+}
+
+.value-card__title {
+  font-size: 1.4rem;
+  color: var(--dark);
+  margin-bottom: 1rem;
+  font-weight: 600;
+  line-height: 1.3;
+  gap: 0.75rem;
+}
+
+.value-card__icon {
+  font-size: 1.75rem;
+}
+
+.value-card__description {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+}
+
+.value-card__empty {
+  display: block;
+}
+

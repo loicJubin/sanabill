@@ -1,7 +1,33 @@
-<section id="contact" class="contact">
-    <div class="container">
-        <h2 class="section-title" style="color: white;">{{ site.data.contact.title[page.lang] }}</h2>
-        <p>{{ site.data.contact.description[page.lang] }}</p>
-        <a href="mailto:{{ site.data.contact.email[page.lang] }}">{{ site.data.contact.email[page.lang] }}</a>
+{% assign contact = site.data.contact[page.lang] %}
+
+<section class="hero-banner" style="padding-bottom: 2rem; margin-bottom: 2rem;">
+  <div class="container text-center">
+    <h1 class="display-1">{{ contact.hero.title }}</h1>
+    <p>{{ contact.hero.subtitle }}</p>
+  </div>
+</section>
+
+<section class="container">
+    <div class="contact-grid">
+      <div class="map-wrapper">
+        <h2 class="display-2">{{ contact.map_title }}</h2>
+<iframe data-tally-src="https://tally.so/embed/5BZXOQ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="276" frameborder="0" marginheight="0" marginwidth="0" title="Contact (fr)"></iframe>
+<script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+
+  </div>
+
+  
+      <!-- Contact Information -->
+      <div class="contact-info-wrapper">
+        <h2 class="display-2">{{ contact.info_title }}</h2>
+        <div class="contact-info-item">
+          <a href="mailto:{{ contact.email.address }}">{{ contact.email.address }}</a>
+          <p>{{ contact.address.line1 }}<br>
+             {{ contact.address.line2 }}<br>
+             {{ contact.address.line3 }}<br>
+             {{ contact.address.line4 }}</p>
+        </div>
+      </div>
     </div>
+  </div>
 </section>

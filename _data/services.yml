@@ -1,23 +1,64 @@
-title: 
-  fr: "Notre expertise"
+fr:
+  title: "Notre expertise"
 
-subtitle: 
-  fr: "Donner aux organisations de santé les moyens de transformer la complexité administrative en excellence opérationnelle grâce à la technologie open source."
+  subtitle: "Aider les organisations de santé à structurer, simplifier et piloter leurs processus administratifs avec une expertise forte sur les contestations d’assurance."
 
-items:
-  fr:
-    - icon: "/assets/images/undraw_programming.svg"
-      title: "Développement d’applications"
-      description: "Applications web sur mesure adaptées à l’administration des soins de santé, de plateformes intuitives pour la gestion des contestations d'assurances à de l’automatisation administrative en tenant compte des contraintes de vos systèmes existants."
-    
-    - icon: "/assets/images/undraw_presentation.svg"
-      title: "Optimisation des processus & conseil"
-      description: "Analyse experte et accompagnement stratégique pour rationaliser vos opérations administratives. Nous identifions les points de friction, concevons des flux de travail efficaces et mettons en œuvre des solutions d’automatisation qui réduisent le travail manuel et améliorent la précision."
-    
-    - icon: "/assets/images/undraw_diary.svg"
-      title: "Collecte et intégration des données"
-      description: "Formulaires web avancés et outils de collecte de données permettant d’injecter directement les informations dans vos systèmes existants. Éliminez les doubles saisies et garantissez la cohérence des données au sein de votre organisation."
-    
-    - icon: "/assets/images/undraw_product-iteration.svg"
-      title: "Automatisation des flux de travail"
-      description: "Transformez les tâches administratives répétitives en processus automatisés. Du suivi des factures à la gestion des demandes d’assurance, nous vous aidons à libérer un temps précieux pour que vos équipes se concentrent sur l’essentiel."
+  sections:
+    - id: "consulting-contestations"
+      title: "Consulting en contestations d’assurance"
+      tagline: "Comprendre les causes pour agir efficacement."
+      description: >
+        Nous accompagnons vos équipes dans l’analyse de votre situation actuelle :
+      bullets:
+        - "typologies de refus et causes récurrentes"
+        - "organisation et responsabilités internes"
+        - "points de friction avec les assureurs"
+      conclusion: >
+        Nous formulons des recommandations concrètes et actionnables,
+        adaptées à vos contraintes opérationnelles et réglementaires.
+        Objectif : améliorer vos taux de succès et réduire la charge administrative
+        liée aux contestations pour vous permettre de traiter les dossiers plus
+        efficacement et avec une meilleure visibilité.
+
+    - id: "zero"
+      title: "ZERO – Gestion des refus d’assurance"
+      tagline: "Structurer, suivre et piloter les contestations."
+      description: >
+        ZERO est notre solution logicielle dédiée à la gestion des refus d’assurance.
+        Elle permet notamment de :
+      bullets:
+        - "structurer les dossiers de contestation"
+        - "suivre les statuts et délais"
+        - "disposer d’une vision claire des volumes et résultats"
+      conclusion: >
+        ZERO apporte un cadre commun et une meilleure visibilité
+        sur vos contestations et s’intègre progressivement
+        à vos pratiques existantes.
+      link:
+        label: "Découvrir ZERO"
+        url: "/fr/zero/"
+
+
+    - id: "optimisation-automatisation"
+      title: "Optimisation & automatisation administrative"
+      tagline: "Simplifier sans complexifier."
+      description: >
+        Sur la base du diagnostic, nous intervenons sur vos processus :
+      bullets:
+        - "clarification des flux de traitement"
+        - "réduction des tâches manuelles et des ressaisies"
+        - "automatisations ciblées et progressives"
+      conclusion: >
+        Ces optimisations visent à fiabiliser les flux administratifs,
+        réduire les efforts manuels inutiles et améliorer la fluidité
+        du traitement des dossiers sans alourdir votre organisation.
+
+
+  closing:
+    text: >
+      Sanabill intervient comme partenaire métier avec une approche combinant
+      expertise terrain, structuration des processus et outillage adapté.
+
+  cta:
+    label: "Contactez-nous"
+    url: "/fr/contact/"
