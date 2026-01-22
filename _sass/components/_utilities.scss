@@ -37,9 +37,14 @@
   text-align: center;
 }
 
+
+.disable-md {
+
+}
+
 .hover-available {
   pointer-events: none;
-  @media (any-hover: hover) {
+  @media (hover: hover) {
       pointer-events: auto;
      }
 }
@@ -49,7 +54,7 @@
     display: inherit;
     pointer-events: auto;
 
-    @media (any-hover: hover) {
+    @media (hover: hover) {
       display: none;
     }
 }
