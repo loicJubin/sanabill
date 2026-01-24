@@ -1,10 +1,10 @@
 {% assign text = site.data.services[page.lang] %}
 
 <!-- Hero Section -->
-<section class="hero-banner" style="padding-bottom:2rem;">
-    <div class="container text-center">
-        <h1 class="display-1">{{ text.title }}</h1>
-        <p>{{ text.subtitle }}</p>
+<section class="hero">
+    <div class="hero__content">
+        <h1 class="hero__title">{{ text.title }}</h1>
+        <p class="hero__subtitle">{{ text.subtitle }}</p>
     </div>
 </section>
 
@@ -33,7 +33,7 @@
                 
                 {% if service.link %}
                 <div class="service__cta text-center">
-                    <a href="{{ service.link.url }}" class="btn btn-primary">{{ service.link.label }}</a>
+                    <a href="{{ service.link.url }}" class="btn btn--primary">{{ service.link.label }}</a>
                 </div>
                 {% endif %}
             </div>
@@ -50,13 +50,13 @@
 </section>
 
 <!-- CTA Section -->
-<section class="services-cta">
-    <div class="container" style="padding-bottom:3rem;">
-        <h2 class="services-cta__title display-2">Prêt à optimiser vos processus ?</h2>
-        <a href="{{ text.cta.url }}" class="btn btn--white">{{ text.cta.label }}</a>
-    </div>
-    <div style="padding:1rem;">
-      {% include footer.html %}
+<section class="footer">
+    <div class="footer__content">
+        <h2 class="footer__title">Prêt à optimiser vos processus ?</h2>
+        <div class="footer__subtitle">
+          <a href="{{ text.cta.url }}" class="btn btn--secondary btn--rounded">{{ text.cta.label }}</a>
+        </div>
+        {% include footer.html %}
     </div>
 </section>
 

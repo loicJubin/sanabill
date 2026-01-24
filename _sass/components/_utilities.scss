@@ -1,10 +1,6 @@
 // ============================
 // Margin utilities
 // ============================
-.mt-md {
-  margin-top: $spacing-md;
-}
-
 .mt {
   &-1 {
     margin-top: $spacing-3xl;
@@ -32,15 +28,16 @@
     }
 }
 
-
 .text-center {
   text-align: center;
 }
 
-
-.disable-md {
-
+.container {
+  &--xl {
+    max-width: $breakpoint-xl;
+  }
 }
+
 
 .hover-available {
   pointer-events: none;
@@ -48,7 +45,6 @@
       pointer-events: auto;
      }
 }
-
 
 .hide-hover-available {
     display: inherit;

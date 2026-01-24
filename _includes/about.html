@@ -1,9 +1,11 @@
   {% assign text = site.data.about[page.lang] %}
 
   <!-- Hero Section -->
-  <section class="hero-banner text-center" style="padding-bottom:2rem;">
-      <h1 class="display-1">{{ text.title }}</h1>
-      <p>{{ text.subtitle }}</p>
+  <section class="hero">
+    <div class="hero__content">
+      <h1 class="hero__title">{{ text.title }}</h1>
+      <p class="hero__subtitle">{{ text.subtitle }}</p>
+    </div>
   </section>
 
   <!-- Story Section -->
@@ -45,13 +47,11 @@
 </section>
 
   <!-- CTA Section -->
-  <section class="about-cta">
-    <div class="about-cta__container" style="padding-bottom:3rem;">
-      <h2 class="about-cta__title">{{ text.cta.title }}</h2>
-      <p class="about-cta__text">{{ text.cta.subtitle }}</p>
-      <a href="/{{ page.lang }}/contact/" class="btn btn--white">{{ text.cta.link_value }}</a>
-    </div>
-    <div style="padding:1rem;">
+  <section class="footer">
+    <div class="footer__content">
+      <h2 class="footer__title">{{ text.cta.title }}</h2>
+      <p class="footer__subtitle">{{ text.cta.subtitle }}</p>
+      <a href="/{{ page.lang }}/contact/" class="btn btn--secondary btn--rounded btn--margin-bottom-lg">{{ text.cta.link_value }}</a>
       {% include footer.html %}
     </div>
   </section>

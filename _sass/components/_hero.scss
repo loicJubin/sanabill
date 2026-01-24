@@ -1,21 +1,32 @@
-.hero-banner {
+.hero {
   background: var(--gradient-primary);
+  color: var(--color-white);
+  padding: $spacing-2xl 5% $spacing-lg;
   clip-path: ellipse(180% 64% at 50% 33%);
-  color: var(--white);
-  padding: 4rem 5% 4rem;
-
-  h1 {
-    margin-bottom: 1.5rem;
-  }
-
-  p {
-    font-size: $font-lg;
-    margin-bottom: 3rem;
-  }
-}
-
-.hero-content {
-  max-width: 900px;
-  margin: 0 auto;
   text-align: center;
+
+  &__content {
+    max-width: $breakpoint-md;
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-size: $font-4xl;
+    font-weight: $font-medium;
+    margin-bottom: $spacing-lg;
+    line-height: $leading-tight;
+
+    @include md {
+      font-size: 2.75rem;
+      font-weight: $font-medium;
+    }
+
+  }
+
+  &__subtitle {
+    font-size: $font-lg;
+    margin-bottom: $spacing-xl;
+    opacity: 0.95;
+  }
+
 }

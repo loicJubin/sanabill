@@ -4,9 +4,9 @@
   &__title {
     text-transform: uppercase;
     font-size: $font-base;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     margin-bottom: 2rem;
-    font-weight: 500;
+    font-weight: $font-medium;
     text-align: center;
   }
 

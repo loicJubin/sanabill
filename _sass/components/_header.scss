@@ -1,4 +1,4 @@
-header {
+.header {
   background: var(--white);
   padding: 1rem 5%;
   position: sticky;
@@ -6,11 +6,12 @@ header {
   top: 0;
   z-index: $z-sticky;
 
-  nav {
+  &__nav {
     @include container($container-max-width, 0px);
     @include flex-between;
+  }
 
-    ul {
+  &__menu {
       position: absolute;
       display: none;
       list-style: none;
@@ -25,7 +26,7 @@ header {
       box-shadow: var(--shadow-sm);
 
 
-      &.active {
+      &--active {
         display: flex;
       }
 
@@ -41,7 +42,7 @@ header {
       }
     }
 
-    a {
+  &__link {
       text-decoration: none;
       color: var(--text-primary);
       font-weight: $font-medium;
@@ -66,23 +67,25 @@ header {
         border-radius: 4px;
       }
     }
-  }
 }
 
 .logo {
+  text-decoration: none;
   font-size: $font-3xl;
   font-weight: $font-bold;
 
-  .sana {
+  &__primary {
     color: var(--sana-blue);
   }
 
-  .bill {
+  &__secondary {
     color: var(--bill-blue);
   }
 }
 
+//====================
 // Mobile Menu Toggle
+//====================
 .menu-toggle {
   display: flex;
   flex-direction: column;
@@ -93,8 +96,7 @@ header {
     display: none
   }
 
-
-  span {
+  &__bar {
     width: 25px;
     height: 3px;
     background: var(--dark);
@@ -102,20 +104,17 @@ header {
     transition: all var(--transition-base);
   }
 
-  &.active {
-    span:nth-child(1) {
+  &--active {
+    .menu-toggle__bar:nth-child(1) {
       transform: rotate(45deg) translate(8px, 8px);
     }
 
-    span:nth-child(2) {
+    .menu-toggle__bar:nth-child(2) {
       opacity: 0;
     }
 
-    span:nth-child(3) {
+    .menu-toggle__bar:nth-child(3) {
       transform: rotate(-45deg) translate(7px, -7px);
     }
   }
-
 }
-
-

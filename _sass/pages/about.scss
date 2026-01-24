@@ -88,32 +88,6 @@
   line-height: 1.85;
 }
 
-/* About CTA Section */
-.about-cta {
-  background: var(--gradient-primary);
-  color: var(--white);
-  padding: 5rem 5% 0rem;
-  text-align: center;
-}
-
-.about-cta__container {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.about-cta__title {
-  font-size: 2.25rem;
-  margin-bottom: 1.5rem;
-  font-weight: 600;
-}
-
-.about-cta__text {
-  font-size: 1.2rem;
-  margin-bottom: 2.5rem;
-  opacity: 0.95;
-  line-height: 1.7;
-}
-
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .about-hero__title {
@@ -144,13 +118,6 @@
     font-size: 1.25rem;
   }
 
-  .about-cta__title {
-    font-size: 1.75rem;
-  }
-
-  .about-cta__text {
-    font-size: 1.1rem;
-  }
 }
 
 /* About Values Section - Alternative Design */

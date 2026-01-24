@@ -3,17 +3,18 @@
 // ============================================
 
 .display {
-  &-1 {
-    font-size: $font-5xl;
-    font-weight: $font-medium;
-    line-height: $leading-tight;
-  }
-  &-2 {
-    font-size: $font-4xl;
+
+  &-4xl {
+    font-size: $font-3xl;
     font-weight: $font-medium;
     line-height: $leading-tight;
     margin-bottom: $spacing-lg;
+    @media md {
+      font-size: $font-4xl;
+    }
   }
+
+
  &-3 {
     font-size: $font-3xl;
     font-weight: $font-medium;

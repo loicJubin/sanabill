@@ -1,19 +1,19 @@
-<header>
-    <nav>
+<header class="header">
+    <nav class="header__nav">
         <a href="/" class="logo">
-            <span class="sana">Sana</span><span class="bill">bill</span>
+            <span class="logo__primary">Sana</span><span class="logo__secondary">bill</span>
         </a>
         <div class="menu-toggle" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
+            <span class="menu-toggle__bar"></span>
+            <span class="menu-toggle__bar"></span>
+            <span class="menu-toggle__bar"></span>
         </div>
-        <ul id="navMenu">
-          <li><a href="{{ '/' | relative_url }}" onclick="closeMenu()">{{ site.data.header.home[page.lang] }}</a></li>
-          <li><a href="{{ '/fr/zero/' | relative_url }}" onclick="closeMenu()">{{ site.data.header.zero[page.lang] }}</a></li>
-          <li><a href="{{ '/fr/services/' | relative_url }}" onclick="closeMenu()">{{ site.data.header.services[page.lang] }}</a></li>
-            <li><a href="{{ '/fr/about/' | relative_url }}" onclick="closeMenu()">{{ site.data.header.about[page.lang] }}</a></li>
-            <li><a href="{{ '/fr/contact/' | relative_url }}" onclick="closeMenu()">{{ site.data.header.contact[page.lang] }}</a></li>
+        <ul id="navMenu" class="header__menu">
+          <li><a href="{{ '/' | relative_url }}" class="header__link" onclick="closeMenu()">{{ site.data.header.home[page.lang] }}</a></li>
+          <li><a href="{{ '/fr/zero/' | relative_url }}" class="header__link" onclick="closeMenu()">{{ site.data.header.zero[page.lang] }}</a></li>
+          <li><a href="{{ '/fr/services/' | relative_url }}" class="header__link" onclick="closeMenu()">{{ site.data.header.services[page.lang] }}</a></li>
+            <li><a href="{{ '/fr/about/' | relative_url }}" class="header__link" onclick="closeMenu()">{{ site.data.header.about[page.lang] }}</a></li>
+            <li><a href="{{ '/fr/contact/' | relative_url }}" class="header__link" onclick="closeMenu()">{{ site.data.header.contact[page.lang] }}</a></li>
         </ul>
     </nav>
 </header>

@@ -7,10 +7,33 @@
   color: var(--white);
   text-align: center;
   padding: 1rem;
+  padding: $spacing-xl 5% $spacing-sm;
+
+  &--padding-y-sm {
+    padding: $spacing-sm 5%;
+  }
 
   &__content {
-    opacity: 0.7;
-    margin: 0;
+    max-width: $breakpoint-md;
+    margin: 0 auto;
   }
+
+  &__title {
+    font-size: $font-3xl;
+    font-weight: $font-medium;
+    margin-bottom: $spacing-lg;
+    line-height: $leading-tight;
+  }
+
+  &__subtitle {
+    font-size: $font-lg;
+    margin-bottom: $spacing-xl;
+  }
+
+  &__trademark {
+    margin: 0;
+    opacity: 0.90;
+  }
+
 }
 

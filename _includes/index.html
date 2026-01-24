@@ -1,10 +1,10 @@
 {% comment %} Hero section {% endcomment %}
 {% assign hero = site.data.index[page.lang].hero %}
-<section class="hero-banner">
-    <div class="hero-content">
-        <h1 class="display-1">{{ hero.title }}</h1>
-        <p class="">{{ hero.description }}</p>
-        <a href="{{ '/fr/zero/' | relative_url }}" class="btn btn--white">{{ hero.cta_button }}</a>
+<section class="hero">
+    <div class="hero__content">
+        <h1 class="hero__title">{{ hero.title }}</h1>
+        <p class="hero__subtitle">{{ hero.description }}</p>
+        <a href="{{ '/fr/zero/' | relative_url }}" class="btn btn--secondary btn--rounded btn--margin-bottom-md">{{ hero.cta_button }}</a>
     </div>
 </section>
 
@@ -23,7 +23,7 @@
 {% assign expertises = site.data.index[page.lang].expertises %}
 <section class="container container--xl">
   <div class="expertises-layout">
-      <h2 class="display-2 text-center m-0">{{ expertises.title }}</h2>
+      <h2 class="display-4xl text-center m-0">{{ expertises.title }}</h2>
       <div class="expertises-grid">
           {% for bloc in expertises.blocs %}
             <a href="{{ bloc.link }}" class="hover-available" style="text-decoration: none; color: inherit;">
@@ -31,7 +31,7 @@
                   <div class="card__title fw-semibold">{{ bloc.title }}</div>
                   <div class="card__text">{{ bloc.description }}</div>
                   <form action="{{ bloc.link }}" class="hide-hover-available expertise__card__form">
-                    <input type="submit" class="btn btn-primary" value="{{bloc.link_value}}"
+                    <input type="submit" class="btn btn--primary" value="{{bloc.link_value}}"
                     style="float: right; margin-top:1.5rem;"></input>
                   </form>
               </div>
@@ -44,7 +44,7 @@
 {% comment %} Why-us section {% endcomment %}
 {% assign why_us = site.data.index[page.lang].why_us %}
 <section class="container">
-  <h2 class="display-2 text-center">{{ why_us.title }}</h2>
+  <h2 class="display-4xl text-center">{{ why_us.title }}</h2>
   <div class="why-us-grid">
       {% for reason in why_us.reasons %}
       <div class="card card--no-border">
@@ -55,7 +55,7 @@
       {% endfor %}
   </div>
   <div class="text-center pb-2">
-    <a href="{{ '/fr/contact/' | relative_url }}" class="btn btn-primary">{{ why_us.contact }} </a>
+    <a href="{{ '/fr/contact/' | relative_url }}" class="btn btn--primary">{{ why_us.contact }} </a>
   </div>
 </section>
 
