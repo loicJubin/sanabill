@@ -70,14 +70,8 @@
   <div class="container">
     {% include section-head.html eyebrow=text.principles.eyebrow title=text.principles.title %}
     <div class="grid grid--3">
-      {% assign principle_icons = "layers,data,simplicity" | split: "," %}
       {% for item in text.principles.items %}
-        <article class="card">
-          {% assign icon_name = principle_icons[forloop.index0] %}
-          <span class="card__icon">{% include icon.html name=icon_name %}</span>
-          <h3 class="card__title">{{ item.title }}</h3>
-          <p class="card__text">{{ item.description }}</p>
-        </article>
+        {% include tile.html label=item.label status=item.status tone="ok" viz=item.viz title=item.title text=item.description %}
       {% endfor %}
     </div>
   </div>

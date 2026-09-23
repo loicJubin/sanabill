@@ -28,11 +28,7 @@
     {% include section-head.html eyebrow=text.values_eyebrow title=text.values_title %}
     <div class="grid grid--values">
       {% for value in text.values %}
-        <article class="card">
-          <span class="card__icon">{% include icon.html name=value.icon %}</span>
-          <h3 class="card__title">{{ value.title }}</h3>
-          <p class="card__text">{{ value.description }}</p>
-        </article>
+        {% include tile.html label=value.label status=value.status tone="ok" viz=value.viz title=value.title text=value.description %}
       {% endfor %}
     </div>
   </div>

@@ -1,0 +1,127 @@
+// ============================================
+// TILES
+// Cards styled like the ZERO dashboard: label + status, title,
+// a small decorative chart and a short text.
+// ============================================
+
+$status-alert: #b4231b;
+$status-alert-bg: #fdecea;
+$status-ok: #1d7a43;
+$status-ok-bg: #e7f5ec;
+
+.tile {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1.25rem 1.375rem 1.375rem;
+  background: $surface;
+  border: 1px solid $border;
+  border-radius: $radius-md;
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: $spacing-sm;
+    margin-bottom: 0.875rem;
+    font-size: $font-xs;
+    color: $ink-muted;
+  }
+
+  &__status {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 8px;
+    font-weight: $font-semibold;
+    white-space: nowrap;
+    border-radius: $radius-full;
+
+    &::before {
+      width: 6px;
+      height: 6px;
+      content: "";
+      background: currentColor;
+      border-radius: 50%;
+    }
+
+    &--alert {
+      color: $status-alert;
+      background: $status-alert-bg;
+    }
+
+    &--ok {
+      color: $status-ok;
+      background: $status-ok-bg;
+    }
+  }
+
+  &__title {
+    font-size: $font-2xl;
+    letter-spacing: -0.03em;
+
+    // Reserve two lines in multi-column grids so the charts stay aligned
+    @include md {
+      min-height: 2.4em;
+    }
+  }
+
+  &__viz {
+    display: flex;
+    align-items: flex-end;
+    height: 44px;
+    margin: 1.125rem 0 1rem;
+    border-bottom: 1px solid $border;
+
+    svg {
+      width: 100%;
+      height: 44px;
+    }
+
+    polyline {
+      fill: none;
+      stroke: $bill-blue;
+      stroke-width: 2;
+      stroke-linejoin: round;
+      stroke-linecap: round;
+      vector-effect: non-scaling-stroke;
+    }
+
+    .is-dashed {
+      stroke: $border-strong;
+      stroke-dasharray: 4 4;
+    }
+  }
+
+  &__bar {
+    display: flex;
+    gap: 4px;
+    width: 100%;
+    height: 12px;
+    margin-bottom: 12px;
+
+    span {
+      background: $border-strong;
+      border-radius: 3px;
+    }
+
+    &--segments span {
+      &:nth-child(1) { flex: 3; background: $bill-blue; }
+      &:nth-child(2) { flex: 2; background: $sana-blue; }
+      &:nth-child(3) { flex: 1.5; }
+      &:nth-child(4) { flex: 1; }
+      &:nth-child(5) { flex: 0.6; }
+    }
+
+    &--solid span {
+      flex: 1;
+      background: $gradient-primary;
+    }
+  }
+
+  &__text {
+    font-size: 0.9375rem;
+    color: $ink-muted;
+  }
+}

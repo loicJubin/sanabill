@@ -31,10 +31,19 @@ fr:
     subtitle: "Dans beaucoup d’organisations de santé, la gestion des contestations repose sur quelques personnes et beaucoup de temps."
     items:
       - title: "Fichiers multiples"
+        label: "Sources de données"
+        status: "Dispersé"
+        viz: "segments"
         description: "Les informations sont dispersées entre tableurs, e-mails et logiciels de facturation."
       - title: "Suivi manuel"
+        label: "Suivi des délais"
+        status: "Manuel"
+        viz: "broken"
         description: "Statuts et délais sont suivis à la main, avec un risque réel d’oubli."
       - title: "Peu de visibilité"
+        label: "Dossiers ouverts"
+        status: "Inconnu"
+        viz: "unknown"
         description: "Difficile de savoir combien de dossiers sont ouverts, ce qui bloque et pourquoi."
 
   approach:

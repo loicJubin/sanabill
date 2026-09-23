@@ -25,23 +25,33 @@ fr:
 
   values:
     - title: "Expertise métier"
-      icon: "expertise"
+      label: "Point de départ"
+      status: "Le terrain"
+      viz: "rising"
       description: "Nous partons toujours des réalités du terrain. Les enjeux administratifs de la santé exigent une compréhension fine des processus, des contraintes et des responsabilités."
 
     - title: "Partenariat"
-      icon: "partnership"
+      label: "Mode de travail"
+      status: "Avec vos équipes"
+      viz: "steady"
       description: "Nous travaillons avec vos équipes, pas à leur place. Chaque démarche est construite en collaboration et à votre rythme."
 
     - title: "Simplicité et pragmatisme"
-      icon: "simplicity"
+      label: "Complexité"
+      status: "Minimale"
+      viz: "flat"
       description: "Nous privilégions des solutions claires, progressives et directement utiles, sans projets lourds ni complexité excessive."
 
     - title: "Souveraineté des données"
-      icon: "data"
+      label: "Données"
+      status: "Open source"
+      viz: "solid"
       description: "Nos solutions s’appuient sur des technologies open source et garantissent que vous restez pleinement propriétaire de vos données et de leur usage."
 
     - title: "Ancrage suisse"
-      icon: "swiss"
+      label: "Implantation"
+      status: "Lausanne"
+      viz: "steps"
       description: "Sanabill est une entreprise suisse, engagée auprès des acteurs locaux de la santé, avec une exigence élevée en matière de qualité, de fiabilité et de conformité."
 
   cta:
