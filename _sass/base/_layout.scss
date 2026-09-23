@@ -218,4 +218,10 @@
   img {
     width: 100%;
   }
+
+  // Breathing room between the window bar and the top of the screenshot
+  &__bar + img {
+    padding-top: 12px;
+    background: #f8fafb; // matches the top edge of the ZERO screenshots
+  }
 }
