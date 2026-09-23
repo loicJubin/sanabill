@@ -138,31 +138,39 @@
   overflow: hidden;
   background: $surface;
   border: 1px solid $border;
-  border-radius: $radius-md;
+  border-radius: $radius-sm;
   box-shadow: $shadow-float;
 
   &__bar {
     display: flex;
     align-items: center;
-    gap: 6px;
-    padding: 10px 14px;
-    background: $surface-muted;
+    gap: 8px;
+    height: 34px;
+    padding-left: 12px;
+    background: $surface;
     border-bottom: 1px solid $border;
+  }
 
-    span {
+  &__title {
+    font-size: $font-xs;
+    font-weight: $font-medium;
+    color: $ink;
+  }
+
+  &__controls {
+    display: flex;
+    align-self: stretch;
+    margin-left: auto;
+
+    svg {
+      box-sizing: content-box;
       width: 10px;
       height: 10px;
-      background: $border-strong;
-      border-radius: 50%;
-    }
-
-    em {
-      margin-left: auto;
-      font-size: $font-xs;
-      font-style: normal;
-      font-weight: $font-semibold;
-      letter-spacing: 0.08em;
-      color: $ink-muted;
+      padding: 0 16px;
+      align-self: center;
+      fill: none;
+      stroke: $ink-muted;
+      stroke-width: 1;
     }
   }
 

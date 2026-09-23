@@ -21,7 +21,7 @@
     </div>
     <div class="home-hero__visual">
       <figure class="app-frame">
-        <div class="app-frame__bar" aria-hidden="true"><span></span><span></span><span></span><em>ZERO</em></div>
+        {% include app-bar.html %}
         <img src="{{ '/assets/images/pilotage_zero.webp' | relative_url }}" alt="{{ text.hero.image_alt }}" width="1000" height="539" fetchpriority="high" />
       </figure>
       <div class="kpi kpi--float kpi--float-a" aria-hidden="true">
@@ -30,8 +30,8 @@
         {% include sparkline.html trend="down" %}
       </div>
       <div class="kpi kpi--float kpi--float-b" aria-hidden="true">
-        <span class="kpi__label">Fiabilité des données*</span>
-        <span class="kpi__value">{{ zero.stats[3].number }}</span>
+        <span class="kpi__label">Satisfaction utilisateurs*</span>
+        <span class="kpi__value">{{ zero.stats[1].number }}</span>
         {% include sparkline.html trend="up" %}
       </div>
       <p class="home-hero__note">*Résultats observés chez nos premiers clients.</p>
