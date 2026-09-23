@@ -1,0 +1,115 @@
+// ============================================
+// SERVICES
+// ============================================
+
+.anchor-nav {
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-xs;
+    margin-top: -1.5rem;
+    padding: 0;
+    list-style: none;
+  }
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1rem;
+    font-size: $font-sm;
+    font-weight: $font-medium;
+    color: $ink;
+    text-decoration: none;
+    background: $surface;
+    border: 1px solid $border;
+    border-radius: $radius-full;
+    box-shadow: $shadow-card;
+
+    span {
+      font-weight: $font-semibold;
+      color: $bill-blue;
+    }
+
+    &:hover {
+      border-color: $bill-blue;
+    }
+  }
+}
+
+.service {
+  display: grid;
+  gap: $spacing-md $spacing-2xl;
+  padding: $spacing-xl 0;
+  border-bottom: 1px solid $border;
+
+  &:last-child {
+    border-bottom: 0;
+  }
+
+  @include lg {
+    grid-template-columns: 1fr 1.4fr;
+    padding: $spacing-2xl 0;
+  }
+
+  &__header {
+    @include lg {
+      position: sticky;
+      top: $header-height + 16px;
+      align-self: start;
+    }
+  }
+
+  &__number {
+    display: block;
+    margin-bottom: $spacing-sm;
+    font-size: 2.5rem;
+    font-weight: $font-bold;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: $numeral;
+  }
+
+  &__title {
+    font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem);
+  }
+
+  &__tagline {
+    margin-top: $spacing-xs;
+    font-size: $font-lg;
+    color: $bill-blue;
+  }
+
+  &__body {
+    display: grid;
+    gap: $spacing-md;
+    font-size: $font-lg;
+  }
+
+  &__deliverable {
+    padding: $spacing-md;
+    background: $surface-muted;
+    border-left: 3px solid $bill-blue;
+    border-radius: 0 $radius-sm $radius-sm 0;
+  }
+
+  &__deliverable-label {
+    margin-bottom: 0.25rem;
+    font-size: $font-xs;
+    font-weight: $font-semibold;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: $bill-blue;
+  }
+
+  &__conclusion {
+    color: $ink-muted;
+  }
+
+  &--zero &__number {
+    background: $gradient-primary;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}

@@ -1,0 +1,80 @@
+// ============================================
+// ZERO PRODUCT PAGE
+// ============================================
+
+.zero-hero {
+  display: grid;
+  gap: $spacing-xl;
+  align-items: center;
+
+  @include lg {
+    grid-template-columns: 1fr 1.1fr;
+    gap: $spacing-2xl;
+  }
+
+  .btn-group {
+    margin-top: $spacing-lg;
+  }
+}
+
+.feature-list {
+  max-width: 60rem;
+  margin: 0 auto;
+
+  @include md {
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-md;
+  }
+
+  li {
+    padding: $spacing-md;
+    background: $surface;
+    border: 1px solid $border;
+    border-radius: $radius-md;
+  }
+}
+
+.showcase {
+  display: grid;
+  gap: $spacing-lg;
+  align-items: center;
+
+  & + & {
+    margin-top: $spacing-2xl;
+
+    @include md {
+      margin-top: $spacing-3xl;
+    }
+  }
+
+  @include lg {
+    grid-template-columns: 1fr 1.5fr;
+    gap: $spacing-2xl;
+
+    &--reverse {
+      grid-template-columns: 1.5fr 1fr;
+
+      .showcase__text {
+        order: 2;
+      }
+    }
+  }
+
+  &__index {
+    display: block;
+    margin-bottom: $spacing-xs;
+    font-size: $font-sm;
+    font-weight: $font-semibold;
+    color: $bill-blue;
+  }
+
+  &__title {
+    margin-bottom: $spacing-sm;
+    font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem);
+  }
+
+  &__text p {
+    font-size: $font-lg;
+    color: $ink-muted;
+  }
+}

@@ -1,0 +1,10 @@
+{% comment %} Params: eyebrow, title, subtitle {% endcomment %}
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero__content">
+      <p class="eyebrow"><span class="zero-ring" aria-hidden="true"></span>{{ include.eyebrow }}</p>
+      <h1 class="page-hero__title">{{ include.title }}</h1>
+      {% if include.subtitle %}<p class="page-hero__subtitle">{{ include.subtitle }}</p>{% endif %}
+    </div>
+  </div>
+</section>

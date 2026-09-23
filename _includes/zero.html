@@ -1,95 +1,112 @@
-{% comment %} Production section {% endcomment %}
 {% assign text = site.data.zero[page.lang] %}
 
-<section class="zero-product">
-    <div class="zero-product__zero-content">
-        <div>
-            <h1 class="display-2">{{ text.title }}</h1>
-            <p class="zero-product__zero-content__text m-0">{{ text.description }}</p>
-        </div>
-        <div>
-          <div class="stats-grid" style="padding-bottom: 1rem;">
-              {% for stat in text.stats %}
-              <div class="stat-card">
-                  <div class="stat-number">{{ stat.number }}</div>
-                  <div class="stat-label">{{ stat.label }}</div>
-              </div>
-              {% endfor %}
-          </div>
-          <p class="text-secondary"><small><i>{{ text.stats_disclaimers }}</i></small></p>
-        </div>
-    </div>
-    <div class="container container--no-padding">
-      <a href="#contact" class="btn btn--primary mt-5">{{ text.cta_button }}</a>
-    </div>
-</section>
-
-<section class="product-features">
-    <h2 class="display-2 text-center">{{ text.features.title }}</h2>
-    <div class="d-flex" style="padding-bottom: 2rem;">
-      <div class="card card">
-        <div class="card__title text-secondary">{{ text.features.features_summary.description }}</div>
-        <ul class="features-list">
-          {% for items in text.features.features_summary.list %}
-            <li>{{ items }}</li>
-          {% endfor %}
-        </ul>
+{% comment %} Hero {% endcomment %}
+<section class="page-hero page-hero--product">
+  <div class="container zero-hero">
+    <div class="zero-hero__content">
+      <p class="eyebrow"><span class="zero-ring" aria-hidden="true"></span>{{ text.eyebrow }}</p>
+      <h1 class="page-hero__title">{{ text.title }}</h1>
+      <p class="page-hero__subtitle">{{ text.description }}</p>
+      <div class="btn-group">
+        <a href="#contact" class="btn btn--primary">{{ text.cta_primary }}</a>
+        <a href="#fonctionnalites" class="btn btn--ghost">{{ text.cta_secondary }}</a>
       </div>
     </div>
-
-    {% comment %} Feature Showcases {% endcomment %}
-    {% for feat in text.features_showcase %}
-    <article class="feature-showcase {% cycle '', 'reverse' %}">
-        <div class="feature-info">
-            <h4 class="display-3">{{ feat.title }}</h4>
-            <p>{{ feat.description }}</p>
-        </div>
-        
-        <div class="feature-snapshot">
-            <figure class="snapshot-placeholder">
-                <img 
-                    src="{{ feat.image_path }}" 
-                    alt="{{ feat.title }}" 
-                    loading="lazy"
-                    width="600"
-                    height="400"
-                />
-                {% if feat.image_desription %}
-                <figcaption>{{ feat.image_desription }}</figcaption>
-                {% endif %}
-            </figure>
-        </div>
-    </article>
-    {% endfor %}
+    <figure class="app-frame zero-hero__visual">
+      <div class="app-frame__bar" aria-hidden="true"><span></span><span></span><span></span><em>ZERO</em></div>
+      <img src="{{ '/assets/images/pilotage_zero.webp' | relative_url }}" alt="{{ text.hero_image_alt }}" width="1000" height="539" fetchpriority="high" />
+    </figure>
+  </div>
 </section>
 
-
-{% comment %} 
-<section aria-labelledby="testimonials-title">
-    <div class="container">
-        <h2 class="text-center display-2">{{ text.testimonial.title }}</h2>
-        <div class="testimonials-grid">
-            {% for testimony in text.testimonial.items %}
-            <blockquote class="testimonial-card">
-                <p class="testimonial-text">{{ testimony.description }}</p>
-                <div class="testimonial-author">
-                    <cite>{{ testimony.person }}</cite>
-                </div>
-            </blockquote>
-            {% endfor %}
+{% comment %} Stats {% endcomment %}
+<section class="section section--tight" aria-labelledby="stats-title">
+  <div class="container">
+    <h2 class="sr-only" id="stats-title">{{ text.stats_title }}</h2>
+    <div class="kpi-grid kpi-grid--4">
+      {% for stat in text.stats %}
+        <div class="kpi">
+          <span class="kpi__value">{{ stat.number }}</span>
+          <span class="kpi__label">{{ stat.label }}</span>
         </div>
+      {% endfor %}
     </div>
-</section>
-Testimonials Section {% endcomment %}
-
-{% include _testimonials.html %}
-
-<section id="contact" class="container text-center" style="max-width: 800px;">
-  <h2 class="display-2">{{ text.contact.title }}</h2>
-  <p class="text-secondary">{{ text.contact.description }}</p>
-  <iframe data-tally-src="https://tally.so/embed/jalexE?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="200" frameborder="0" marginheight="0" marginwidth="0" title="Contact ZERO (fr)">
-    <link href="/assets/css/style.css" rel="stylesheet"></link>
-  </iframe>
-  <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+    <p class="footnote">{{ text.stats_disclaimers }}</p>
+  </div>
 </section>
 
+{% comment %} Features {% endcomment %}
+<section class="section section--muted" id="fonctionnalites">
+  <div class="container">
+    {% include section-head.html eyebrow=text.features.eyebrow title=text.features.title subtitle=text.features.subtitle %}
+    <ul class="feature-list">
+      {% for item in text.features.list %}
+        <li>{% include icon.html name="check" %}<span>{{ item }}</span></li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+{% comment %} Feature showcases {% endcomment %}
+<section class="section">
+  <div class="container">
+    {% for feat in text.features_showcase %}
+      <article class="showcase{% cycle '', ' showcase--reverse' %}">
+        <div class="showcase__text">
+          <span class="showcase__index" aria-hidden="true">0{{ forloop.index }}</span>
+          <h3 class="showcase__title">{{ feat.title }}</h3>
+          <p>{{ feat.description }}</p>
+        </div>
+        <figure class="app-frame showcase__visual">
+          <img src="{{ feat.image_path | relative_url }}" alt="{{ feat.image_description }}" width="{{ feat.image_width }}" height="{{ feat.image_height }}" loading="lazy" />
+        </figure>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+
+{% comment %} Integration & data principles {% endcomment %}
+<section class="section section--muted">
+  <div class="container">
+    {% include section-head.html eyebrow=text.principles.eyebrow title=text.principles.title %}
+    <div class="grid grid--3">
+      {% assign principle_icons = "layers,data,simplicity" | split: "," %}
+      {% for item in text.principles.items %}
+        <article class="card">
+          {% assign icon_name = principle_icons[forloop.index0] %}
+          <span class="card__icon">{% include icon.html name=icon_name %}</span>
+          <h3 class="card__title">{{ item.title }}</h3>
+          <p class="card__text">{{ item.description }}</p>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% if text.testimonial.enabled %}
+<section class="section" aria-labelledby="testimonials-title">
+  <div class="container">
+    {% include section-head.html title=text.testimonial.title id="testimonials-title" %}
+    <div class="grid grid--3">
+      {% for testimony in text.testimonial.items %}
+        <blockquote class="card quote">
+          <p>{{ testimony.description }}</p>
+          <cite>{{ testimony.person }}</cite>
+        </blockquote>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% comment %} Contact form (Tally) {% endcomment %}
+<section id="contact" class="section">
+  <div class="container container--narrow">
+    <div class="form-card">
+      {% include section-head.html eyebrow="Démo" title=text.contact.title subtitle=text.contact.description %}
+      <iframe data-tally-src="https://tally.so/embed/jalexE?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="200" frameborder="0" marginheight="0" marginwidth="0" title="Formulaire de contact ZERO"></iframe>
+      <p class="form-card__alt">Vous préférez l’e-mail ? <a href="mailto:{{ text.contact.email }}?subject=ZERO">{{ text.contact.email }}</a></p>
+    </div>
+  </div>
+</section>
+{% include tally.html %}

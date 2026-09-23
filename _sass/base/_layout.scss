@@ -1,0 +1,160 @@
+// ============================================
+// LAYOUT
+// ============================================
+
+.container {
+  width: 100%;
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: 0 $spacing-sm;
+
+  @include sm {
+    padding: 0 $spacing-md;
+  }
+
+  &--narrow {
+    max-width: 52rem;
+  }
+}
+
+.section {
+  padding: $spacing-2xl 0;
+
+  @include md {
+    padding: $spacing-3xl 0;
+  }
+
+  &--tight {
+    padding-top: $spacing-xl;
+
+    @include md {
+      padding-top: $spacing-2xl;
+    }
+  }
+
+  &--muted {
+    background: $surface-muted;
+    border-top: 1px solid $border;
+    border-bottom: 1px solid $border;
+  }
+}
+
+.grid {
+  display: grid;
+  gap: $spacing-md;
+
+  @include md {
+    &--3 { grid-template-columns: repeat(3, 1fr); }
+    &--4 { grid-template-columns: repeat(2, 1fr); }
+    &--values { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @include lg {
+    &--4 { grid-template-columns: repeat(4, 1fr); }
+    &--values { grid-template-columns: repeat(3, 1fr); }
+  }
+}
+
+.split {
+  display: grid;
+  gap: $spacing-xl;
+  align-items: center;
+
+  @include lg {
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing-2xl;
+  }
+
+  &--top {
+    align-items: start;
+  }
+}
+
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-sm;
+}
+
+// Page hero used on inner pages
+.page-hero {
+  padding: $spacing-2xl 0 $spacing-xl;
+  background:
+    radial-gradient(60rem 20rem at 85% -10%, rgba($sana-blue, 0.12), transparent 70%),
+    radial-gradient(40rem 20rem at 0% 0%, rgba($bill-blue, 0.08), transparent 70%),
+    $surface-muted;
+  border-bottom: 1px solid $border;
+
+  @include md {
+    padding: $spacing-3xl 0 $spacing-2xl;
+  }
+
+  &__content {
+    max-width: 48rem;
+  }
+
+  &__title {
+    font-size: clamp(2rem, 1.4rem + 2.4vw, 3.25rem);
+    text-wrap: balance;
+  }
+
+  &__subtitle {
+    margin-top: $spacing-md;
+    font-size: $font-lg;
+    color: $ink-muted;
+
+    @include md {
+      font-size: $font-xl;
+    }
+  }
+
+  &--center {
+    text-align: center;
+
+    .page-hero__content {
+      margin: 0 auto;
+    }
+
+    .btn {
+      margin-top: $spacing-lg;
+    }
+  }
+}
+
+// Screenshot frame, styled like a desktop app window
+.app-frame {
+  overflow: hidden;
+  background: $surface;
+  border: 1px solid $border;
+  border-radius: $radius-md;
+  box-shadow: $shadow-float;
+
+  &__bar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 14px;
+    background: $surface-muted;
+    border-bottom: 1px solid $border;
+
+    span {
+      width: 10px;
+      height: 10px;
+      background: $border-strong;
+      border-radius: 50%;
+    }
+
+    em {
+      margin-left: auto;
+      font-size: $font-xs;
+      font-style: normal;
+      font-weight: $font-semibold;
+      letter-spacing: 0.08em;
+      color: $ink-muted;
+    }
+  }
+
+  img {
+    width: 100%;
+  }
+}

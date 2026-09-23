@@ -1,18 +1,11 @@
-home:
-  fr: Accueil
-  en: Home
-services: 
-  fr: Services
-  en: Services
-products:
-  fr: Produits
-  en: Products
-zero: 
-  fr: Zero
-  en: Zero
-about: 
-  fr: À propos
-  en: About
-contact: 
-  fr: Contact
-  en: Contact
+# Main navigation (FR only). `url` is also used to highlight the current page.
+links:
+  - label: Services
+    url: /fr/services/
+  - label: ZERO
+    url: /fr/zero/
+  - label: À propos
+    url: /fr/about/
+cta:
+  label: Planifier un diagnostic
+  url: /fr/contact/

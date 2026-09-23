@@ -1,0 +1,75 @@
+// ============================================
+// FORMS (Tally embeds) & FAQ
+// ============================================
+
+.form-card {
+  padding: $spacing-lg;
+  background: $surface;
+  border: 1px solid $border;
+  border-radius: $radius-md;
+  box-shadow: $shadow-card;
+
+  @include md {
+    padding: $spacing-xl;
+  }
+
+  .section-head {
+    margin-bottom: $spacing-lg;
+  }
+
+  > .section-head__title {
+    margin-bottom: $spacing-md;
+    font-size: $font-2xl;
+  }
+
+  iframe {
+    display: block;
+    min-height: 200px;
+  }
+
+  &__alt {
+    margin-top: $spacing-md;
+    font-size: $font-sm;
+    text-align: center;
+    color: $ink-muted;
+  }
+}
+
+.faq {
+  border-top: 1px solid $border;
+
+  &__item {
+    border-bottom: 1px solid $border;
+  }
+
+  &__question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: $spacing-md;
+    padding: $spacing-md 0;
+    font-size: $font-lg;
+    font-weight: $font-semibold;
+    cursor: pointer;
+    list-style: none;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    color: $bill-blue;
+    transition: transform $transition-base;
+  }
+
+  &__item[open] &__icon {
+    transform: rotate(45deg);
+  }
+
+  &__answer {
+    padding-bottom: $spacing-md;
+    color: $ink-muted;
+  }
+}

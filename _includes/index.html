@@ -1,61 +1,130 @@
-{% comment %} Hero section {% endcomment %}
-{% assign hero = site.data.index[page.lang].hero %}
-<section class="hero">
-    <div class="hero__content">
-        <h1 class="hero__title">{{ hero.title }}</h1>
-        <p class="hero__subtitle">{{ hero.description }}</p>
-        <a href="{{ '/fr/zero/' | relative_url }}" class="btn btn--secondary btn--rounded btn--margin-bottom-md">{{ hero.cta_button }}</a>
+{% assign text = site.data.index[page.lang] %}
+{% assign zero = site.data.zero[page.lang] %}
+
+{% comment %} Hero {% endcomment %}
+<section class="home-hero">
+  <div class="container home-hero__grid">
+    <div class="home-hero__content">
+      <p class="eyebrow"><span class="zero-ring" aria-hidden="true"></span>{{ text.hero.eyebrow }}</p>
+      <h1 class="home-hero__title">{{ text.hero.title }}</h1>
+      <p class="home-hero__lead">{{ text.hero.description }}</p>
+      <div class="btn-group">
+        <a href="{{ '/fr/contact/' | relative_url }}" class="btn btn--primary">{{ text.hero.cta_primary }}</a>
+        <a href="{{ '/fr/zero/' | relative_url }}" class="btn btn--ghost">{{ text.hero.cta_secondary }} {% include icon.html name="arrow" %}</a>
+      </div>
+      <ul class="zero-line">
+        {% for item in text.hero.zero_line %}
+          <li><span class="zero-line__digit" aria-hidden="true">0</span>{{ item }}</li>
+        {% endfor %}
+      </ul>
     </div>
-</section>
-
-{% comment %} Partners section {% endcomment %}
-{% assign partners = site.data.index[page.lang].partners %}
-<section class="hero-partner">
-  <h2 class="partners__title">{{  partners.partner_title }}</h2>
-  <div class="partners__content">
-      <a href="https://www.ophtalmique.ch/">
-        <img src="assets/images/partners/HoJGnoir.gif" alt="Hôpital ophtalmique Jules-Gonin" class="partners__content__logo">
-      </a>
+    <div class="home-hero__visual">
+      <figure class="app-frame">
+        <div class="app-frame__bar" aria-hidden="true"><span></span><span></span><span></span><em>ZERO</em></div>
+        <img src="{{ '/assets/images/pilotage_zero.webp' | relative_url }}" alt="{{ text.hero.image_alt }}" width="1000" height="539" fetchpriority="high" />
+      </figure>
+      <div class="kpi kpi--float kpi--float-a" aria-hidden="true">
+        <span class="kpi__label">Délais de traitement*</span>
+        <span class="kpi__value">{{ zero.stats[0].number }}</span>
+        {% include sparkline.html trend="down" %}
+      </div>
+      <div class="kpi kpi--float kpi--float-b" aria-hidden="true">
+        <span class="kpi__label">Fiabilité des données*</span>
+        <span class="kpi__value">{{ zero.stats[3].number }}</span>
+        {% include sparkline.html trend="up" %}
+      </div>
+      <p class="home-hero__note">*Résultats observés chez nos premiers clients.</p>
+    </div>
   </div>
 </section>
 
-{% comment %} Expertises section {% endcomment %}
-{% assign expertises = site.data.index[page.lang].expertises %}
-<section class="container container--xl">
-  <div class="expertises-layout">
-      <h2 class="display-4xl text-center m-0">{{ expertises.title }}</h2>
-      <div class="expertises-grid">
-          {% for bloc in expertises.blocs %}
-            <a href="{{ bloc.link }}" class="hover-available" style="text-decoration: none; color: inherit;">
-              <div class="card card--hover card--featured" style="height: 100%;">
-                  <div class="card__title fw-semibold">{{ bloc.title }}</div>
-                  <div class="card__text">{{ bloc.description }}</div>
-                  <form action="{{ bloc.link }}" class="hide-hover-available expertise__card__form">
-                    <input type="submit" class="btn btn--primary" value="{{bloc.link_value}}"
-                    style="float: right; margin-top:1.5rem;"></input>
-                  </form>
-              </div>
-            </a>
-          {% endfor %}
-      </div>
-  </div>
-</section>
-
-{% comment %} Why-us section {% endcomment %}
-{% assign why_us = site.data.index[page.lang].why_us %}
-<section class="container">
-  <h2 class="display-4xl text-center">{{ why_us.title }}</h2>
-  <div class="why-us-grid">
-      {% for reason in why_us.reasons %}
-      <div class="card card--no-border">
-        <div class="card__title">{{ reason.title }}</div>
-        <div class="card__text">{{ reason.description }}</div>
-        <div class="card__footnote-number">0{{ forloop.index }}</div>
-      </div>
+{% comment %} Trust bar {% endcomment %}
+<section class="trust" aria-labelledby="trust-title">
+  <div class="container trust__inner">
+    <h2 class="trust__title" id="trust-title">{{ text.partners.title }}</h2>
+    <ul class="trust__logos">
+      {% for partner in text.partners.items %}
+        <li><a href="{{ partner.url }}" rel="noopener"><img src="{{ partner.logo | relative_url }}" alt="{{ partner.name }}" width="200" height="56" loading="lazy" /></a></li>
       {% endfor %}
-  </div>
-  <div class="text-center pb-2">
-    <a href="{{ '/fr/contact/' | relative_url }}" class="btn btn--primary">{{ why_us.contact }} </a>
+    </ul>
+    <ul class="trust__facts">
+      {% for fact in text.partners.facts %}
+        <li>{% include icon.html name="check" %}{{ fact }}</li>
+      {% endfor %}
+    </ul>
   </div>
 </section>
 
+{% comment %} Problem {% endcomment %}
+<section class="section">
+  <div class="container">
+    {% include section-head.html eyebrow=text.problem.eyebrow title=text.problem.title subtitle=text.problem.subtitle %}
+    <div class="grid grid--3">
+      {% assign problem_icons = "files,hand,eye" | split: "," %}
+      {% for item in text.problem.items %}
+        <article class="card">
+          {% assign icon_name = problem_icons[forloop.index0] %}
+          <span class="card__icon">{% include icon.html name=icon_name %}</span>
+          <h3 class="card__title">{{ item.title }}</h3>
+          <p class="card__text">{{ item.description }}</p>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% comment %} Approach: 3 steps {% endcomment %}
+<section class="section section--muted">
+  <div class="container">
+    {% include section-head.html eyebrow=text.approach.eyebrow title=text.approach.title subtitle=text.approach.subtitle %}
+    <ol class="steps">
+      {% for step in text.approach.steps %}
+        <li class="steps__item">
+          <span class="steps__number" aria-hidden="true">0{{ forloop.index }}</span>
+          <h3 class="steps__title">{{ step.title }}</h3>
+          <p class="steps__text">{{ step.description }}</p>
+          <a href="{{ step.link | relative_url }}" class="link-arrow">{{ step.link_label }} {% include icon.html name="arrow" %}</a>
+        </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+
+{% comment %} ZERO teaser {% endcomment %}
+<section class="section">
+  <div class="container split">
+    <div class="split__text">
+      {% include section-head.html eyebrow=text.zero.eyebrow title=text.zero.title subtitle=text.zero.description align="left" %}
+      <a href="{{ '/fr/zero/' | relative_url }}" class="btn btn--primary">{{ text.zero.link_label }}</a>
+    </div>
+    <div class="split__visual">
+      <div class="kpi-grid">
+        {% for stat in zero.stats %}
+          <div class="kpi">
+            <span class="kpi__value">{{ stat.number }}</span>
+            <span class="kpi__label">{{ stat.label }}</span>
+          </div>
+        {% endfor %}
+      </div>
+      <p class="footnote">{{ zero.stats_disclaimers }}</p>
+    </div>
+  </div>
+</section>
+
+{% comment %} Why us {% endcomment %}
+<section class="section section--muted">
+  <div class="container">
+    {% include section-head.html eyebrow=text.why_us.eyebrow title=text.why_us.title %}
+    <div class="grid grid--4">
+      {% for reason in text.why_us.reasons %}
+        <article class="card card--plain">
+          <span class="card__index" aria-hidden="true">0{{ forloop.index }}</span>
+          <h3 class="card__title">{{ reason.title }}</h3>
+          <p class="card__text">{{ reason.description }}</p>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% include cta.html title=text.cta.title subtitle=text.cta.subtitle label=text.cta.label url=text.cta.url %}

@@ -1,57 +1,41 @@
-  {% assign text = site.data.about[page.lang] %}
+{% assign text = site.data.about[page.lang] %}
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero__content">
-      <h1 class="hero__title">{{ text.title }}</h1>
-      <p class="hero__subtitle">{{ text.subtitle }}</p>
-    </div>
-  </section>
+{% include page-hero.html eyebrow=text.hero.eyebrow title=text.hero.title subtitle=text.hero.subtitle %}
 
-  <!-- Story Section -->
-  <section class="about-story">
-    <div class="about-story__container">
-      <p class="about-story__intro">{{ text.story_intro }}</p>
-        {% for paragraph in text.paragraphs %}
-          <p class="about-story__paragraph">{{ paragraph }}</p>
-        {% endfor %}
+<section class="section section--tight">
+  <div class="container split split--top">
+    <div class="split__text prose">
+      <h2 class="section-head__title">{{ text.story_title }}</h2>
+      {% for paragraph in text.paragraphs %}
+        <p>{{ paragraph }}</p>
+      {% endfor %}
     </div>
-  </section>
-
-  <!-- Values Section -->
-<section class="about-values">
-  <div class="about-values__container">
-    <div class="about-values__header">
-      <h2 class="about-values__title">{{ text.values_title }}</h2>
-      <p class="about-values__subtitle">{{ text.values_subtitle }}</p>
-    </div>
-    <div class="about-values__timeline">
-      {% for value in text.values %}
-      <div class="value-card">
-        <div class="value-card__empty"></div>
-        <div class="value-card__marker">
-          <div class="value-card__dot">
-            <span class="value-card__number">{{ forloop.index }}</span>
+    <aside class="split__visual">
+      <dl class="facts">
+        {% for fact in text.facts %}
+          <div class="facts__row">
+            <dt>{{ fact.label }}</dt>
+            <dd>{{ fact.value }}</dd>
           </div>
-        </div>
-        <div class="value-card__content">
-          <h3 class="value-card__title text-center text-secondary">
-            {{ value.title }}
-          </h3>
-          <p class="value-card__description">{{ value.description }}</p>
-        </div>
-      </div>
+        {% endfor %}
+      </dl>
+    </aside>
+  </div>
+</section>
+
+<section class="section section--muted">
+  <div class="container">
+    {% include section-head.html eyebrow=text.values_eyebrow title=text.values_title %}
+    <div class="grid grid--values">
+      {% for value in text.values %}
+        <article class="card">
+          <span class="card__icon">{% include icon.html name=value.icon %}</span>
+          <h3 class="card__title">{{ value.title }}</h3>
+          <p class="card__text">{{ value.description }}</p>
+        </article>
       {% endfor %}
     </div>
   </div>
 </section>
 
-  <!-- CTA Section -->
-  <section class="footer">
-    <div class="footer__content">
-      <h2 class="footer__title">{{ text.cta.title }}</h2>
-      <p class="footer__subtitle">{{ text.cta.subtitle }}</p>
-      <a href="/{{ page.lang }}/contact/" class="btn btn--secondary btn--rounded btn--margin-bottom-lg">{{ text.cta.link_value }}</a>
-      {% include footer.html %}
-    </div>
-  </section>
+{% include cta.html title=text.cta.title subtitle=text.cta.subtitle label=text.cta.label url=text.cta.url %}

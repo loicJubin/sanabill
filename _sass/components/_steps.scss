@@ -1,0 +1,83 @@
+// ============================================
+// STEPS (approach / process)
+// ============================================
+
+.steps {
+  display: grid;
+  gap: $spacing-md;
+  padding: 0;
+  list-style: none;
+  counter-reset: none;
+
+  @include md {
+    grid-template-columns: repeat(3, 1fr);
+
+    &--4 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @include lg {
+    &--4 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xs;
+    padding: $spacing-lg;
+    background: $surface;
+    border: 1px solid $border;
+    border-radius: $radius-md;
+
+    // Gradient accent on top of each step
+    &::before {
+      position: absolute;
+      top: -1px;
+      right: $spacing-lg;
+      left: $spacing-lg;
+      height: 3px;
+      content: "";
+      background: $gradient-primary;
+      border-radius: 0 0 3px 3px;
+    }
+  }
+
+  &__number {
+    font-size: 2rem;
+    font-weight: $font-bold;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    font-variant-numeric: tabular-nums;
+    color: $numeral;
+  }
+
+  &__title {
+    margin-top: $spacing-xs;
+    font-size: $font-lg;
+  }
+
+  &__text {
+    flex: 1;
+    color: $ink-muted;
+  }
+
+  .link-arrow {
+    margin-top: $spacing-sm;
+  }
+}
+
+.mini-steps {
+  display: grid;
+  gap: $spacing-sm;
+  padding-left: 1.25rem;
+  color: $ink-muted;
+
+  li::marker {
+    font-weight: $font-semibold;
+    color: $bill-blue;
+  }
+}

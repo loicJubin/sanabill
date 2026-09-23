@@ -1,16 +1,26 @@
 fr:
   hero:
-    title: "Contactez-nous"
-    subtitle: "Nous serions ravis d'avoir de vos nouvelles. Contactez-nous pour toute question."
-  map_title: "Formulaire"
+    eyebrow: "Contact"
+    title: "Parlons de votre situation"
+    subtitle: "Une question, un enjeu spécifique ou l’envie de découvrir ZERO ? Écrivez-nous, nous revenons vers vous rapidement."
+
+  form_title: "Formulaire"
 
   info_title: "Informations"
+
+  next_steps_title: "Et ensuite ?"
+  next_steps:
+    - "Nous prenons connaissance de votre message."
+    - "Nous vous proposons un premier échange pour comprendre votre contexte."
+    - "Si cela fait sens, nous définissons ensemble la suite : diagnostic, démonstration de ZERO ou accompagnement."
 
   address:
     line1: "Sanabill Sàrl"
     line2: "Avenue d'Echallens 61"
     line3: "1004 Lausanne"
     line4: "Suisse"
-  
+  map_url: "https://www.openstreetmap.org/search?query=Avenue%20d%27Echallens%2061%2C%201004%20Lausanne"
+  map_label: "Voir sur la carte"
+
   email:
     address: "contact@sanabill.ch"
