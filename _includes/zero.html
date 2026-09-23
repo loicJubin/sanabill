@@ -38,7 +38,7 @@
 {% comment %} Features {% endcomment %}
 <section class="section section--muted" id="fonctionnalites">
   <div class="container">
-    {% include section-head.html eyebrow=text.features.eyebrow title=text.features.title subtitle=text.features.subtitle %}
+    {% include section-head.html eyebrow=text.features.eyebrow title=text.features.title subtitle=text.features.subtitle ring="true" %}
     <ul class="feature-list">
       {% for item in text.features.list %}
         <li>{% include icon.html name="check" %}<span>{{ item }}</span></li>
@@ -67,7 +67,7 @@
 {% comment %} Integration & data principles {% endcomment %}
 <section class="section section--muted">
   <div class="container">
-    {% include section-head.html eyebrow=text.principles.eyebrow title=text.principles.title %}
+    {% include section-head.html eyebrow=text.principles.eyebrow title=text.principles.title ring="true" %}
     <div class="grid grid--3">
       {% for item in text.principles.items %}
         {% include tile.html label=item.label status=item.status tone="ok" viz=item.viz title=item.title text=item.description %}

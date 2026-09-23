@@ -10,9 +10,9 @@ fr:
     cta_secondary: "Découvrir ZERO"
     cta_note: "Premier échange gratuit"
     zero_line:
-      - "Zéro dossier oublié"
-      - "Zéro fichier éparpillé"
-      - "Zéro complexité inutile"
+      - "Dossier oublié"
+      - "Fichier éparpillé"
+      - "Complexité inutile"
     image_alt: "Tableau de bord ZERO : suivi des contestations par statut, avec volumes, montants en CHF et évolution"
 
   partners:
