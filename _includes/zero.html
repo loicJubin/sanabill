@@ -39,11 +39,25 @@
 <section class="section section--muted" id="fonctionnalites">
   <div class="container">
     {% include section-head.html eyebrow=text.features.eyebrow title=text.features.title subtitle=text.features.subtitle ring="true" %}
-    <ul class="feature-list">
-      {% for item in text.features.list %}
-        <li>{% include icon.html name="check" %}<span>{{ item }}</span></li>
-      {% endfor %}
-    </ul>
+    {% assign cols = text.features.columns %}
+    <table class="feature-table">
+      <thead>
+        <tr>
+          <th scope="col">{{ cols.domain }}</th>
+          <th scope="col">{{ cols.feature }}</th>
+          <th scope="col" class="feature-table__status-col">{{ cols.status }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in text.features.list %}
+          <tr>
+            <td><span class="feature-table__tag">{{ item.domain }}</span></td>
+            <td class="feature-table__text">{{ item.text }}</td>
+            <td class="feature-table__status-col"><span class="tile__status tile__status--ok">{{ text.features.status }}</span></td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
   </div>
 </section>
 

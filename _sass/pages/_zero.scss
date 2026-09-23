@@ -17,20 +17,90 @@
   }
 }
 
-.feature-list {
+// Feature table, styled like a ZERO data table
+.feature-table {
+  width: 100%;
   max-width: 60rem;
   margin: 0 auto;
+  overflow: hidden;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: $surface;
+  border: 1px solid $border;
+  border-radius: $radius-md;
 
-  @include md {
-    grid-template-columns: repeat(2, 1fr);
-    gap: $spacing-md;
+  th {
+    padding: 0.75rem 1.25rem;
+    font-size: $font-xs;
+    font-weight: $font-semibold;
+    letter-spacing: 0.04em;
+    text-align: left;
+    text-transform: uppercase;
+    color: $ink-muted;
+    background: $surface-muted;
+    border-bottom: 1px solid $border;
+
+    &.feature-table__status-col {
+      text-align: right;
+    }
   }
 
-  li {
-    padding: $spacing-md;
-    background: $surface;
-    border: 1px solid $border;
-    border-radius: $radius-md;
+  td {
+    padding: 0.875rem 1.25rem;
+    vertical-align: middle;
+    border-bottom: 1px solid $border;
+  }
+
+  tbody tr:last-child td {
+    border-bottom: 0;
+  }
+
+  &__tag {
+    display: inline-block;
+    padding: 3px 8px;
+    font-size: $font-xs;
+    font-weight: $font-semibold;
+    white-space: nowrap;
+    color: $bill-blue;
+    background: rgba($bill-blue, 0.08);
+    border-radius: 6px;
+  }
+
+  &__status-col {
+    text-align: right;
+
+    .tile__status {
+      font-size: $font-xs;
+    }
+  }
+
+  // Mobile: each row becomes a small card (tag + status, then the text)
+  @media (max-width: #{$breakpoint-md - 1px}) {
+    thead {
+      @include sr-only;
+    }
+
+    tr {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 0.5rem;
+      padding: 1rem;
+      border-bottom: 1px solid $border;
+    }
+
+    tbody tr:last-child {
+      border-bottom: 0;
+    }
+
+    td {
+      padding: 0;
+      border: 0;
+    }
+
+    .feature-table__text {
+      grid-column: 1 / -1;
+      grid-row: 2;
+    }
   }
 }
 
