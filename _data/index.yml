@@ -6,8 +6,9 @@ fr:
       Nous accompagnons les organisations de santé dans l’analyse et l’optimisation
       de la gestion des contestations d’assurances. Avec notre expertise métier et ZERO,
       notre outil de pilotage, vos équipes structurent et suivent chaque refus plus efficacement.
-    cta_primary: "Planifier un diagnostic"
+    cta_primary: "Demander un diagnostic"
     cta_secondary: "Découvrir ZERO"
+    cta_note: "Premier échange gratuit"
     zero_line:
       - "Zéro dossier oublié"
       - "Zéro fichier éparpillé"
@@ -88,6 +89,6 @@ fr:
 
   cta:
     title: "Une question ou un enjeu spécifique ?"
-    subtitle: "Échangeons sur votre situation et voyons ensemble par où commencer."
-    label: "Planifier un diagnostic"
+    subtitle: "Le premier échange est gratuit : nous prenons le temps de comprendre votre problématique avant de proposer des solutions."
+    label: "Demander un diagnostic"
     url: "/fr/contact/"

@@ -68,3 +68,23 @@
     color: #9a9cb8;
   }
 }
+
+.footer__bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: $spacing-xs $spacing-md;
+}
+
+.footer__legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-md;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  a {
+    color: #c9cbe0;
+  }
+}

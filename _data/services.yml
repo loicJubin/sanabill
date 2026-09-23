@@ -53,8 +53,8 @@ fr:
     eyebrow: "Déroulement"
     title: "Comment se déroule un accompagnement"
     steps:
-      - title: "Premier échange"
-        description: "Nous écoutons vos enjeux, votre organisation et vos contraintes."
+      - title: "Premier échange gratuit"
+        description: "Un rendez-vous offert pour comprendre votre problématique, votre organisation et vos contraintes, avant de proposer des solutions."
       - title: "Diagnostic"
         description: "Nous analysons vos refus, leurs causes et vos processus actuels."
       - title: "Recommandations"
@@ -68,6 +68,8 @@ fr:
     items:
       - question: "Faut-il remplacer notre logiciel de facturation ?"
         answer: "Non. ZERO s’intègre progressivement à vos systèmes de facturation existants. Notre approche consiste à améliorer l’existant, pas à tout transformer."
+      - question: "Le premier rendez-vous est-il payant ?"
+        answer: "Non. Le premier échange est gratuit : il nous permet de comprendre votre problématique avant de venir avec des solutions."
       - question: "Peut-on commencer par un simple diagnostic ?"
         answer: "Oui. Un diagnostic ponctuel est souvent le meilleur point de départ. La suite, conseil, ZERO ou optimisation, se décide ensemble sur cette base."
       - question: "Que deviennent nos données ?"
@@ -82,6 +84,6 @@ fr:
 
   cta:
     title: "Prêt à optimiser vos processus ?"
-    subtitle: "Discutons de vos enjeux et du point de départ le plus utile pour vos équipes."
-    label: "Planifier un diagnostic"
+    subtitle: "Le premier échange est gratuit : nous prenons le temps de comprendre votre problématique avant de proposer des solutions."
+    label: "Demander un diagnostic"
     url: "/fr/contact/"

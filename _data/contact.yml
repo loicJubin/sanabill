@@ -3,15 +3,19 @@ fr:
     eyebrow: "Contact"
     title: "Parlons de votre situation"
     subtitle: "Une question, un enjeu spécifique ou l’envie de découvrir ZERO ? Écrivez-nous, nous revenons vers vous rapidement."
+    free_note: "Le premier échange est gratuit. Il nous permet de comprendre votre problématique avant de vous proposer des solutions."
 
-  form_title: "Formulaire"
+  form_title: "Décrivez votre situation"
+  form_intro: "Quelques lignes suffisent : votre établissement, le type de refus rencontrés et ce que vous aimeriez améliorer."
+  privacy_note: "Vos données servent uniquement à répondre à votre demande."
+  privacy_link: "Protection des données"
 
   info_title: "Informations"
 
   next_steps_title: "Et ensuite ?"
   next_steps:
     - "Nous prenons connaissance de votre message."
-    - "Nous vous proposons un premier échange pour comprendre votre contexte."
+    - "Nous vous proposons un premier échange gratuit pour comprendre votre problématique."
     - "Si cela fait sens, nous définissons ensemble la suite : diagnostic, démonstration de ZERO ou accompagnement."
 
   address:

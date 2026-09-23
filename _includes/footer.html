@@ -31,5 +31,10 @@
   </div>
   <div class="container footer__bottom">
     <p>{{ footer.copyright }}</p>
+    <ul class="footer__legal">
+      {% for link in footer.legal %}
+        <li><a href="{{ link.url | relative_url }}">{{ link.label }}</a></li>
+      {% endfor %}
+    </ul>
   </div>
 </footer>

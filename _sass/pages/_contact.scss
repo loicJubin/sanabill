@@ -51,3 +51,70 @@
     line-height: $leading-relaxed;
   }
 }
+
+.form-card__intro {
+  margin-bottom: $spacing-sm;
+  color: $ink-muted;
+}
+
+.free-note,
+.cta-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: $font-sm;
+  font-weight: $font-medium;
+  color: $ink;
+
+  .icon {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    color: #1d7a43;
+  }
+}
+
+.free-note {
+  align-items: flex-start;
+  margin-bottom: $spacing-md;
+
+  .icon {
+    margin-top: 2px;
+  }
+}
+
+.cta-note {
+  margin-top: $spacing-sm;
+}
+
+// Legal pages
+.legal {
+  display: grid;
+  gap: $spacing-sm;
+
+  h2 {
+    margin-top: $spacing-lg;
+    font-size: $font-xl;
+  }
+
+  h3 {
+    margin-top: $spacing-xs;
+    font-size: $font-base;
+  }
+
+  p,
+  li {
+    max-width: 68ch;
+    color: $ink-muted;
+  }
+
+  ul {
+    display: grid;
+    gap: $spacing-xs;
+    padding-left: 1.25rem;
+  }
+
+  &__updated {
+    font-size: $font-sm;
+  }
+}

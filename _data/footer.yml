@@ -3,3 +3,8 @@ zero_line: "Zéro dossier oublié. Zéro fichier éparpillé. Zéro complexité 
 nav_title: "Navigation"
 contact_title: "Contact"
 copyright: "&copy; 2026 Sanabill Sàrl. Tous droits réservés."
+legal:
+  - label: "Mentions légales"
+    url: /fr/mentions-legales/
+  - label: "Protection des données"
+    url: /fr/protection-des-donnees/

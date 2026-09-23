@@ -12,6 +12,7 @@
         <a href="{{ '/fr/contact/' | relative_url }}" class="btn btn--primary">{{ text.hero.cta_primary }}</a>
         <a href="{{ '/fr/zero/' | relative_url }}" class="btn btn--ghost">{{ text.hero.cta_secondary }} {% include icon.html name="arrow" %}</a>
       </div>
+      <p class="cta-note">{% include icon.html name="check" %}{{ text.hero.cta_note }}</p>
       <ul class="zero-line">
         {% for item in text.hero.zero_line %}
           <li><span class="zero-line__digit" aria-hidden="true">0</span>{{ item }}</li>
