@@ -19,19 +19,45 @@
   }
 
 
-  &__index {
-    display: block;
-    margin-bottom: $spacing-sm;
-    font-size: $font-sm;
-    font-weight: $font-semibold;
-    font-variant-numeric: tabular-nums;
-    color: $bill-blue;
-  }
-
   &__title {
     margin-bottom: $spacing-xs;
     font-size: $font-lg;
     font-weight: $font-semibold;
+  }
+
+  &__text {
+    color: $ink-muted;
+  }
+}
+
+// Editorial items: thin rule, large light numeral, no box
+.grid--editorial {
+  gap: $spacing-xl $spacing-lg;
+}
+
+.editorial {
+  padding-top: 1.25rem;
+  border-top: 1px solid $ink;
+
+  &__number {
+    display: block;
+    margin-bottom: 1.75rem;
+    font-size: 4rem;
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    font-variant-numeric: tabular-nums;
+    color: $numeral;
+  }
+
+  &__title {
+    margin-bottom: 0.75rem;
+    font-size: $font-xl;
+
+    // Keep the texts aligned when titles wrap in the 4-column layout
+    @include lg {
+      min-height: 2.4em;
+    }
   }
 
   &__text {

@@ -109,12 +109,12 @@
 <section class="section section--muted">
   <div class="container">
     {% include section-head.html eyebrow=text.why_us.eyebrow title=text.why_us.title %}
-    <div class="grid grid--4">
+    <div class="grid grid--4 grid--editorial">
       {% for reason in text.why_us.reasons %}
-        <article class="card card--plain">
-          <span class="card__index" aria-hidden="true">0{{ forloop.index }}</span>
-          <h3 class="card__title">{{ reason.title }}</h3>
-          <p class="card__text">{{ reason.description }}</p>
+        <article class="editorial">
+          <span class="editorial__number" aria-hidden="true">0{{ forloop.index }}</span>
+          <h3 class="editorial__title">{{ reason.title }}</h3>
+          <p class="editorial__text">{{ reason.description }}</p>
         </article>
       {% endfor %}
     </div>
