@@ -143,12 +143,29 @@
 
   &__bar {
     display: flex;
+    align-items: flex-end;
+    gap: 4px;
+    height: 38px;
+    padding-left: 8px;
+    background: $surface-muted;
+    border-bottom: 1px solid $border;
+  }
+
+  // Active tab, merged with the page below it
+  &__tab {
+    position: relative;
+    display: flex;
     align-items: center;
     gap: 8px;
-    height: 34px;
-    padding-left: 12px;
+    width: 180px;
+    max-width: 45%;
+    height: 30px;
+    margin-bottom: -1px;
+    padding: 0 10px 0 12px;
     background: $surface;
-    border-bottom: 1px solid $border;
+    border: 1px solid $border;
+    border-bottom-color: $surface;
+    border-radius: 8px 8px 0 0;
   }
 
   &__title {
@@ -157,9 +174,34 @@
     color: $ink;
   }
 
+  &__close,
+  &__new {
+    fill: none;
+    stroke: $ink-muted;
+    stroke-width: 1.2;
+    stroke-linecap: round;
+  }
+
+  &__close {
+    width: 8px;
+    height: 8px;
+    margin-left: auto;
+  }
+
+  // Same 30px line as the tab, so the icons are centred on "ZERO"
+  &__new {
+    box-sizing: content-box;
+    width: 10px;
+    height: 10px;
+    margin-bottom: -1px;
+    padding: 10px 6px;
+  }
+
   &__controls {
     display: flex;
-    align-self: stretch;
+    align-items: center;
+    height: 30px;
+    margin-bottom: -1px;
     margin-left: auto;
 
     svg {
@@ -167,7 +209,6 @@
       width: 10px;
       height: 10px;
       padding: 0 16px;
-      align-self: center;
       fill: none;
       stroke: $ink-muted;
       stroke-width: 1;
