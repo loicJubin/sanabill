@@ -74,21 +74,36 @@
   border-bottom: 1px solid $border;
 
   &__inner {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: $spacing-md;
+    display: grid;
+    justify-items: center;
+    gap: 1.25rem;
     text-align: center;
   }
 
+  // Label centred between two thin rules
   &__title {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    width: 100%;
+    max-width: 40rem;
     font-size: $font-sm;
     font-weight: $font-semibold;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
     color: $ink-muted;
+
+    &::before,
+    &::after {
+      flex: 1;
+      height: 1px;
+      content: "";
+      background: $border;
+    }
+
+    span {
+      white-space: nowrap;
+    }
   }
 
   &__logos,
@@ -97,35 +112,41 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: $spacing-sm $spacing-lg;
     padding: 0;
+    margin: 0;
     list-style: none;
+  }
+
+  &__logos {
+    gap: $spacing-lg;
   }
 
   &__logos img {
     width: auto;
-    height: 48px;
-    filter: grayscale(1);
-    opacity: 0.85;
-    transition: opacity $transition-fast, filter $transition-fast;
+    height: 60px;
   }
 
-  &__logos a:hover img {
-    filter: none;
-    opacity: 1;
+  // Facts as plain text: stacked on phones, separated by dots from 640px
+  &__facts {
+    flex-direction: column;
+    gap: 0.25rem;
+
+    @include sm {
+      flex-direction: row;
+      gap: 0;
+    }
   }
 
   &__facts li {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
     font-size: $font-sm;
-    color: $ink;
+    color: $ink-muted;
 
-    .icon {
-      width: 18px;
-      height: 18px;
-      color: $bill-blue;
+    @include sm {
+      & + li::before {
+        margin: 0 0.875rem;
+        content: "·";
+        color: $border-strong;
+      }
     }
   }
 }

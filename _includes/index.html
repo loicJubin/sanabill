@@ -42,7 +42,7 @@
 {% comment %} Trust bar {% endcomment %}
 <section class="trust" aria-labelledby="trust-title">
   <div class="container trust__inner">
-    <h2 class="trust__title" id="trust-title">{{ text.partners.title }}</h2>
+    <h2 class="trust__title" id="trust-title"><span>{{ text.partners.title }}</span></h2>
     <ul class="trust__logos">
       {% for partner in text.partners.items %}
         <li><a href="{{ partner.url }}" rel="noopener"><img src="{{ partner.logo | relative_url }}" alt="{{ partner.name }}" width="200" height="56" loading="lazy" /></a></li>
@@ -50,7 +50,7 @@
     </ul>
     <ul class="trust__facts">
       {% for fact in text.partners.facts %}
-        <li>{% include icon.html name="check" %}{{ fact }}</li>
+        <li>{{ fact }}</li>
       {% endfor %}
     </ul>
   </div>
