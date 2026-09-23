@@ -39,17 +39,6 @@
   padding-top: 1.25rem;
   border-top: 1px solid $ink;
 
-  &__number {
-    display: block;
-    margin-bottom: 1.75rem;
-    font-size: 4rem;
-    font-weight: 300;
-    line-height: 1;
-    letter-spacing: -0.04em;
-    font-variant-numeric: tabular-nums;
-    color: $numeral;
-  }
-
   &__title {
     margin-bottom: 0.75rem;
     font-size: $font-xl;

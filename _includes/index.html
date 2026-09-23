@@ -113,7 +113,6 @@
     <div class="grid grid--4 grid--editorial">
       {% for reason in text.why_us.reasons %}
         <article class="editorial">
-          <span class="editorial__number" aria-hidden="true">0{{ forloop.index }}</span>
           <h3 class="editorial__title">{{ reason.title }}</h3>
           <p class="editorial__text">{{ reason.description }}</p>
         </article>

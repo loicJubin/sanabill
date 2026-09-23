@@ -53,7 +53,6 @@
     {% for feat in text.features_showcase %}
       <article class="showcase{% cycle '', ' showcase--reverse' %}">
         <div class="showcase__text">
-          <span class="showcase__index" aria-hidden="true">0{{ forloop.index }}</span>
           <h3 class="showcase__title">{{ feat.title }}</h3>
           <p>{{ feat.description }}</p>
         </div>

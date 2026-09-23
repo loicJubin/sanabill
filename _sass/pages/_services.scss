@@ -60,16 +60,6 @@
     }
   }
 
-  &__number {
-    display: block;
-    margin-bottom: $spacing-sm;
-    font-size: 2.5rem;
-    font-weight: $font-bold;
-    line-height: 1;
-    letter-spacing: -0.03em;
-    color: $numeral;
-  }
-
   &__title {
     font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem);
   }

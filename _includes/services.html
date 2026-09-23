@@ -5,7 +5,7 @@
 <nav class="container anchor-nav" aria-label="Services">
   <ul>
     {% for service in text.sections %}
-      <li><a href="#{{ service.id }}"><span aria-hidden="true">0{{ forloop.index }}</span>{{ service.title }}</a></li>
+      <li><a href="#{{ service.id }}">{{ service.title }}</a></li>
     {% endfor %}
   </ul>
 </nav>
@@ -15,7 +15,6 @@
     {% for service in text.sections %}
       <article id="{{ service.id }}" class="service{% if service.id == 'zero' %} service--zero{% endif %}">
         <header class="service__header">
-          <span class="service__number" aria-hidden="true">0{{ forloop.index }}</span>
           <h2 class="service__title">{{ service.title }}</h2>
           <p class="service__tagline">{{ service.tagline }}</p>
         </header>
