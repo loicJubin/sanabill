@@ -73,6 +73,10 @@
     padding: $spacing-3xl 0;
   }
 
+  @include lg {
+    padding: $spacing-4xl 0;
+  }
+
   &__inner {
     position: relative;
   }
