@@ -72,7 +72,7 @@
 <section class="section section--muted">
   <div class="container">
     {% include section-head.html eyebrow=text.approach.eyebrow title=text.approach.title subtitle=text.approach.subtitle %}
-    <ol class="steps">
+    <ol class="steps" data-reveal>
       {% for step in text.approach.steps %}
         <li class="steps__item">
           <span class="steps__number" aria-hidden="true">0{{ forloop.index }}</span>

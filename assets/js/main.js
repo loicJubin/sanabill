@@ -1,3 +1,23 @@
+// Reveal: elements marked [data-reveal] fade in when they scroll into view.
+document.addEventListener('DOMContentLoaded', () => {
+    const targets = document.querySelectorAll('[data-reveal]');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!targets.length || reduceMotion || !('IntersectionObserver' in window)) return;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('is-revealed');
+            observer.unobserve(entry.target);
+        });
+    }, { threshold: 0.2 });
+
+    targets.forEach((el) => {
+        el.classList.add('is-reveal-ready');
+        observer.observe(el);
+    });
+});
+
 // Mobile navigation: toggles the menu and keeps aria-expanded in sync.
 document.addEventListener('DOMContentLoaded', () => {
     const toggle = document.querySelector('.menu-toggle');

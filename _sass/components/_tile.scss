@@ -38,12 +38,15 @@ $status-ok-bg: #e7f5ec;
     white-space: nowrap;
     border-radius: $radius-full;
 
+    // Glowing dot with a soft pulse (still under reduced motion)
     &::before {
       width: 6px;
       height: 6px;
       content: "";
       background: currentColor;
       border-radius: 50%;
+      filter: drop-shadow(0 0 3px currentColor);
+      animation: status-pulse 2.4s ease-out infinite;
     }
 
     &--alert {
@@ -188,4 +191,15 @@ $status-ok-bg: #e7f5ec;
   &--muted { fill: #9aa0ae; }
   &--soft { fill: $ink-muted; }
   &--faint { fill: $border-strong; }
+}
+
+@keyframes status-pulse {
+  0% {
+    box-shadow: 0 0 0 0 currentColor;
+  }
+
+  70%,
+  100% {
+    box-shadow: 0 0 0 5px transparent;
+  }
 }
