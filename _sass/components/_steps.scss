@@ -154,3 +154,20 @@
     }
   }
 }
+
+// Déroulement: steps (with their footprints) fade in from left to right,
+// one after another. Overrides the vertical reveal of .steps.
+.steps--path.is-reveal-ready .steps__item {
+  transform: translateX(-24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.steps--path.is-reveal-ready.is-revealed .steps__item {
+  transform: none;
+
+  @for $i from 2 through 4 {
+    &:nth-child(#{$i}) {
+      transition-delay: #{($i - 1) * 0.3}s;
+    }
+  }
+}

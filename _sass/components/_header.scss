@@ -125,11 +125,9 @@
     color: $bill-blue;
   }
 
-  &--light .logo__primary {
-    color: #5fcff5;
-  }
-
-  &--light .logo__secondary {
+  // Footer (dark background): both parts in white
+  &--white .logo__primary,
+  &--white .logo__secondary {
     color: $white;
   }
 }
