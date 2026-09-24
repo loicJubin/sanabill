@@ -22,4 +22,4 @@ bundle exec jekyll serve
 ## À valider avant d'activer
 
 - Citations utilisateurs de ZERO : elles sont désactivées par défaut. Pour les afficher, passer `testimonial.enabled: true` dans `_data/zero.yml`, une fois les citations validées par les personnes concernées.
-- Pages légales (`fr/mentions-legales.html`, `fr/protection-des-donnees.html`) : à faire valider par un·e juriste. Compléter les mentions légales avec le numéro IDE et le nom de la personne responsable si nécessaire. Mettre à jour la déclaration si un outil de mesure d'audience est ajouté.
+- Pages légales (`fr/mentions-legales.html`, `fr/protection-des-donnees.html`) : à faire valider par un·e juriste. Compléter les mentions légales avec le numéro IDE et le nom de la personne responsable si nécessaire. La mesure d'audience (Umami Cloud, région UE) est déclarée dans `fr/protection-des-donnees.html` : mettre à jour la déclaration si l'outil change.
