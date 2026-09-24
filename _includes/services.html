@@ -5,7 +5,7 @@
 <nav class="container anchor-nav" aria-label="Services">
   <ul>
     {% for service in text.sections %}
-      <li><a href="#{{ service.id }}">{{ service.title }}</a></li>
+      <li><a href="#{{ service.id }}"{% if service.id == 'zero' %} class="anchor-nav__featured"{% endif %}>{{ service.title }}{% include icon.html name="chevron" %}</a></li>
     {% endfor %}
   </ul>
 </nav>
@@ -31,7 +31,7 @@
           </div>
           <p class="service__conclusion">{{ service.conclusion }}</p>
           {% if service.link %}
-            <a href="{{ service.link.url | relative_url }}" class="link-arrow">{{ service.link.label }} {% include icon.html name="arrow" %}</a>
+            <a href="{{ service.link.url | relative_url }}" class="btn btn--soft"><span class="zero-ring" aria-hidden="true"></span>{{ service.link.label }}</a>
           {% endif %}
         </div>
       </article>
@@ -42,12 +42,16 @@
 <section class="section section--muted">
   <div class="container">
     {% include section-head.html eyebrow=text.process.eyebrow title=text.process.title %}
-    <ol class="steps steps--4">
+    <ol class="steps steps--path">
       {% for step in text.process.steps %}
         <li class="steps__item">
           <span class="steps__number" aria-hidden="true">0{{ forloop.index }}</span>
           <h3 class="steps__title">{{ step.title }}</h3>
           <p class="steps__text">{{ step.description }}</p>
+          {% unless forloop.last %}
+            {% include footprints.html variant="path" %}
+            {% include footprints.html variant="short" %}
+          {% endunless %}
         </li>
       {% endfor %}
     </ol>

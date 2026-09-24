@@ -6,7 +6,7 @@
   ul {
     display: flex;
     flex-wrap: wrap;
-    gap: $spacing-xs;
+    gap: 0.625rem;
     margin-top: -1.5rem;
     padding: 0;
     list-style: none;
@@ -16,7 +16,7 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.6rem 1rem;
+    padding: 0.7rem 1rem;
     font-size: $font-sm;
     font-weight: $font-medium;
     color: $ink;
@@ -25,14 +25,34 @@
     border: 1px solid $border;
     border-radius: $radius-full;
     box-shadow: $shadow-card;
+    transition: border-color $transition-fast, box-shadow $transition-fast;
 
-    span {
-      font-weight: $font-semibold;
-      color: $bill-blue;
+    .icon {
+      width: 14px;
+      height: 14px;
+      color: #9aa0ae;
     }
 
     &:hover {
       border-color: $bill-blue;
+    }
+  }
+
+  // ZERO, the product, stands out. The gradient starts on a darker blue so
+  // white text keeps a 4.5:1 contrast.
+  .anchor-nav__featured {
+    color: $white;
+    background: linear-gradient(135deg, #0a7fa9 0%, $bill-blue 100%);
+    border-color: transparent;
+    box-shadow: 0 8px 20px rgba($bill-blue, 0.25);
+
+    .icon {
+      color: $white;
+    }
+
+    &:hover {
+      border-color: transparent;
+      box-shadow: 0 10px 24px rgba($bill-blue, 0.35);
     }
   }
 }

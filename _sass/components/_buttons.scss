@@ -58,6 +58,25 @@
     }
   }
 
+  // Secondary action with a light brand tint
+  &--soft {
+    align-self: flex-start;
+    justify-self: start;
+    color: $bill-blue;
+    background: rgba($bill-blue, 0.08);
+    border-color: rgba($bill-blue, 0.2);
+
+    &:hover {
+      background: rgba($bill-blue, 0.14);
+    }
+
+    .zero-ring {
+      width: 11px;
+      height: 14px;
+      border-width: 2.5px;
+    }
+  }
+
   &--sm {
     min-height: 40px;
     padding: 0.5rem 1rem;

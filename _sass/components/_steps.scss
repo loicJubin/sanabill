@@ -100,3 +100,69 @@
     }
   }
 }
+
+// "Déroulement": steps linked by footprints.
+// Phones/tablets: vertical list with a short trail under each step.
+// Desktop: zigzag on 4 columns, trails walking from one step to the next.
+.steps--path {
+  gap: 0.5rem;
+
+  @include md {
+    grid-template-columns: 1fr;
+  }
+
+  .steps__item {
+    padding: 0;
+    background: none;
+    border: 0;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .footprints {
+    fill: $ink;
+    opacity: 0.8;
+  }
+
+  .footprints--path {
+    display: none;
+  }
+
+  .footprints--short {
+    margin: 0.75rem 0 0 0.25rem;
+  }
+
+  @include lg {
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 72px;
+    align-items: start;
+
+    .steps__item {
+      position: relative;
+    }
+
+    // Even steps sit lower to draw the zigzag
+    .steps__item:nth-child(even) {
+      margin-top: 150px;
+    }
+
+    .footprints--short {
+      display: none;
+    }
+
+    .footprints--path {
+      position: absolute;
+      top: 24px;
+      left: calc(100% - 10px);
+      display: block;
+    }
+
+    // From a low step back up to the next high one: same trail, flipped
+    .steps__item:nth-child(even) .footprints--path {
+      top: -126px;
+      transform: scaleY(-1);
+    }
+  }
+}
