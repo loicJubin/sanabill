@@ -13,14 +13,18 @@
     </div>
 
     <aside class="contact-aside">
-      <div class="card card--plain">
-        <h2 class="card__title">{{ contact.next_steps_title }}</h2>
-        <ol class="mini-steps">
-          {% for step in contact.next_steps %}
-            <li>{{ step }}</li>
-          {% endfor %}
-        </ol>
-      </div>
+      <h2 class="card__title">{{ contact.next_steps_title }}</h2>
+      <ol class="next-steps">
+        {% for step in contact.next_steps %}
+          <li class="next-steps__item">
+            <span class="next-steps__icon">{% include icon.html name=step.icon %}</span>
+            <div>
+              <p class="next-steps__label">{{ step.label }}</p>
+              <p>{{ step.text }}</p>
+            </div>
+          </li>
+        {% endfor %}
+      </ol>
     </aside>
   </div>
 </section>

@@ -92,3 +92,57 @@
     font-size: $font-sm;
   }
 }
+
+// "Et ensuite ?": icon, label and text, linked by a dotted line
+.next-steps {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  &__item {
+    position: relative;
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    gap: 0.875rem;
+    padding-bottom: 1.75rem;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+
+    // Dotted link to the next step
+    &:not(:last-child)::before {
+      position: absolute;
+      top: 48px;
+      bottom: 4px;
+      left: 21px;
+      content: "";
+      border-left: 2px dotted #b3b8c4;
+    }
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    color: $bill-blue;
+    background: rgba($bill-blue, 0.08);
+    border-radius: $radius-md;
+
+    .icon {
+      width: 22px;
+      height: 22px;
+    }
+  }
+
+  &__label {
+    margin-bottom: 0.125rem;
+    font-size: $font-xs;
+    font-weight: $font-semibold;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: $bill-blue;
+  }
+}
