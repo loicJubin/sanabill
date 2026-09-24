@@ -22,6 +22,22 @@ Conséquences pour l'écriture du SCSS :
 - Mettre à jour avec `bundle update github-pages` quand GitHub publie une nouvelle version.
 - Si Sass signale « Invalid US-ASCII character », le terminal n'est pas en UTF-8 : lancer avec `LANG=C.UTF-8`.
 
+## Liens directs vers une section
+
+Chaque section a un `id` : on peut la cibler par l'URL, par exemple `https://www.sanabill.ch/fr/services/#deroulement`.
+
+| Page | Ancres |
+|---|---|
+| Accueil `/` | `#introduction`, `#references`, `#constat`, `#approche`, `#zero`, `#pourquoi-sanabill`, `#prendre-contact` |
+| Services `/fr/services/` | `#introduction`, `#services` (avec `#consulting-contestations`, `#zero`, `#optimisation-automatisation`), `#deroulement`, `#questions-frequentes`, `#prendre-contact` |
+| ZERO `/fr/zero/` | `#introduction`, `#resultats`, `#fonctionnalites`, `#apercu`, `#integration`, `#temoignages` (si activés), `#contact` |
+| À propos `/fr/about/` | `#introduction`, `#qui-sommes-nous`, `#valeurs`, `#prendre-contact` |
+| Contact `/fr/contact/` | `#introduction`, `#formulaire` |
+| Mentions légales | `#introduction`, `#contenu`, puis un `id` par titre (`#exploitant`, `#hebergement`…) |
+| Protection des données | `#introduction`, `#contenu`, puis un `id` par titre (`#donnees-collectees`, `#prestataires`, `#vos-droits`…) |
+
+Ces ancres peuvent être partagées ou utilisées dans des liens : ne pas les renommer sans raison. Une nouvelle section doit recevoir un `id` court, en minuscules, sans accents. `page-hero.html` et `cta.html` en posent un par défaut (`introduction`, `prendre-contact`), modifiable avec le paramètre `id`.
+
 ## Structure
 
 - `_data/*.yml` : tous les textes du site (un fichier par page, plus `header.yml` et `footer.yml`).

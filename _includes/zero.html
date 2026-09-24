@@ -1,7 +1,7 @@
 {% assign text = site.data.zero[page.lang] %}
 
 {% comment %} Hero {% endcomment %}
-<section class="page-hero page-hero--product">
+<section class="page-hero page-hero--product" id="introduction">
   <div class="container zero-hero">
     <div class="zero-hero__content">
       <p class="eyebrow"><span class="zero-ring" aria-hidden="true"></span>{{ text.eyebrow }}</p>
@@ -13,7 +13,7 @@
       </div>
     </div>
     <div class="zero-hero__visual">
-      <section class="app-frame results-panel" aria-labelledby="results-title">
+      <section class="app-frame results-panel" id="resultats" aria-labelledby="results-title">
         {% include app-bar.html %}
         <div class="results-panel__body">
           <h2 class="results-panel__title" id="results-title">{{ text.stats_title }}*</h2>
@@ -61,7 +61,7 @@
 </section>
 
 {% comment %} Feature showcases {% endcomment %}
-<section class="section section--clip">
+<section class="section section--clip" id="apercu">
   <div class="container">
     {% for feat in text.features_showcase %}
       <article class="showcase{% cycle '', ' showcase--reverse' %}" data-reveal>
@@ -78,7 +78,7 @@
 </section>
 
 {% comment %} Integration & data principles {% endcomment %}
-<section class="section section--muted">
+<section class="section section--muted" id="integration">
   <div class="container">
     {% include section-head.html eyebrow=text.principles.eyebrow title=text.principles.title ring="true" %}
     <div class="grid grid--3">
@@ -90,7 +90,7 @@
 </section>
 
 {% if text.testimonial.enabled %}
-<section class="section" aria-labelledby="testimonials-title">
+<section class="section" id="temoignages" aria-labelledby="testimonials-title">
   <div class="container">
     {% include section-head.html title=text.testimonial.title id="testimonials-title" %}
     <div class="grid grid--3">
