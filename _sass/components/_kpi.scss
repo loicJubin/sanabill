@@ -19,6 +19,21 @@
     letter-spacing: -0.03em;
     font-variant-numeric: tabular-nums;
     color: $ink;
+
+    // Brand gradient on the figure. The light end is a slightly darker
+    // sana-blue so the figure keeps a 3:1 contrast on white.
+    align-self: flex-start;
+    background: linear-gradient(135deg, #0b97c8 0%, $bill-blue 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &__unit {
+    margin-left: 0.08em;
+    font-size: 0.55em;
+    font-weight: $font-semibold;
+    letter-spacing: 0;
   }
 
   &__label {

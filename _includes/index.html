@@ -26,12 +26,12 @@
       </figure>
       <div class="kpi kpi--float kpi--float-a" aria-hidden="true">
         <span class="kpi__label">Délais de traitement*</span>
-        <span class="kpi__value">{{ zero.stats[0].number }}</span>
+        {% assign kpi_v = zero.stats[0].number %}{% include kpi-value.html value=kpi_v %}
         {% include sparkline.html trend="down" %}
       </div>
       <div class="kpi kpi--float kpi--float-b" aria-hidden="true">
         <span class="kpi__label">Satisfaction utilisateurs*</span>
-        <span class="kpi__value">{{ zero.stats[1].number }}</span>
+        {% assign kpi_v = zero.stats[1].number %}{% include kpi-value.html value=kpi_v %}
         {% include sparkline.html trend="up" %}
       </div>
       <p class="home-hero__note">*Résultats observés chez nos premiers clients.</p>
@@ -96,7 +96,7 @@
       <div class="kpi-grid">
         {% for stat in zero.stats %}
           <div class="kpi">
-            <span class="kpi__value">{{ stat.number }}</span>
+            {% include kpi-value.html value=stat.number %}
             <span class="kpi__label">{{ stat.label }}</span>
           </div>
         {% endfor %}
