@@ -1,5 +1,5 @@
-{% comment %} Closing call-to-action band. Params: title, subtitle, label, url {% endcomment %}
-<section class="cta-band">
+{% comment %} Closing call-to-action band. Params: title, subtitle, label, url, id (anchor, default "prendre-contact") {% endcomment %}
+<section class="cta-band" id="{{ include.id | default: 'prendre-contact' }}">
   <div class="container cta-band__inner">
     <span class="cta-band__ring" aria-hidden="true"></span>
     <h2 class="cta-band__title">{{ include.title }}</h2>

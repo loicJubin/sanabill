@@ -1,21 +1,19 @@
 source "https://rubygems.org"
-# Hello! This is where you manage which Jekyll version is used to run.
-# When you want to use a different version, change it below, save the
-# file and run `bundle install`. Run Jekyll with `bundle exec`, like so:
+
+# Le site est publié par GitHub Pages, qui compile avec ses propres versions
+# (Jekyll 3.10, ancien compilateur Ruby Sass, plugins figés). La gem
+# `github-pages` installe exactement ces versions en local : ce qui compile
+# ici compile aussi en ligne. Avec Jekyll 4 (Dart Sass), certaines
+# écritures acceptées localement faisaient échouer le build de GitHub Pages.
+# Versions utilisées par GitHub Pages : https://pages.github.com/versions/
+# Mise à jour : `bundle update github-pages`.
 #
-#     bundle exec jekyll serve
-#
-# This will help ensure the proper Jekyll version is running.
-# Happy Jekylling!
-gem "jekyll", "~> 4.4.1"
-# If you want to use GitHub Pages, remove the "gem "jekyll"" above and
-# uncomment the line below. To upgrade, run `bundle update github-pages`.
-# gem "github-pages", group: :jekyll_plugins
-# If you have any plugins, put them here!
-group :jekyll_plugins do
-  gem "jekyll-seo-tag", "~> 2.8"
-  gem "jekyll-sitemap", "~> 1.4"
-end
+# Les plugins jekyll-seo-tag et jekyll-sitemap (déclarés dans _config.yml)
+# sont inclus dans github-pages.
+gem "github-pages", "~> 232", group: :jekyll_plugins
+
+# Serveur web requis par `jekyll serve` depuis Ruby 3
+gem "webrick", "~> 1.8"
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
 # and associated library.

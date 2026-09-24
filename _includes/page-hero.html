@@ -1,5 +1,5 @@
-{% comment %} Params: eyebrow, title, subtitle, narrow (true to align with a narrow content column) {% endcomment %}
-<section class="page-hero">
+{% comment %} Params: eyebrow, title, subtitle, narrow (true to align with a narrow content column), id (anchor, default "introduction") {% endcomment %}
+<section class="page-hero" id="{{ include.id | default: 'introduction' }}">
   <div class="container{% if include.narrow %} container--narrow{% endif %}">
     <div class="page-hero__content">
       <p class="eyebrow">{{ include.eyebrow }}</p>

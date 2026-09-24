@@ -2,7 +2,7 @@
 {% assign zero = site.data.zero[page.lang] %}
 
 {% comment %} Hero {% endcomment %}
-<section class="home-hero">
+<section class="home-hero" id="introduction">
   <div class="container home-hero__grid">
     <div class="home-hero__content">
       <p class="eyebrow">{{ text.hero.eyebrow }}</p>
@@ -40,7 +40,7 @@
 </section>
 
 {% comment %} Trust bar {% endcomment %}
-<section class="trust" aria-labelledby="trust-title">
+<section class="trust" id="references" aria-labelledby="trust-title">
   <div class="container trust__inner">
     <h2 class="trust__title" id="trust-title"><span>{{ text.partners.title }}</span></h2>
     <ul class="trust__logos">
@@ -57,7 +57,7 @@
 </section>
 
 {% comment %} Problem {% endcomment %}
-<section class="section">
+<section class="section" id="constat">
   <div class="container">
     {% include section-head.html eyebrow=text.problem.eyebrow title=text.problem.title subtitle=text.problem.subtitle %}
     <div class="grid grid--3">
@@ -69,7 +69,7 @@
 </section>
 
 {% comment %} Approach: 3 steps {% endcomment %}
-<section class="section section--muted">
+<section class="section section--muted" id="approche">
   <div class="container">
     {% include section-head.html eyebrow=text.approach.eyebrow title=text.approach.title subtitle=text.approach.subtitle %}
     <ol class="steps" data-reveal>
@@ -86,7 +86,7 @@
 </section>
 
 {% comment %} ZERO teaser {% endcomment %}
-<section class="section">
+<section class="section" id="zero">
   <div class="container split">
     <div class="split__text">
       {% include section-head.html eyebrow=text.zero.eyebrow title=text.zero.title subtitle=text.zero.description align="left" ring="true"%}
@@ -107,7 +107,7 @@
 </section>
 
 {% comment %} Why us {% endcomment %}
-<section class="section section--muted">
+<section class="section section--muted" id="pourquoi-sanabill">
   <div class="container">
     {% include section-head.html eyebrow=text.why_us.eyebrow title=text.why_us.title %}
     <div class="grid grid--4 grid--editorial">

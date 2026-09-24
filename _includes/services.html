@@ -10,7 +10,7 @@
   </ul>
 </nav>
 
-<section class="section section--tight">
+<section class="section section--tight" id="services">
   <div class="container">
     {% for service in text.sections %}
       <article id="{{ service.id }}" class="service{% if service.id == 'zero' %} service--zero{% endif %}">
@@ -39,7 +39,7 @@
   </div>
 </section>
 
-<section class="section section--muted">
+<section class="section section--muted" id="deroulement">
   <div class="container">
     {% include section-head.html eyebrow=text.process.eyebrow title=text.process.title %}
     <ol class="steps steps--path" data-reveal>
@@ -58,7 +58,7 @@
   </div>
 </section>
 
-<section class="section">
+<section class="section" id="questions-frequentes">
   <div class="container container--narrow">
     {% include section-head.html eyebrow=text.faq.eyebrow title=text.faq.title %}
     <div class="faq">
