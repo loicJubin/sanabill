@@ -106,17 +106,20 @@ $status-ok-bg: #e7f5ec;
       border-radius: 3px;
     }
 
-    &--segments span {
-      &:nth-child(1) { flex: 3; background: $bill-blue; }
-      &:nth-child(2) { flex: 2; background: $sana-blue; }
-      &:nth-child(3) { flex: 1.5; }
-      &:nth-child(4) { flex: 1; }
-      &:nth-child(5) { flex: 0.6; }
-    }
-
     &--solid span {
       flex: 1;
       background: $gradient-primary;
+    }
+  }
+
+  // Illustrations (Le constat): scale with the tile width
+  &__viz--art {
+    height: auto;
+    padding-bottom: 0.75rem;
+
+    svg {
+      height: auto;
+      overflow: visible;
     }
   }
 
@@ -124,4 +127,65 @@ $status-ok-bg: #e7f5ec;
     font-size: 0.9375rem;
     color: $ink-muted;
   }
+}
+
+// Illustration parts
+.tile-file {
+  filter: drop-shadow(0 4px 6px rgba(20, 20, 43, 0.08));
+
+  &__card {
+    fill: $surface;
+    stroke: $border;
+  }
+
+  &__band {
+    fill: #1d7a43;
+  }
+
+  &__icon {
+    fill: none;
+    stroke: #9aa0ae;
+    stroke-width: 1.5;
+  }
+
+  &__name {
+    font-size: 12px;
+    font-weight: $font-medium;
+    fill: $ink;
+  }
+}
+
+.tile__viz .tile-line__seg {
+  stroke: $bill-blue;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+}
+
+.tile__viz .tile-line__axis {
+  stroke: $border;
+  stroke-width: 1;
+}
+
+.tile-line__dot {
+  fill: $surface;
+  stroke: $bill-blue;
+  stroke-width: 2;
+}
+
+.tile-line__gap {
+  font-size: 12px;
+  font-weight: $font-semibold;
+  text-anchor: middle;
+  fill: #9aa0ae;
+}
+
+.tile-q {
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  fill: $ink;
+
+  &--accent { fill: $bill-blue; }
+  &--muted { fill: #9aa0ae; }
+  &--soft { fill: $ink-muted; }
+  &--faint { fill: $border-strong; }
 }

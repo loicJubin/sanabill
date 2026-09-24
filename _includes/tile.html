@@ -1,7 +1,7 @@
 {% comment %}
   Card styled like a ZERO dashboard tile.
   Params: label, status, tone ("alert" | "ok"), viz, title, text
-  viz: segments | broken | unknown | flat | steps | solid | steady | rising
+  viz: files | timeline | questions (illustrations), flat | steps | solid | steady | rising (charts)
 {% endcomment %}
 <article class="tile">
   <div class="tile__top">
@@ -9,20 +9,50 @@
     <span class="tile__status tile__status--{{ include.tone | default: 'ok' }}">{{ include.status }}</span>
   </div>
   <h3 class="tile__title">{{ include.title }}</h3>
-  <div class="tile__viz" aria-hidden="true">
+  {% assign art = "files,timeline,questions" | split: "," %}
+  <div class="tile__viz{% if art contains include.viz %} tile__viz--art{% endif %}" aria-hidden="true">
     {% case include.viz %}
-    {% when 'segments' %}
-      <div class="tile__bar tile__bar--segments"><span></span><span></span><span></span><span></span><span></span></div>
+    {% when 'files' %}
+      {% comment %} Several versions of the same spreadsheet {% endcomment %}
+      <svg viewBox="0 0 300 108" focusable="false">
+        {% assign files = "0,6,-3|148,26,3|40,64,-1" | split: "|" %}
+        {% for f in files %}
+          {% assign p = f | split: "," %}
+          <g class="tile-file" transform="translate({{ p[0] }} {{ p[1] }}) rotate({{ p[2] }} 76 20)">
+            <rect class="tile-file__card" width="150" height="40" rx="6" />
+            <path class="tile-file__band" d="M6 0h138a6 6 0 0 1 6 6v0H0v0a6 6 0 0 1 6-6z" />
+            <rect class="tile-file__icon" x="10" y="16" width="10" height="13" rx="1.5" />
+            <text class="tile-file__name" x="27" y="27">Suivis_v{{ forloop.index }}.xlsx</text>
+          </g>
+        {% endfor %}
+      </svg>
+    {% when 'timeline' %}
+      {% comment %} Follow-up in separate steps, with gaps {% endcomment %}
+      <svg viewBox="0 0 300 108" focusable="false">
+        <line class="tile-line__axis" x1="4" y1="70" x2="296" y2="70" />
+        <line class="tile-line__seg" x1="10" y1="70" x2="70" y2="70" />
+        <line class="tile-line__seg" x1="120" y1="70" x2="160" y2="70" />
+        <line class="tile-line__seg" x1="220" y1="70" x2="290" y2="70" />
+        {% assign dots = "10,70,120,160,220,290" | split: "," %}
+        {% for x in dots %}<circle class="tile-line__dot" cx="{{ x }}" cy="70" r="4" />{% endfor %}
+        <text class="tile-line__gap" x="95" y="56">?</text>
+        <text class="tile-line__gap" x="190" y="56">?</text>
+      </svg>
+    {% when 'questions' %}
+      {% comment %} Open questions nobody can answer quickly {% endcomment %}
+      <svg viewBox="0 0 300 108" focusable="false">
+        <text class="tile-q" x="0" y="40" font-size="40">Qui ?</text>
+        <text class="tile-q tile-q--accent" x="118" y="18" font-size="18">Quoi ?</text>
+        <text class="tile-q tile-q--muted" x="128" y="52" font-size="30">Où ?</text>
+        <text class="tile-q tile-q--soft" x="6" y="76" font-size="22">Quand ?</text>
+        <text class="tile-q" x="112" y="100" font-size="34">Pourquoi ?</text>
+        <text class="tile-q tile-q--faint" x="222" y="28" font-size="16">Qui ?</text>
+      </svg>
     {% when 'solid' %}
       <div class="tile__bar tile__bar--solid"><span></span></div>
     {% else %}
       <svg viewBox="0 0 120 44" preserveAspectRatio="none" focusable="false">
         {% case include.viz %}
-        {% when 'broken' %}
-          <polyline points="0,30 15,26 30,28 45,20 60,22" />
-          <polyline class="is-dashed" points="60,22 75,30 90,18 105,34 120,24" />
-        {% when 'unknown' %}
-          <polyline class="is-dashed" points="0,26 20,24 40,28 60,22 80,26 100,23 120,25" />
         {% when 'flat' %}
           <polyline points="0,34 30,33 60,34 90,33 120,34" />
         {% when 'steps' %}
