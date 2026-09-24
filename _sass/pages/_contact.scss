@@ -26,32 +26,6 @@
   }
 }
 
-.contact-list {
-  display: grid;
-  gap: $spacing-md;
-  margin-top: $spacing-sm;
-  padding: 0;
-  list-style: none;
-
-  li {
-    display: flex;
-    gap: 0.75rem;
-    align-items: flex-start;
-  }
-
-  .icon {
-    flex-shrink: 0;
-    width: 20px;
-    height: 20px;
-    margin-top: 3px;
-    color: $bill-blue;
-  }
-
-  address {
-    line-height: $leading-relaxed;
-  }
-}
-
 .form-card__intro {
   margin-bottom: $spacing-sm;
   color: $ink-muted;

@@ -13,20 +13,6 @@
     </div>
 
     <aside class="contact-aside">
-      <div class="card">
-        <h2 class="card__title">{{ contact.info_title }}</h2>
-        <ul class="contact-list">
-          <li>{% include icon.html name="mail" %}<a href="mailto:{{ contact.email.address }}">{{ contact.email.address }}</a></li>
-          <li>{% include icon.html name="pin" %}
-            <address>
-              {{ contact.address.line1 }}<br>
-              {{ contact.address.line2 }}<br>
-              {{ contact.address.line3 }}, {{ contact.address.line4 }}<br>
-              <a href="{{ contact.map_url }}" rel="noopener">{{ contact.map_label }}</a>
-            </address>
-          </li>
-        </ul>
-      </div>
       <div class="card card--plain">
         <h2 class="card__title">{{ contact.next_steps_title }}</h2>
         <ol class="mini-steps">

@@ -10,7 +10,6 @@ fr:
   privacy_note: "Vos données servent uniquement à répondre à votre demande."
   privacy_link: "Protection des données"
 
-  info_title: "Informations"
 
   next_steps_title: "Et ensuite ?"
   next_steps:
@@ -23,8 +22,6 @@ fr:
     line2: "Avenue d'Echallens 61"
     line3: "1004 Lausanne"
     line4: "Suisse"
-  map_url: "https://www.openstreetmap.org/search?query=Avenue%20d%27Echallens%2061%2C%201004%20Lausanne"
-  map_label: "Voir sur la carte"
 
   email:
     address: "contact@sanabill.ch"
