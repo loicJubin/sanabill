@@ -24,7 +24,7 @@ fr:
     facts:
       - "Entreprise suisse"
       - "Technologies open source"
-      - "Vous restez propriétaire de vos données"
+      - "Restez propriétaire de vos données"
 
   problem:
     eyebrow: "Le constat"
@@ -35,12 +35,12 @@ fr:
         label: "Sources de données"
         status: "Dispersé"
         viz: "segments"
-        description: "Les informations sont dispersées entre tableurs, e-mails et logiciels de facturation."
-      - title: "Suivi manuel"
+        description: "Les informations sont dispersées entre fichier Excel, e-mails et logiciels de facturation."
+      - title: "Suivi non automatisaté"
         label: "Suivi des délais"
         status: "Manuel"
         viz: "broken"
-        description: "Statuts et délais sont suivis à la main, avec un risque réel d’oubli."
+        description: "Statuts et délais sont suivis manuellement avec un risque réel d’oubli."
       - title: "Peu de visibilité"
         label: "Dossiers ouverts"
         status: "Inconnu"
