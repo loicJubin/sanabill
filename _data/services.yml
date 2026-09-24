@@ -35,7 +35,7 @@ fr:
         url: "/fr/zero/"
 
     - id: "optimisation-automatisation"
-      title: "Optimisation & automatisation administrative"
+      title: "Optimisation & automatisation administratives"
       tagline: "Simplifier sans complexifier."
       description: "Sur la base du diagnostic, nous intervenons sur vos processus :"
       bullets:

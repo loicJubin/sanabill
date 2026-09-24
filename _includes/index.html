@@ -45,7 +45,7 @@
     <h2 class="trust__title" id="trust-title"><span>{{ text.partners.title }}</span></h2>
     <ul class="trust__logos">
       {% for partner in text.partners.items %}
-        <li><a href="{{ partner.url }}" rel="noopener" target="_blank"><img src="{{ partner.logo | relative_url }}" alt="{{ partner.name }}" width="200" height="56" loading="lazy" /></a></li>
+        <li><a href="{{ partner.url }}" rel="noopener" target="_blank"><img src="{{ partner.logo | relative_url }}" alt="{{ partner.name }}" width="200" height="56" loading="lazy" /><span class="sr-only"> (nouvel onglet)</span></a></li>
       {% endfor %}
     </ul>
     <ul class="trust__facts">

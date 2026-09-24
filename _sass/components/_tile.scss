@@ -63,11 +63,6 @@ $status-ok-bg: #e7f5ec;
   &__title {
     font-size: $font-2xl;
     letter-spacing: -0.03em;
-
-    // Reserve lines in multi-column grids so the charts stay aligned
-    @include md {
-      min-height: 1.4em;
-    }
   }
 
   &__viz {
@@ -231,4 +226,15 @@ $status-ok-bg: #e7f5ec;
   stroke: $bill-blue;
   stroke-width: 2.5;
   stroke-linecap: round;
+}
+
+// Tiles side by side: label, title, illustration and text line up across
+// the row (subgrid), without reserving empty lines under short titles.
+.grid--3 > .tile {
+  @include md {
+    display: grid;
+    grid-row: span 4;
+    grid-template-rows: subgrid;
+    row-gap: 0;
+  }
 }
