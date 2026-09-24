@@ -1,8 +1,8 @@
-{% comment %} Browser-style window bar (tab + "+" and Windows controls) on top of ZERO screenshots. Decorative. {% endcomment %}
+{% comment %} Browser-style window bar (tab + "+" and Windows controls) on top of ZERO screenshots. Decorative. Param: title (default "ZERO") {% endcomment %}
 <div class="app-frame__bar" aria-hidden="true">
   <span class="app-frame__tab">
     <span class="zero-ring zero-ring--sm"></span>
-    <span class="app-frame__title">ZERO</span>
+    <span class="app-frame__title">{{ include.title | default: "ZERO" }}</span>
     <svg class="app-frame__close" viewBox="0 0 10 10" focusable="false"><path d="M2 2l6 6M8 2l-6 6" /></svg>
   </span>
   <svg class="app-frame__new" viewBox="0 0 10 10" focusable="false"><path d="M5 1v8M1 5h8" /></svg>

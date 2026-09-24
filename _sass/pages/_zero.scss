@@ -226,3 +226,37 @@
     transform: none;
   }
 }
+
+// Démo: text and highlights on the left, the form in a ZERO window
+.demo {
+  display: grid;
+  gap: $spacing-xl;
+  align-items: center;
+
+  @include lg {
+    grid-template-columns: 1fr 1.1fr;
+    gap: $spacing-2xl;
+  }
+
+  .section-head {
+    margin-bottom: $spacing-lg;
+  }
+
+  &__body {
+    padding: 1.5rem 1.75rem 1.75rem;
+
+    iframe {
+      display: block;
+      min-height: 200px;
+    }
+
+    .form-card__alt {
+      text-align: left;
+    }
+  }
+
+  &__form-title {
+    margin-bottom: 1rem;
+    font-size: $font-lg;
+  }
+}
