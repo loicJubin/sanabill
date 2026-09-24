@@ -1,0 +1,127 @@
+// ============================================
+// ZERO MOTIF
+// The "0" ring is Sanabill's signature: it marks section headings,
+// the "zéro" promises and the closing call-to-action.
+// ============================================
+
+.zero-ring {
+  display: inline-block;
+  flex-shrink: 0;
+  width: 14px;
+  height: 18px;
+  border: 3px solid $bill-blue;
+  border-color: $sana-blue $bill-blue $bill-blue $sana-blue;
+  border-radius: 50%;
+
+  &--sm {
+    width: 12px;
+    height: 15px;
+    border-width: 2.5px;
+  }
+
+  &--xl {
+    width: 0.62em;
+    height: 0.82em;
+    margin: 0 0.06em;
+    border-width: 0.13em;
+  }
+}
+
+// "Zéro dossier oublié · Zéro fichier éparpillé · …"
+.zero-line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-xs $spacing-md;
+  margin-top: $spacing-lg;
+  padding: 0;
+  list-style: none;
+  font-size: $font-sm;
+  font-weight: $font-medium;
+  color: $ink;
+
+  li {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  &__digit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    font-size: $font-sm;
+    font-weight: $font-bold;
+    font-variant-numeric: tabular-nums;
+    color: $bill-blue;
+    background: rgba($bill-blue, 0.08);
+    border-radius: 50%;
+  }
+}
+
+// Closing call-to-action band
+.cta-band {
+  position: relative;
+  overflow: hidden;
+  padding: $spacing-2xl 0;
+  color: $white;
+  text-align: center;
+  background: $gradient-primary;
+
+  @include md {
+    padding: $spacing-3xl 0;
+  }
+
+  @include lg {
+    padding: $spacing-4xl 0;
+  }
+
+  &__inner {
+    position: relative;
+  }
+
+  &__ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 34rem;
+    height: 42rem;
+    border: 3.5rem solid rgba($white, 0.07);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+
+  &__title {
+    position: relative;
+    max-width: 40rem;
+    margin: 0 auto;
+    font-size: clamp(1.625rem, 1.2rem + 1.6vw, 2.375rem);
+    color: $white;
+    text-wrap: balance;
+  }
+
+  &__subtitle {
+    position: relative;
+    max-width: 36rem;
+    margin: $spacing-sm auto $spacing-lg;
+    font-size: $font-lg;
+    color: rgba($white, 0.9);
+  }
+
+  .btn {
+    position: relative;
+  }
+}
+
+.error-code {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: $spacing-md;
+  font-size: clamp(4rem, 3rem + 5vw, 7rem);
+  font-weight: $font-bold;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: $ink;
+}

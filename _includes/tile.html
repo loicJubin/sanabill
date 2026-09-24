@@ -1,0 +1,87 @@
+{% comment %}
+  Card styled like a ZERO dashboard tile.
+  Params: label, status, tone ("alert" | "ok"), viz, title, text
+  viz: files | timeline | questions | bricks | data-home | rails
+{% endcomment %}
+<article class="tile">
+  <div class="tile__top">
+    <span class="tile__label">{{ include.label }}</span>
+    <span class="tile__status tile__status--{{ include.tone | default: 'ok' }}">{{ include.status }}</span>
+  </div>
+  <h3 class="tile__title">{{ include.title }}</h3>
+  {% assign art = "files,timeline,questions,bricks,data-home,rails" | split: "," %}
+  <div class="tile__viz{% if art contains include.viz %} tile__viz--art{% endif %}" aria-hidden="true">
+    {% case include.viz %}
+    {% when 'files' %}
+      {% comment %} Several versions of the same spreadsheet {% endcomment %}
+      <svg viewBox="0 0 300 108" focusable="false">
+        {% assign files = "0,6,-3|148,26,3|40,64,-1" | split: "|" %}
+        {% for f in files %}
+          {% assign p = f | split: "," %}
+          <g class="tile-file" transform="translate({{ p[0] }} {{ p[1] }}) rotate({{ p[2] }} 76 20)">
+            <rect class="tile-file__card" width="150" height="40" rx="6" />
+            <path class="tile-file__band" d="M6 0h138a6 6 0 0 1 6 6v0H0v0a6 6 0 0 1 6-6z" />
+            <rect class="tile-file__icon" x="10" y="16" width="10" height="13" rx="1.5" />
+            <text class="tile-file__name" x="27" y="27">Refus_v1{{ forloop.index }}.xlsx</text>
+          </g>
+        {% endfor %}
+      </svg>
+    {% when 'timeline' %}
+      {% comment %} Follow-up in separate steps, with gaps {% endcomment %}
+      <svg viewBox="0 0 300 108" focusable="false">
+        <line class="tile-line__axis" x1="4" y1="70" x2="296" y2="70" />
+        <line class="tile-line__seg" x1="10" y1="70" x2="70" y2="70" />
+        <line class="tile-line__seg" x1="120" y1="70" x2="160" y2="70" />
+        <line class="tile-line__seg" x1="220" y1="70" x2="290" y2="70" />
+        {% assign dots = "10,70,120,160,220,290" | split: "," %}
+        {% for x in dots %}<circle class="tile-line__dot" cx="{{ x }}" cy="70" r="4" />{% endfor %}
+        <text class="tile-line__gap" x="95" y="56">?</text>
+        <text class="tile-line__gap" x="190" y="56">?</text>
+      </svg>
+    {% when 'questions' %}
+      {% comment %} Open questions nobody can answer quickly {% endcomment %}
+      <svg viewBox="0 0 300 108" focusable="false">
+        <text class="tile-q" x="0" y="40" font-size="40">Qui ?</text>
+        <text class="tile-q tile-q--accent" x="118" y="18" font-size="18">Quoi ?</text>
+        <text class="tile-q tile-q--muted" x="128" y="52" font-size="30">Où ?</text>
+        <text class="tile-q tile-q--soft" x="6" y="76" font-size="22">Quand ?</text>
+        <text class="tile-q" x="112" y="100" font-size="34">Pourquoi ?</text>
+        <text class="tile-q tile-q--faint" x="222" y="28" font-size="16">Qui ?</text>
+      </svg>
+    {% when 'bricks' %}
+      {% comment %} Your base stays; ZERO adds bricks one by one. Bricks sit directly on the base and cover its studs. {% endcomment %}
+      <svg viewBox="0 0 300 108" focusable="false">
+        <rect class="tile-brick tile-brick--base" x="10" y="84" width="280" height="22" rx="3" />
+        {% comment %} Base studs aligned with the four brick slots (hidden under placed bricks, visible in the free slot) {% endcomment %}
+        {% assign studs = "31,59,101,129,171,199,241,269" | split: "," %}
+        {% for x in studs %}<rect class="tile-brick tile-brick--base" x="{{ x }}" y="78" width="14" height="7" rx="2" />{% endfor %}
+        {% assign bricks = "24,94,164" | split: "," %}
+        {% for x in bricks %}
+          {% assign xi = x | plus: 0 %}
+          <g class="tile-brick tile-brick--step{{ forloop.index }}">
+            <rect x="{{ xi }}" y="62" width="56" height="22" rx="2" />
+            <rect x="{{ xi | plus: 7 }}" y="56" width="14" height="7" rx="2" />
+            <rect x="{{ xi | plus: 35 }}" y="56" width="14" height="7" rx="2" />
+          </g>
+        {% endfor %}
+        <rect class="tile-brick--next" x="234" y="62" width="56" height="22" rx="2" />
+      </svg>
+    {% when 'data-home' %}
+      {% comment %} Your data stays at home {% endcomment %}
+      <svg viewBox="0 0 300 108" focusable="false">
+        <path class="tile-home" d="M80 52 L150 6 L220 52 V104 H80 Z" />
+        <path class="tile-db" d="M125 50 v38 a25 7 0 0 0 50 0 v-38 z" />
+        <ellipse class="tile-db tile-db--top" cx="150" cy="50" rx="25" ry="7" />
+        <path class="tile-db__line" d="M125 69 a25 7 0 0 0 50 0" />
+      </svg>
+    {% when 'rails' %}
+      {% comment %} Guidelines, not rails: the path stays free between them {% endcomment %}
+      <svg viewBox="0 0 300 108" focusable="false">
+        <path class="tile-rail" d="M10 20 H290" />
+        <path class="tile-rail" d="M10 90 H290" />
+        <path class="tile-path" d="M10 55 C 50 30, 80 80, 120 55 S 190 28, 230 60 S 275 72, 290 50" />
+      </svg>
+    {% endcase %}
+  </div>
+  <p class="tile__text">{{ include.text }}</p>
+</article>

@@ -1,37 +1,51 @@
 fr:
-  title: "À propos de Sanabill"
-  subtitle: "Votre partenaire de confiance pour optimiser la gestion administrative en santé"
+  hero:
+    eyebrow: "À propos"
+    title: "Une expertise suisse au service de la santé"
+    subtitle: "Votre partenaire de confiance pour optimiser la gestion administrative en santé."
 
-  story_intro: "Une expertise suisse au service de la santé"
-
+  story_title: "Qui sommes-nous"
   paragraphs:
-    - "Sanabill est une entreprise suisse spécialisée dans l’accompagnement des organisations de santé sur leurs enjeux administratifs, avec une expertise forte dans la gestion des refus et contestations d’assurance."
+    - "Sanabill est une entreprise suisse spécialisée dans l’accompagnement des organisations de santé sur leurs enjeux administratifs, avec une expertise forte dans la gestion des refus et contestations d’assurances."
 
-    - "Nous intervenons là où les processus deviennent complexes, chronophages et peu lisibles pour les équipes administratives et financières. Notre approche combine analyse métier, structuration des processus et outillage adapté, sans surcouche inutile."
+    - "Nous intervenons là où les processus deviennent complexes, chronophages et peu lisibles pour les équipes administratives et financières. Notre approche combine analyse métier, structuration des processus et développement de solutions adaptées, sans surcouche inutile."
 
-    - "Nous travaillons aux côtés de nos clients de manière pragmatique et progressive en tenant compte de leurs contraintes opérationnelles, réglementaires et organisationnelles. L’objectif n’est pas de tout transformer mais d’apporter des améliorations concrètes, mesurables et durables."
+    - "Nous travaillons aux côtés de nos clients de manière pragmatique et progressive, en tenant compte de leurs contraintes opérationnelles, réglementaires et organisationnelles. L’objectif n’est pas de tout transformer, mais d’apporter des améliorations concrètes, mesurables et durables."
 
-  values_title: "Nos valeurs"
-  values_subtitle: "Les principes qui guident notre action au quotidien"
+  facts:
+    - label: "Siège"
+      value: "Lausanne, Suisse"
+    - label: "Spécialités"
+      value: "Refus d’assurances, optimisation et automatisation administratives"
+    - label: "Approche"
+      value: "Conseil + outil ZERO"
+
+  values_eyebrow: "Nos valeurs"
+  values_title: "Les principes qui guident notre action"
 
   values:
     - title: "Expertise métier"
-      description: "Nous partons toujours des réalités du terrain. Les enjeux administratifs de la santé exigent une compréhension fine des processus, des contraintes et des responsabilités."
+      statement: "Nous partons toujours des réalités du terrain."
+      detail: "Les enjeux administratifs de la santé exigent une compréhension fine des processus, des contraintes et des responsabilités."
 
     - title: "Partenariat"
-      description: "Nous travaillons avec vos équipes, pas à leur place. Chaque démarche est construite en collaboration et à votre rythme."
+      statement: "Nous travaillons avec vos équipes, pas à leur place."
+      detail: "Chaque démarche est construite en collaboration et à votre rythme."
 
     - title: "Simplicité et pragmatisme"
-      description: "Nous privilégions des solutions claires, progressives et directement utiles sans projets lourds ni complexité excessive."
+      statement: "Des solutions claires, progressives et directement utiles."
+      detail: "Sans projets lourds ni complexité excessive."
 
     - title: "Souveraineté des données"
-      description: "Nos solutions s’appuient sur des technologies open source et garantissent que vous restez pleinement propriétaire de vos données et de leur usage."
+      statement: "Vous restez pleinement propriétaire de vos données."
+      detail: "Nos solutions s’appuient sur des technologies open source."
 
     - title: "Ancrage suisse"
-      description: "Sanabill est une entreprise suisse, engagée auprès des acteurs locaux de la santé, avec une exigence élevée en matière de qualité, de fiabilité et de conformité."
+      statement: "Une entreprise suisse, engagée auprès des acteurs locaux de la santé."
+      detail: "Avec une exigence élevée en matière de qualité, de fiabilité et de conformité."
 
   cta:
     title: "Prêt à optimiser votre gestion administrative ?"
-    subtitle: "Discutons de vos enjeux et explorons ensemble comment Sanabill peut vous accompagner"
-    link_value: "Contactez-nous"
-
+    subtitle: "Discutons de vos enjeux et explorons ensemble comment Sanabill peut vous accompagner."
+    label: "Contactez-nous"
+    url: "/fr/contact/"

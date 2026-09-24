@@ -1,51 +1,92 @@
 fr:
-  title: "ZERO – Structurer et piloter les refus d’assurances, simplement"
+  eyebrow: "ZERO · par Sanabill"
+  title: "Structurer et piloter les refus d’assurances, simplement"
   description: >
-    Les refus et contestations d’assurances sont souvent traités de manière fragmentée : fichiers multiples, suivis manuels, manque de visibilité sur l’état réel des dossiers.<br>
-    ZERO est l’outil développé par Sanabill pour structurer la gestion des refus,
-    améliorer le pilotage et soutenir les équipes administratives et financières au quotidien.<br>
-    Il s’intègre à l’existant et accompagne une démarche progressive d’amélioration sans complexité inutile."
-  cta_button: "Échanger autour de ZERO"
+    Les refus et contestations d’assurances sont souvent traités de manière fragmentée :
+    fichiers multiples, suivis manuels, manque de visibilité sur l’état réel des dossiers.
+    ZERO est l’outil développé par Sanabill pour structurer la gestion des refus, améliorer
+    le pilotage et soutenir les équipes administratives et financières au quotidien.
+  cta_primary: "Échanger autour de ZERO"
+  cta_secondary: "Voir les fonctionnalités"
 
+  stats_title: "Résultats observés"
   stats:
-    - number: "25%"
-      label: "de réduction des délais de traitement des refus*"
-    - number: "87%"
+    - number: "−25 %"
+      label: "de délais de traitement des refus*"
+    - number: "87 %"
       label: "de satisfaction des utilisateurs*"
-    - number: "99%"
-      label: "de réduction du temps consacré au suivi*"
-    - number: "97%"
+    - number: "−99 %"
+      label: "de temps consacré au suivi*"
+    - number: "97 %"
       label: "de fiabilité des données*"
-
   stats_disclaimers: "*Résultats observés chez nos premiers clients. Les gains dépendent du contexte, des volumes traités et de l’organisation existante."
 
   features:
+    eyebrow: "Fonctionnalités"
     title: "Ce que ZERO permet concrètement"
-    features_summary:
-      description: "ZERO ne remplace pas vos équipes. Il leur donne un cadre clair pour travailler efficacement."
-      list:
-        - "Centraliser l’ensemble des refus et contestations d’assurances"
-        - "Catégoriser les refus selon des logiques métier compréhensibles"
-        - "Attribuer et suivre les dossiers de manière structurée"
-        - "Visualiser l’état des factures et contestations en cours"
-        - "Conserver un historique complet et traçable de chaque action"
-        - "S’intégrer progressivement à vos systèmes de facturation existants"
+    subtitle: "ZERO ne remplace pas vos équipes. Il leur donne un cadre clair pour travailler efficacement."
+    columns:
+      domain: "Domaine"
+      feature: "Fonctionnalité"
+      status: "Statut"
+    status: "Inclus"
+    list:
+      - domain: "Collecte"
+        text: "Centraliser l’ensemble des refus et contestations d’assurances"
+      - domain: "Analyse"
+        text: "Catégoriser les refus selon des logiques métier compréhensibles"
+      - domain: "Organisation"
+        text: "Attribuer et suivre les dossiers de manière structurée"
+      - domain: "Pilotage"
+        text: "Visualiser l’état des factures et contestations en cours"
+      - domain: "Traçabilité"
+        text: "Conserver un historique complet et traçable de chaque action"
+      - domain: "Intégration"
+        text: "S’intégrer progressivement à vos systèmes de facturation existants"
 
   features_showcase:
-      - title: "Suivi des refus"
-        description: "Une vue d’ensemble claire de tous les refus et contestations en cours pour prioriser les actions et piloter l’activité afin de permettre un traitement efficace."
-        image_path: "/assets/images/pilotage_zero.PNG"
-        image_desription: "Aperçu du tableau de bord de suivi"
-      - title: "Analyse des catégories"
-        description: "Une lecture structurée des causes de refus pour identifier les points d’amélioration dans les processus de facturation et ainsi réduire les erreurs avant facturation."
-        image_path: "/assets/images/analytic_classifications_variant.PNG"
-        image_desription: "Tableau d'analyse des catégories de refus"
-      - title: "Chronologie"
-        description: "Chaque dossier conserve l’historique complet des actions, y compris après refacturation, pour une traçabilité totale et ainsi réduire le temps de recherche des raisons des corrections."
-        image_path: "/assets/images/chronology.PNG"
-        image_desription: "Vue chronologique des actions"
+    - title: "Suivi des refus"
+      description: "Une vue d’ensemble claire de tous les refus et contestations en cours, pour prioriser les actions et piloter l’activité."
+      image_path: "/assets/images/pilotage_zero.webp"
+      image_width: 1000
+      image_height: 539
+      image_description: "Aperçu du tableau de bord de suivi"
+    - title: "Analyse des catégories"
+      description: "Une lecture structurée des causes de refus, pour identifier les points d’amélioration dans les processus de facturation et réduire les erreurs avant facturation."
+      image_path: "/assets/images/analytic_classifications_variant.webp"
+      image_width: 992
+      image_height: 319
+      image_description: "Tableau d’analyse des catégories de refus"
+    - title: "Chronologie"
+      description: "Chaque dossier conserve l’historique complet des actions, y compris après refacturation. Traçabilité totale et moins de temps passé à rechercher la raison des corrections."
+      image_path: "/assets/images/chronology.webp"
+      image_width: 1000
+      image_height: 641
+      image_description: "Vue chronologique des actions"
 
+  principles:
+    eyebrow: "Intégration & données"
+    title: "Conçu pour s’intégrer, pas pour tout remplacer"
+    items:
+      - title: "Intégration progressive"
+        label: "Déploiement"
+        status: "Progressif"
+        viz: "bricks"
+        description: "ZERO s’adapte à vos systèmes de facturation existants et s’adopte étape par étape."
+      - title: "Vos données vous appartiennent"
+        label: "Propriété des données"
+        status: "Chez vous"
+        viz: "data-home"
+        description: "Basé sur des technologies open source : vous restez pleinement propriétaire de vos données et de leur usage."
+      - title: "Un cadre, pas une contrainte"
+        label: "Pratiques existantes"
+        status: "Respectées"
+        viz: "rails"
+        description: "Pas d’automatisation à tout prix : un cadre clair pour l’équipe, qui respecte vos pratiques."
+
+  # Citations utilisateurs : à n'afficher qu'une fois validées par les personnes concernées.
   testimonial:
+    enabled: false
     title: "Ce que disent les utilisateurs de ZERO"
     items:
       - description: "« Avant ZERO, le suivi des refus était très morcelé. Aujourd’hui, nous avons une vue claire sur les dossiers en cours et sur ce qui bloque réellement. »"
@@ -54,7 +95,14 @@ fr:
         person: "Responsable facturation, organisation de santé"
       - description: "« L’outil nous a surtout aidés à structurer notre manière de travailler. Ce n’est pas de l’automatisation à tout prix, mais un cadre clair pour l’équipe. »"
         person: "Responsable financier, établissement de soins"
+
   contact:
+    eyebrow: "Démo"
+    form_title: "Demander une démonstration"
+    highlights:
+      - "Centraliser l’ensemble des refus et contestations"
+      - "Catégoriser les refus selon des logiques métier"
+      - "Suivre les dossiers et leur historique complet"
     title: "Vous souhaitez découvrir ZERO ?"
     description: "Discutons de votre contexte et voyons ensemble si ZERO répond à vos besoins en matière de gestion des refus d’assurances."
     email: "contact@sanabill.ch"

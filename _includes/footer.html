@@ -1,1 +1,40 @@
-<p class="footer__trademark">{{ site.data.footer.copyright[page.lang] }}</p>
+{% assign footer = site.data.footer %}
+{% assign contact = site.data.contact.fr %}
+<footer class="footer">
+  <div class="container footer__grid">
+    <div class="footer__brand">
+      <a href="{{ '/' | relative_url }}" class="logo logo--white" aria-label="Sanabill, accueil">
+        <span class="logo__primary">Sana</span><span class="logo__secondary">bill</span>
+      </a>
+      <p class="footer__tagline">{{ footer.tagline }}</p>
+      <p class="footer__zero"><span class="zero-ring zero-ring--sm" aria-hidden="true"></span>{{ footer.zero_line }}</p>
+    </div>
+    <nav class="footer__col" aria-label="Pied de page">
+      <h2 class="footer__heading">{{ footer.nav_title }}</h2>
+      <ul class="footer__list">
+        <li><a href="{{ '/' | relative_url }}">Accueil</a></li>
+        {% for link in site.data.header.links %}
+          <li><a href="{{ link.url | relative_url }}">{{ link.label }}</a></li>
+        {% endfor %}
+        <li><a href="{{ '/fr/contact/' | relative_url }}">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="footer__col">
+      <h2 class="footer__heading">{{ footer.contact_title }}</h2>
+      <address class="footer__address">
+        <a href="mailto:{{ contact.email.address }}">{{ contact.email.address }}</a><br>
+        {{ contact.address.line1 }}<br>
+        {{ contact.address.line2 }}<br>
+        {{ contact.address.line3 }}, {{ contact.address.line4 }}
+      </address>
+    </div>
+  </div>
+  <div class="container footer__bottom">
+    <p>{{ footer.copyright }}</p>
+    <ul class="footer__legal">
+      {% for link in footer.legal %}
+        <li><a href="{{ link.url | relative_url }}">{{ link.label }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+</footer>

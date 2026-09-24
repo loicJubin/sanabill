@@ -1,0 +1,173 @@
+// ============================================
+// STEPS (approach / process)
+// ============================================
+
+.steps {
+  display: grid;
+  gap: $spacing-md;
+  padding: 0;
+  list-style: none;
+  counter-reset: none;
+
+  @include md {
+    grid-template-columns: repeat(3, 1fr);
+
+    &--4 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @include lg {
+    &--4 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xs;
+    padding: $spacing-lg;
+    background: $surface;
+    border: 1px solid $border;
+    border-radius: $radius-md;
+
+    // Gradient accent on top of each step
+    &::before {
+      position: absolute;
+      top: -1px;
+      right: $spacing-lg;
+      left: $spacing-lg;
+      height: 3px;
+      content: "";
+      background: $gradient-primary;
+      border-radius: 0 0 3px 3px;
+    }
+  }
+
+  &__number {
+    font-size: 2rem;
+    font-weight: $font-bold;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    font-variant-numeric: tabular-nums;
+    color: $numeral;
+  }
+
+  &__title {
+    margin-top: $spacing-xs;
+    font-size: $font-lg;
+  }
+
+  &__text {
+    flex: 1;
+    color: $ink-muted;
+  }
+
+  .link-arrow {
+    margin-top: $spacing-sm;
+  }
+}
+
+// Cards fade in one after another when the list scrolls into view.
+// Only active once JS has marked the list (content stays visible without JS).
+.steps.is-reveal-ready .steps__item {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.steps.is-reveal-ready.is-revealed .steps__item {
+  opacity: 1;
+  transform: none;
+
+  @for $i from 2 through 4 {
+    &:nth-child(#{$i}) {
+      transition-delay: #{($i - 1) * 0.18}s;
+    }
+  }
+}
+
+// "Déroulement": steps linked by footprints.
+// Phones/tablets: vertical list with a short trail under each step.
+// Desktop: zigzag on 4 columns, trails walking from one step to the next.
+.steps--path {
+  gap: 0.5rem;
+
+  @include md {
+    grid-template-columns: 1fr;
+  }
+
+  .steps__item {
+    padding: 0;
+    background: none;
+    border: 0;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .footprints {
+    fill: $ink;
+    opacity: 0.8;
+  }
+
+  .footprints--path {
+    display: none;
+  }
+
+  .footprints--short {
+    margin: 0.75rem 0 0 0.25rem;
+  }
+
+  @include lg {
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 72px;
+    align-items: start;
+
+    .steps__item {
+      position: relative;
+    }
+
+    // Even steps sit lower to draw the zigzag
+    .steps__item:nth-child(even) {
+      margin-top: 150px;
+    }
+
+    .footprints--short {
+      display: none;
+    }
+
+    .footprints--path {
+      position: absolute;
+      top: 24px;
+      left: calc(100% - 10px);
+      display: block;
+    }
+
+    // From a low step back up to the next high one: same trail, flipped
+    .steps__item:nth-child(even) .footprints--path {
+      top: -126px;
+      transform: scaleY(-1);
+    }
+  }
+}
+
+// Déroulement: steps (with their footprints) fade in from left to right,
+// one after another. Overrides the vertical reveal of .steps.
+.steps--path.is-reveal-ready .steps__item {
+  transform: translateX(-24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.steps--path.is-reveal-ready.is-revealed .steps__item {
+  transform: none;
+
+  @for $i from 2 through 4 {
+    &:nth-child(#{$i}) {
+      transition-delay: #{($i - 1) * 0.3}s;
+    }
+  }
+}

@@ -1,120 +1,172 @@
+// ============================================
+// HEADER
+// ============================================
+
 .header {
-  background: var(--white);
-  padding: 1rem 5%;
   position: sticky;
-  box-shadow: $shadow-md;
   top: 0;
-  z-index: $z-sticky;
+  z-index: $z-dropdown;
+  background: rgba($surface, 0.9);
+  border-bottom: 1px solid $border;
+  backdrop-filter: saturate(180%) $blur-md;
+  -webkit-backdrop-filter: saturate(180%) $blur-md;
 
   &__nav {
-    @include container($container-max-width, 0px);
-    @include flex-between;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 68px;
   }
 
   &__menu {
-      position: absolute;
-      display: none;
-      list-style: none;
-      margin: 0;
-      top: 100%;
-      left: 0;
-      right: 0;
-      background: var(--white);
-      flex-direction: column;
-      padding: 2rem;
-      gap: 1rem;
-      box-shadow: var(--shadow-sm);
+    display: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
 
-
-      &--active {
-        display: flex;
-      }
-
-      @include md{
-        position: static;
-        flex-direction: row;
-        box-shadow: none;
-        margin: 0;
-        padding:0;
-        display: flex;
-        list-style: none;
-        gap: 2rem;
-      }
-    }
+  // Mobile menu: white panel filling the screen under the header.
+  // Absolute (not fixed): the header's backdrop-filter would otherwise
+  // shrink a fixed panel to the header's own height.
+  &__menu--active {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xs;
+    height: calc(100vh - 68px);
+    height: calc(100dvh - 68px);
+    padding: $spacing-md $spacing-sm;
+    overflow-y: auto;
+    background: $surface;
+    border-top: 1px solid $border;
+  }
 
   &__link {
-      text-decoration: none;
-      color: var(--text-primary);
-      font-weight: $font-medium;
-      display: block;
-      text-align: center;
+    display: block;
+    padding: $spacing-sm $spacing-xs;
+    font-size: $font-lg;
+    font-weight: $font-medium;
+    color: $ink;
+    text-decoration: none;
+    border-bottom: 1px solid $border;
+
+    &:hover,
+    &[aria-current="page"] {
+      color: $bill-blue;
+    }
+  }
+
+  &__cta {
+    margin-top: $spacing-md;
+
+    .btn {
       width: 100%;
-      transition: color var(--transition-base);
+    }
+  }
 
-      @include md {
-        display: inherit;
-        width: auto;
-      }
+  @media (min-width: $breakpoint-nav) {
+    &__menu,
+    &__menu--active {
+      position: static;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: $spacing-xs;
+      padding: 0;
+      background: none;
+      height: auto;
+      overflow: visible;
+      border: 0;
+    }
 
+    &__link {
+      position: relative;
+      padding: $spacing-xs $spacing-sm;
+      font-size: $font-sm;
+      color: $ink-muted;
+      border: 0;
 
-      &:hover {
-        color: var(--sana-blue);
-      }
-
-      &:focus-visible {
-        outline: 2px solid var(--sana-blue);
-        outline-offset: 2px;
-        border-radius: 4px;
+      &[aria-current="page"]::after {
+        position: absolute;
+        right: $spacing-sm;
+        bottom: -2px;
+        left: $spacing-sm;
+        height: 2px;
+        content: "";
+        background: $gradient-primary;
+        border-radius: 2px;
       }
     }
+
+    &__cta {
+      margin: 0 0 0 $spacing-sm;
+
+      .btn {
+        width: auto;
+      }
+    }
+  }
 }
 
 .logo {
-  text-decoration: none;
-  font-size: $font-3xl;
+  font-size: 1.5rem;
   font-weight: $font-bold;
+  letter-spacing: -0.03em;
+  text-decoration: none;
 
   &__primary {
-    color: var(--sana-blue);
+    color: $sana-blue;
   }
 
   &__secondary {
-    color: var(--bill-blue);
+    color: $bill-blue;
+  }
+
+  // Footer (dark background): both parts in white
+  &--white .logo__primary,
+  &--white .logo__secondary {
+    color: $white;
   }
 }
 
-//====================
-// Mobile Menu Toggle
-//====================
 .menu-toggle {
   display: flex;
   flex-direction: column;
-  cursor: pointer;
+  justify-content: center;
   gap: 5px;
-
-  @include md {
-    display: none
-  }
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  cursor: pointer;
+  background: none;
+  border: 0;
+  border-radius: $radius-sm;
 
   &__bar {
-    width: 25px;
-    height: 3px;
-    background: var(--dark);
-    border-radius: 3px;
-    transition: all var(--transition-base);
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: $ink;
+    border-radius: 2px;
+    transition: transform $transition-base, opacity $transition-base;
   }
 
-  &--active {
-    .menu-toggle__bar:nth-child(1) {
-      transform: rotate(45deg) translate(8px, 8px);
-    }
+  &[aria-expanded="true"] &__bar:nth-child(2) {
+    transform: translateY(7px) rotate(45deg);
+  }
 
-    .menu-toggle__bar:nth-child(2) {
-      opacity: 0;
-    }
+  &[aria-expanded="true"] &__bar:nth-child(3) {
+    opacity: 0;
+  }
 
-    .menu-toggle__bar:nth-child(3) {
-      transform: rotate(-45deg) translate(7px, -7px);
-    }
+  &[aria-expanded="true"] &__bar:nth-child(4) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  @media (min-width: $breakpoint-nav) {
+    display: none;
   }
 }

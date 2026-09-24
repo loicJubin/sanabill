@@ -1,0 +1,240 @@
+// ============================================
+// TILES
+// Cards styled like the ZERO dashboard: label + status, title,
+// a small decorative chart and a short text.
+// ============================================
+
+$status-alert: #b4231b;
+$status-alert-bg: #fdecea;
+$status-ok: #1d7a43;
+$status-ok-bg: #e7f5ec;
+
+.tile {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1.25rem 1.375rem 1.375rem;
+  background: $surface;
+  border: 1px solid $border;
+  border-radius: $radius-md;
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: $spacing-sm;
+    margin-bottom: 0.875rem;
+    font-size: $font-xs;
+    color: $ink-muted;
+  }
+
+  &__status {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 8px;
+    font-weight: $font-semibold;
+    white-space: nowrap;
+    border-radius: $radius-full;
+
+    // Glowing dot with a soft pulse (still under reduced motion)
+    &::before {
+      width: 6px;
+      height: 6px;
+      content: "";
+      background: currentColor;
+      border-radius: 50%;
+      filter: drop-shadow(0 0 3px currentColor);
+      animation: status-pulse 2.4s ease-out infinite;
+    }
+
+    &--alert {
+      color: $status-alert;
+      background: $status-alert-bg;
+    }
+
+    &--ok {
+      color: $status-ok;
+      background: $status-ok-bg;
+    }
+  }
+
+  &__title {
+    font-size: $font-2xl;
+    letter-spacing: -0.03em;
+  }
+
+  &__viz {
+    display: flex;
+    align-items: flex-end;
+    height: 44px;
+    margin: 1.125rem 0 1rem;
+    border-bottom: 1px solid $border;
+
+    svg {
+      width: 100%;
+      height: 44px;
+    }
+
+  }
+
+
+  // Illustrations (Le constat): scale with the tile width
+  &__viz--art {
+    height: auto;
+    padding-bottom: 0.75rem;
+
+    svg {
+      height: auto;
+      overflow: visible;
+    }
+  }
+
+  &__text {
+    font-size: 0.9375rem;
+    color: $ink-muted;
+  }
+}
+
+// Illustration parts
+.tile-file {
+  filter: drop-shadow(0 4px 6px rgba(20, 20, 43, 0.08));
+
+  &__card {
+    fill: $surface;
+    stroke: $border;
+  }
+
+  &__band {
+    fill: #1d7a43;
+  }
+
+  &__icon {
+    fill: none;
+    stroke: #9aa0ae;
+    stroke-width: 1.5;
+  }
+
+  &__name {
+    font-size: 12px;
+    font-weight: $font-medium;
+    fill: $ink;
+  }
+}
+
+.tile__viz .tile-line__seg {
+  stroke: $bill-blue;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+}
+
+.tile__viz .tile-line__axis {
+  stroke: $border;
+  stroke-width: 1;
+}
+
+.tile-line__dot {
+  fill: $surface;
+  stroke: $bill-blue;
+  stroke-width: 2;
+}
+
+.tile-line__gap {
+  font-size: 12px;
+  font-weight: $font-semibold;
+  text-anchor: middle;
+  fill: #9aa0ae;
+}
+
+.tile-q {
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  fill: $ink;
+
+  &--accent { fill: $bill-blue; }
+  &--muted { fill: #9aa0ae; }
+  &--soft { fill: $ink-muted; }
+  &--faint { fill: $border-strong; }
+}
+
+@keyframes status-pulse {
+  0% {
+    box-shadow: 0 0 0 0 currentColor;
+  }
+
+  70%,
+  100% {
+    box-shadow: 0 0 0 5px transparent;
+  }
+}
+
+.tile-brick {
+  fill: $bill-blue;
+
+  &--base {
+    fill: $border-strong;
+  }
+
+  // Solid lighter colours (not opacity) so the base studs don't show through
+  &--step2 {
+    fill: #8f6bff;
+  }
+
+  &--step3 {
+    fill: #c7b8ff;
+  }
+
+  &--next {
+    fill: none;
+    stroke: $bill-blue;
+    stroke-width: 1.5;
+    stroke-dasharray: 4 3;
+  }
+}
+
+.tile-home {
+  fill: none;
+  stroke: $bill-blue;
+  stroke-width: 2.5;
+  stroke-linejoin: round;
+}
+
+.tile-db {
+  fill: $bill-blue;
+
+  &--top {
+    fill: #6b3cff;
+  }
+
+  &__line {
+    fill: none;
+    stroke: $white;
+    stroke-width: 2;
+  }
+}
+
+.tile__viz .tile-rail {
+  fill: none;
+  stroke: #b3b8c4;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.tile__viz .tile-path {
+  fill: none;
+  stroke: $bill-blue;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+}
+
+// Tiles side by side: label, title, illustration and text line up across
+// the row (subgrid), without reserving empty lines under short titles.
+.grid--3 > .tile {
+  @include md {
+    display: grid;
+    grid-row: span 4;
+    grid-template-rows: subgrid;
+    row-gap: 0;
+  }
+}

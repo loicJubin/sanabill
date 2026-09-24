@@ -1,0 +1,260 @@
+// ============================================
+// ZERO PRODUCT PAGE
+// ============================================
+
+.zero-hero {
+  display: grid;
+  gap: $spacing-xl;
+  align-items: center;
+
+  @include lg {
+    grid-template-columns: 1fr 1.1fr;
+    gap: $spacing-2xl;
+  }
+
+  .btn-group {
+    margin-top: $spacing-lg;
+  }
+}
+
+// Hero: results shown in a ZERO window (figure, label, bar)
+.results-panel {
+  &__body {
+    padding: 0.5rem 1.25rem 0.75rem;
+  }
+
+  &__title {
+    padding: 0.875rem 0 0.25rem;
+    font-size: $font-xs;
+    font-weight: $font-semibold;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: $ink-muted;
+  }
+
+  &__list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: 7.5rem 1fr;
+    gap: 0.25rem 1rem;
+    align-items: center;
+    padding: 0.875rem 0;
+    border-bottom: 1px solid $border;
+
+    &:last-child {
+      border-bottom: 0;
+    }
+
+    .kpi__value {
+      font-size: 2rem;
+    }
+
+    @include sm {
+      grid-template-columns: 7.5rem 1fr 5.5rem;
+    }
+  }
+
+  &__label {
+    font-size: $font-sm;
+    color: $ink-muted;
+  }
+
+  // Bar under the label on phones, in its own column from 640px
+  &__bar {
+    grid-column: 2;
+    height: 8px;
+    overflow: hidden;
+    background: $border;
+    border-radius: $radius-full;
+
+    @include sm {
+      grid-column: auto;
+    }
+
+    i {
+      display: block;
+      height: 100%;
+      background: linear-gradient(90deg, #0b97c8, $bill-blue);
+      border-radius: $radius-full;
+    }
+  }
+}
+
+// Feature table, styled like a ZERO data table
+.feature-table {
+  width: 100%;
+  max-width: 60rem;
+  margin: 0 auto;
+  overflow: hidden;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: $surface;
+  border: 1px solid $border;
+  border-radius: $radius-md;
+
+  th {
+    padding: 0.75rem 1.25rem;
+    font-size: $font-xs;
+    font-weight: $font-semibold;
+    letter-spacing: 0.04em;
+    text-align: left;
+    text-transform: uppercase;
+    color: $ink-muted;
+    background: $surface-muted;
+    border-bottom: 1px solid $border;
+
+    &.feature-table__status-col {
+      text-align: right;
+    }
+  }
+
+  td {
+    padding: 0.875rem 1.25rem;
+    vertical-align: middle;
+    border-bottom: 1px solid $border;
+  }
+
+  tbody tr:last-child td {
+    border-bottom: 0;
+  }
+
+  &__tag {
+    display: inline-block;
+    padding: 3px 8px;
+    font-size: $font-xs;
+    font-weight: $font-semibold;
+    white-space: nowrap;
+    color: $bill-blue;
+    background: rgba($bill-blue, 0.08);
+    border-radius: 6px;
+  }
+
+  &__status-col {
+    text-align: right;
+
+    .tile__status {
+      font-size: $font-xs;
+    }
+  }
+
+  // Mobile: each row becomes a small card (tag + status, then the text)
+  @media (max-width: #{$breakpoint-md - 1px}) {
+    thead {
+      @include sr-only;
+    }
+
+    tr {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 0.5rem;
+      padding: 1rem;
+      border-bottom: 1px solid $border;
+    }
+
+    tbody tr:last-child {
+      border-bottom: 0;
+    }
+
+    td {
+      padding: 0;
+      border: 0;
+    }
+
+    .feature-table__text {
+      grid-column: 1 / -1;
+      grid-row: 2;
+    }
+  }
+}
+
+.showcase {
+  display: grid;
+  gap: $spacing-lg;
+  align-items: center;
+
+  & + & {
+    margin-top: $spacing-2xl;
+
+    @include md {
+      margin-top: $spacing-3xl;
+    }
+  }
+
+  @include lg {
+    grid-template-columns: 1fr 1.5fr;
+    gap: $spacing-2xl;
+
+    &--reverse {
+      grid-template-columns: 1.5fr 1fr;
+
+      .showcase__text {
+        order: 2;
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: $spacing-sm;
+    font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem);
+  }
+
+  &__text p {
+    font-size: $font-lg;
+    color: $ink-muted;
+  }
+}
+
+// Showcases slide in when they scroll into view: from the right, then the
+// left, then the right (alternating with the layout). JS only adds the
+// starting state, so content stays visible without JS or with reduced motion.
+.showcase.is-reveal-ready {
+  opacity: 0;
+  transform: translateX(48px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+
+  &:nth-child(even) {
+    transform: translateX(-48px);
+  }
+
+  &.is-revealed {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+// Démo: text and highlights on the left, the form in a ZERO window
+.demo {
+  display: grid;
+  gap: $spacing-xl;
+  align-items: center;
+
+  @include lg {
+    grid-template-columns: 1fr 1.1fr;
+    gap: $spacing-2xl;
+  }
+
+  .section-head {
+    margin-bottom: $spacing-lg;
+  }
+
+  &__body {
+    iframe {
+      display: block;
+      min-height: 200px;
+    }
+
+    .form-card__alt {
+      text-align: left;
+    }
+  }
+
+  &__form-title {
+    margin-bottom: 1rem;
+    font-size: $font-lg;
+  }
+}

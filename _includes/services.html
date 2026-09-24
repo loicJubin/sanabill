@@ -1,62 +1,76 @@
 {% assign text = site.data.services[page.lang] %}
 
-<!-- Hero Section -->
-<section class="hero">
-    <div class="hero__content">
-        <h1 class="hero__title">{{ text.title }}</h1>
-        <p class="hero__subtitle">{{ text.subtitle }}</p>
-    </div>
-</section>
+{% include page-hero.html eyebrow=text.hero.eyebrow title=text.hero.title subtitle=text.hero.subtitle %}
 
-<!-- Services Section -->
-<section class="services-main">
-    <div class="container">
-        {% for service in text.sections %}
-        <!-- Service {{ forloop.index }}: {{ service.id }} -->
-        <article id="{{ service.id }}" class="service">
-            <div class="service__header">
-                <div class="service__number">0{{ forloop.index }}</div>
-                <h2 class="service__title">{{ service.title }}</h2>
-                <p class="service__tagline">{{ service.tagline }}</p>
-            </div>
-            
-            <div class="service__content {% if service.id == 'zero' %}service__content--highlighted{% endif %}">
-                <p class="service__intro">{{ service.description }}</p>
-                
-                <ul class="service__list">
-                    {% for bullet in service.bullets %}
-                    <li class="service__list-item">{{ bullet }}</li>
-                    {% endfor %}
-                </ul>
-                
-                <p class="service__conclusion">{{ service.conclusion }}</p>
-                
-                {% if service.link %}
-                <div class="service__cta text-center">
-                    <a href="{{ service.link.url }}" class="btn btn--primary">{{ service.link.label }}</a>
-                </div>
-                {% endif %}
-            </div>
-        </article>
-        {% endfor %}
-    </div>
-</section>
+<nav class="container anchor-nav" aria-label="Services">
+  <ul>
+    {% for service in text.sections %}
+      <li><a href="#{{ service.id }}"{% if service.id == 'zero' %} class="anchor-nav__featured"{% endif %}>{{ service.title }}{% include icon.html name="chevron" %}</a></li>
+    {% endfor %}
+  </ul>
+</nav>
 
-<!-- Closing Statement -->
-<section class="container">
-  <div class="services-closing__content">
-      <p class="services-closing__text">{{ text.closing.text }}</p>
+<section class="section section--tight">
+  <div class="container">
+    {% for service in text.sections %}
+      <article id="{{ service.id }}" class="service{% if service.id == 'zero' %} service--zero{% endif %}">
+        <header class="service__header">
+          <h2 class="service__title">{{ service.title }}</h2>
+          <p class="service__tagline">{{ service.tagline }}</p>
+        </header>
+        <div class="service__body">
+          <p>{{ service.description }}</p>
+          <ul class="check-list">
+            {% for bullet in service.bullets %}
+              <li>{% include icon.html name="check" %}{{ bullet }}</li>
+            {% endfor %}
+          </ul>
+          <div class="service__deliverable">
+            <p class="service__deliverable-label">{{ text.deliverable_label }}</p>
+            <p>{{ service.deliverable }}</p>
+          </div>
+          <p class="service__conclusion">{{ service.conclusion }}</p>
+          {% if service.link %}
+            <a href="{{ service.link.url | relative_url }}" class="btn btn--soft"><span class="zero-ring" aria-hidden="true"></span>{{ service.link.label }}</a>
+          {% endif %}
+        </div>
+      </article>
+    {% endfor %}
   </div>
 </section>
 
-<!-- CTA Section -->
-<section class="footer">
-    <div class="footer__content">
-        <h2 class="footer__title">Prêt à optimiser vos processus ?</h2>
-        <div class="footer__subtitle">
-          <a href="{{ text.cta.url }}" class="btn btn--secondary btn--rounded">{{ text.cta.label }}</a>
-        </div>
-        {% include footer.html %}
-    </div>
+<section class="section section--muted">
+  <div class="container">
+    {% include section-head.html eyebrow=text.process.eyebrow title=text.process.title %}
+    <ol class="steps steps--path" data-reveal>
+      {% for step in text.process.steps %}
+        <li class="steps__item">
+          <span class="steps__number" aria-hidden="true">0{{ forloop.index }}</span>
+          <h3 class="steps__title">{{ step.title }}</h3>
+          <p class="steps__text">{{ step.description }}</p>
+          {% unless forloop.last %}
+            {% include footprints.html variant="path" %}
+            {% include footprints.html variant="short" %}
+          {% endunless %}
+        </li>
+      {% endfor %}
+    </ol>
+  </div>
 </section>
 
+<section class="section">
+  <div class="container container--narrow">
+    {% include section-head.html eyebrow=text.faq.eyebrow title=text.faq.title %}
+    <div class="faq">
+      {% for item in text.faq.items %}
+        <details class="faq__item">
+          <summary class="faq__question">{{ item.question }}<span class="faq__icon">{% include icon.html name="plus" %}</span></summary>
+          <p class="faq__answer">{{ item.answer }}</p>
+        </details>
+      {% endfor %}
+    </div>
+    <p class="lead-quote">{{ text.closing.text }}</p>
+  </div>
+</section>
+
+{% include cta.html title=text.cta.title subtitle=text.cta.subtitle label=text.cta.label url=text.cta.url %}

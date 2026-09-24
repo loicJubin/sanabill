@@ -7,166 +7,20 @@
 
 @import 'base/reset';
 @import 'base/typography';
+@import 'base/layout';
 
-@import 'components/utilities';
 @import 'components/header';
-@import 'components/hero';
+@import 'components/footer';
 @import 'components/buttons';
 @import 'components/cards';
-@import 'components/footer';
-@import 'components/carousels';
+@import 'components/zero-motif';
+@import 'components/kpi';
+@import 'components/tile';
+@import 'components/steps';
+@import 'components/forms';
 
-@import 'pages/index';
-@import 'pages/zero';
+@import 'pages/home';
 @import 'pages/services';
+@import 'pages/zero';
 @import 'pages/about';
 @import 'pages/contact';
-
-// ============================================
-// VARIABLES
-// ============================================
-
-:root {
-  // Colors
-  --sana-blue: #{$sana-blue};
-  --bill-blue: #{$bill-blue};
-  --dark: #{$dark};
-  --light-bg: #{$light-bg};
-  --text-primary: #{$text-primary};
-  --text-secondary: #{$text-secondary};
-  --text-tertiary: #{$text-tertiary};
-  --text-light: #{$text-light};
-  --white: #{$white};
-  --color-white: white;
-
-  // Gradients
-  --gradient-primary: linear-gradient(135deg, var(--sana-blue) 0%, var(--bill-blue) 100%);
-  
-  // Shadows
-  --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 15px rgba(0, 0, 0, 0.08);
-  --shadow-lg: 0 12px 30px rgba(69, 13, 253, 0.15);
-  --shadow-xl: 0 10px 25px rgba(0, 0, 0, 0.2);
-  --shadow-button: $shadow-button;
-  
-  // Border Radius
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-full: 50px;
-  
-  // Transitions
-  --transition-fast: 0.2s ease;
-  --transition-base: 0.3s ease;
-  
-  // Spacing
-  --spacing-section: 6rem;
-}
-
-// The article fills all the space between header & footer
-body {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-main {
-  flex: 1;
-}
-
-// ============================================
-// UTILITY CLASSES
-// ============================================
-
-.border-top {
-  border-top: 2px solid rgba(69, 13, 253, 0.1);
-}
-
-.text-secondary {
-  color: var(--text-secondary);
-}
-
-.section-title {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: var(--dark);
-}
-
-.section-subtitle {
-  text-align: center;
-  font-size: 1.2rem;
-  color: var(--text-tertiary);
-  margin-bottom: 3rem;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-// ============================================
-// ACCESSIBILITY
-// ============================================
-
-// Focus styles for keyboard navigation
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-textarea:focus-visible,
-select:focus-visible {
-  outline: 2px solid var(--sana-blue);
-  outline-offset: 2px;
-}
-
-// Reduced motion for accessibility
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-
-// ============================================
-// RESPONSIVE DESIGN
-// ============================================
-
-@media (max-width: 768px) {
-
-  // Typography
-  .section-title {
-    font-size: 2rem;
-  }
-
-  .features-section-title {
-    font-size: 1.6rem;
-  }
-
-
-  .feature-info h4 {
-    font-size: 1.5rem;
-  }
-
-  .snapshot-placeholder {
-    min-height: 250px;
-  }
-
-}
-
-/* Container */
-.container {
-    max-width: $container-max-width;
-    margin: 0 auto;
-    padding: 0 $spacing-md;
-
-    &--no-padding {
-      padding: 0 0;
-    }
-
-    &--xl {
-      max-width: 1400px;
-    }
-}
-
-

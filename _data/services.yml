@@ -1,64 +1,89 @@
 fr:
-  title: "Notre expertise"
-
-  subtitle: "Aider les organisations de santé à structurer, simplifier et piloter leurs processus administratifs avec une expertise forte sur les contestations d’assurance."
+  hero:
+    eyebrow: "Services"
+    title: "Notre expertise"
+    subtitle: "Aider les organisations de santé à structurer, simplifier et piloter leurs processus administratifs, avec une expertise forte sur les contestations d’assurances."
 
   sections:
     - id: "consulting-contestations"
-      title: "Consulting en contestations d’assurance"
+      title: "Consulting en contestations d’assurances"
       tagline: "Comprendre les causes pour agir efficacement."
-      description: >
-        Nous accompagnons vos équipes dans l’analyse de votre situation actuelle :
+      description: "Nous accompagnons vos équipes dans l’analyse de votre situation actuelle :"
       bullets:
         - "typologies de refus et causes récurrentes"
         - "organisation et responsabilités internes"
         - "points de friction avec les assureurs"
+      deliverable: "Des recommandations concrètes et actionnables, adaptées à vos contraintes opérationnelles et réglementaires."
       conclusion: >
-        Nous formulons des recommandations concrètes et actionnables,
-        adaptées à vos contraintes opérationnelles et réglementaires.
-        Objectif : améliorer vos taux de succès et réduire la charge administrative
-        liée aux contestations pour vous permettre de traiter les dossiers plus
-        efficacement et avec une meilleure visibilité.
+        Objectif : améliorer vos taux de succès et réduire la charge administrative liée aux
+        contestations, pour traiter les dossiers plus efficacement et avec une meilleure visibilité.
 
     - id: "zero"
-      title: "ZERO – Gestion des refus d’assurance"
+      title: "ZERO – Gestion des refus d’assurances"
       tagline: "Structurer, suivre et piloter les contestations."
-      description: >
-        ZERO est notre solution logicielle dédiée à la gestion des refus d’assurance.
-        Elle permet notamment de :
+      description: "ZERO est notre solution logicielle dédiée à la gestion des refus d’assurances. Elle permet notamment de :"
       bullets:
         - "structurer les dossiers de contestation"
         - "suivre les statuts et délais"
         - "disposer d’une vision claire des volumes et résultats"
+      deliverable: "Un cadre commun et une meilleure visibilité sur vos contestations."
       conclusion: >
-        ZERO apporte un cadre commun et une meilleure visibilité
-        sur vos contestations et s’intègre progressivement
-        à vos pratiques existantes.
+        ZERO s’intègre progressivement à vos pratiques existantes, sans remettre en cause
+        vos processus du jour au lendemain.
       link:
         label: "Découvrir ZERO"
         url: "/fr/zero/"
 
-
     - id: "optimisation-automatisation"
-      title: "Optimisation & automatisation administrative"
+      title: "Optimisation & automatisation administratives"
       tagline: "Simplifier sans complexifier."
-      description: >
-        Sur la base du diagnostic, nous intervenons sur vos processus :
+      description: "Sur la base du diagnostic, nous intervenons sur vos processus :"
       bullets:
         - "clarification des flux de traitement"
         - "réduction des tâches manuelles et des ressaisies"
         - "automatisations ciblées et progressives"
+      deliverable: "Des flux administratifs plus fiables et plus fluides."
       conclusion: >
-        Ces optimisations visent à fiabiliser les flux administratifs,
-        réduire les efforts manuels inutiles et améliorer la fluidité
-        du traitement des dossiers sans alourdir votre organisation.
+        Ces optimisations réduisent les efforts manuels inutiles et améliorent le traitement
+        des dossiers, sans alourdir votre organisation.
 
+  deliverable_label: "Ce que vous obtenez"
+
+  process:
+    eyebrow: "Déroulement"
+    title: "Comment se déroule un accompagnement"
+    steps:
+      - title: "Premier échange gratuit"
+        description: "Un rendez-vous offert pour comprendre votre problématique, votre organisation et vos contraintes, avant de proposer des solutions."
+      - title: "Diagnostic"
+        description: "Nous analysons vos refus, leurs causes et vos processus actuels."
+      - title: "Recommandations"
+        description: "Nous priorisons avec vous des améliorations concrètes et mesurables."
+      - title: "Mise en œuvre progressive"
+        description: "Structuration avec ZERO et optimisations ciblées, à votre rythme."
+
+  faq:
+    eyebrow: "Questions fréquentes"
+    title: "Vos questions"
+    items:
+      - question: "Faut-il remplacer notre logiciel de facturation ?"
+        answer: "Non. ZERO s’intègre progressivement à vos systèmes de facturation existants. Notre approche consiste à améliorer l’existant, pas à tout transformer."
+      - question: "Le premier rendez-vous est-il payant ?"
+        answer: "Non. Le premier échange est gratuit : il nous permet de comprendre votre problématique avant de venir avec des solutions."
+      - question: "Peut-on commencer par un simple diagnostic ?"
+        answer: "Oui. Un diagnostic ponctuel est souvent le meilleur point de départ. La suite, conseil, ZERO ou optimisation, se décide ensemble sur cette base."
+      - question: "Que deviennent nos données ?"
+        answer: "Nos solutions s’appuient sur des technologies open source et vous restez pleinement propriétaire de vos données et de leur usage."
+      - question: "Nos équipes doivent-elles se mobiliser fortement ?"
+        answer: "Non. Nous travaillons avec vos équipes, pas à leur place, sans mobilisations lourdes ni projets interminables."
 
   closing:
     text: >
-      Sanabill intervient comme partenaire métier avec une approche combinant
-      expertise terrain, structuration des processus et outillage adapté.
+      Sanabill intervient comme partenaire métier, avec une approche combinant
+      expertise terrain, structuration des processus et développement de solutions adaptés.
 
   cta:
-    label: "Contactez-nous"
+    title: "Prêt à optimiser vos processus ?"
+    subtitle: "Le premier échange est gratuit : nous prenons le temps de comprendre votre problématique avant de proposer des solutions."
+    label: "Demander un diagnostic"
     url: "/fr/contact/"

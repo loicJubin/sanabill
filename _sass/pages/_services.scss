@@ -1,0 +1,139 @@
+// ============================================
+// SERVICES
+// ============================================
+
+.anchor-nav {
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.625rem;
+    margin-top: -1.5rem;
+    padding: 0;
+    list-style: none;
+  }
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1rem;
+    font-size: $font-sm;
+    font-weight: $font-medium;
+    color: $ink;
+    text-decoration: none;
+    background: $surface;
+    border: 1px solid $border;
+    border-radius: $radius-full;
+    box-shadow: $shadow-card;
+    transition: border-color $transition-fast, box-shadow $transition-fast;
+
+    .icon {
+      width: 14px;
+      height: 14px;
+      color: #9aa0ae;
+    }
+
+    &:hover {
+      border-color: $bill-blue;
+    }
+  }
+
+  // ZERO, the product, stands out. The gradient starts on a darker blue so
+  // white text keeps a 4.5:1 contrast.
+  .anchor-nav__featured {
+    color: $white;
+    background: linear-gradient(135deg, #0a7fa9 0%, $bill-blue 100%);
+    border-color: transparent;
+    box-shadow: 0 8px 20px rgba($bill-blue, 0.25);
+
+    .icon {
+      color: $white;
+    }
+
+    &:hover {
+      border-color: transparent;
+      box-shadow: 0 10px 24px rgba($bill-blue, 0.35);
+    }
+  }
+}
+
+.service {
+  display: grid;
+  gap: $spacing-md $spacing-2xl;
+  padding: $spacing-xl 0;
+  border-bottom: 1px solid $border;
+
+  &:last-child {
+    border-bottom: 0;
+  }
+
+  @include lg {
+    grid-template-columns: 1fr 1.4fr;
+    padding: $spacing-2xl 0;
+  }
+
+  &__header {
+    @include lg {
+      position: sticky;
+      top: $header-height + 16px;
+      align-self: start;
+    }
+  }
+
+  &__title {
+    font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem);
+  }
+
+  &__tagline {
+    margin-top: $spacing-xs;
+    font-size: $font-lg;
+    color: $bill-blue;
+  }
+
+  &__body {
+    display: grid;
+    gap: $spacing-md;
+    font-size: $font-lg;
+  }
+
+  &__deliverable {
+    padding: $spacing-md;
+    background: $surface-muted;
+    border-left: 3px solid $bill-blue;
+    border-radius: 0 $radius-sm $radius-sm 0;
+  }
+
+  &__deliverable-label {
+    margin-bottom: 0.25rem;
+    font-size: $font-xs;
+    font-weight: $font-semibold;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: $bill-blue;
+  }
+
+  &__conclusion {
+    color: $ink-muted;
+  }
+
+  &--zero &__number {
+    background: $gradient-primary;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+// Mobile: navigation pills share the full width, chevron on the right
+@media (max-width: #{$breakpoint-sm - 1px}) {
+  .anchor-nav {
+    li {
+      width: 100%;
+    }
+
+    a {
+      justify-content: space-between;
+      width: 100%;
+    }
+  }
+}

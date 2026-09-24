@@ -1,57 +1,94 @@
-fr: 
+fr:
   hero:
-    title: "Simplifiez la gestion de vos refus d’assurances"
+    eyebrow: "Conseil en contestations d’assurances · Lausanne"
+    title: "Reprenez le contrôle de vos refus d’assurances"
     description: >
-      Nous accompagnons les organisations de santé dans l’analyse et l’optimisation de la gestion des contestations d’assurances.<br>
-      Grâce à notre expertise métier et à ZERO, vous structurez et pilotez vos refus de manière plus efficace.
-    cta_button: "Découvrez ZERO"
+      Nous accompagnons les organisations de santé dans l’analyse et l’optimisation
+      de la gestion des contestations d’assurances. Avec notre expertise métier et ZERO,
+      notre outil de pilotage, vos équipes structurent et suivent chaque refus plus efficacement.
+    cta_primary: "Demander un diagnostic"
+    cta_secondary: "Découvrir ZERO"
+    cta_note: "Premier échange gratuit"
+    zero_line:
+      - "Dossier oublié"
+      - "Fichier éparpillé"
+      - "Complexité inutile"
+    image_alt: "Tableau de bord ZERO : suivi des contestations par statut, avec volumes, montants en CHF et évolution"
 
   partners:
-    partner_title: "Ils nous font confiance :"
+    title: "Ils nous font confiance"
+    items:
+      - name: "Hôpital ophtalmique Jules-Gonin"
+        url: "https://www.ophtalmique.ch/"
+        logo: "/assets/images/partners/hojg.webp"
+    facts:
+      - "Entreprise suisse"
+      - "Technologies open source"
+      - "Restez propriétaire de vos données"
 
-  expertises:
-    title: "Notre expertise"
-    blocs:
-      - title: "Consulting en contestations"
+  problem:
+    eyebrow: "Le constat"
+    title: "Des refus traités de manière fragmentée"
+    subtitle: "Dans beaucoup d’organisations de santé, la gestion des contestations repose sur quelques personnes et beaucoup de temps."
+    items:
+      - title: "Fichiers multiples"
+        label: "Sources de données"
+        status: "Dispersé"
+        viz: "files"
+        description: "Les informations sont dispersées entre fichiers Excel, e-mails et logiciels de facturation."
+      - title: "Suivi non automatisé"
+        label: "Suivi des délais"
+        status: "Manuel"
+        viz: "timeline"
+        description: "Statuts et délais sont suivis manuellement avec un risque réel d’oubli."
+      - title: "Peu de visibilité"
+        label: "Dossiers ouverts"
+        status: "Inconnu"
+        viz: "questions"
+        description: "Difficile de savoir combien de dossiers sont ouverts, ce qui bloque et pourquoi."
+
+  approach:
+    eyebrow: "Notre approche"
+    title: "Du diagnostic au pilotage, étape par étape"
+    subtitle: "Le métier avant la technologie : nous analysons vos processus avant de proposer des solutions."
+    steps:
+      - title: "Diagnostic des contestations"
         description: "Analyse de votre situation actuelle, identification des causes de refus et recommandations concrètes pour améliorer vos processus."
         link: "/fr/services/#consulting-contestations"
-        link_value : "En savoir plus"
-
-      - title: "ZERO – Gestion des refus d’assurances"
-        description: "Une solution clé en main pour structurer, suivre et piloter efficacement vos contestations d’assurances."
+        link_label: "Le conseil en contestations"
+      - title: "Structuration avec ZERO"
+        description: "Un cadre commun pour centraliser, suivre et piloter vos refus, intégré progressivement à vos pratiques existantes."
         link: "/fr/zero/"
-        link_value : "En savoir plus"
-
-      - title: "Optimisation & automatisation administrative"
-        description: "Simplification et automatisation de vos flux administratifs afin de réduire le travail manuel et les erreurs."
+        link_label: "Découvrir ZERO"
+      - title: "Optimisation & automatisation"
+        description: "Simplification de vos flux administratifs pour réduire le travail manuel, les ressaisies et les erreurs."
         link: "/fr/services/#optimisation-automatisation"
-        link_value : "En savoir plus"
+        link_label: "L’optimisation administrative"
+
+  zero:
+    eyebrow: "ZERO"
+    title: "L’outil qui rend vos refus visibles"
+    description: >
+      ZERO centralise les refus et contestations d’assurances, les catégorise selon des
+      logiques métier et donne à vos équipes une vue claire des volumes, des statuts et des résultats.
+    link_label: "Voir ce que ZERO permet"
+    image_alt: "Analyse des catégories de refus dans ZERO"
 
   why_us:
-    title: "Pourquoi Sanabill ?"
+    eyebrow: "Pourquoi Sanabill"
+    title: "Un partenaire métier, pas une surcouche de plus"
     reasons:
-      - title: "Une expertise ancrée dans la réalité du terrain"
-        description: >
-          La gestion des refus d’assurances est avant tout un enjeu administratif et organisationnel.<br>
-          Nous comprenons les contraintes des équipes et construisons des réponses adaptées
-          à votre contexte et à vos pratiques existantes.
-
+      - title: "Ancrés dans la réalité du terrain"
+        description: "La gestion des refus est d’abord un enjeu administratif et organisationnel. Nous construisons des réponses adaptées à vos pratiques existantes."
       - title: "Le métier avant la technologie"
-        description: >
-          Nous analysons vos processus avant de proposer des solutions.<br>
-          Le conseil et la plateforme ZERO s’inscrivent dans une même logique :
-          améliorer concrètement la gestion des contestations, sans surcouche inutile.
+        description: "Le conseil et ZERO s’inscrivent dans une même logique : améliorer concrètement la gestion des contestations, sans surcouche inutile."
+      - title: "Simple et pragmatique"
+        description: "Pas de projets lourds ni d’outils complexes. Des améliorations ciblées, progressives et directement utiles."
+      - title: "À votre rythme"
+        description: "Diagnostic ponctuel ou démarche plus globale : nous avançons avec vos équipes, étape par étape."
 
-      - title: "Des solutions simples et pragmatiques"
-        description: >
-          Pas de projets lourds ni d’outils complexes.<br>
-          Nous privilégions des améliorations ciblées, progressives
-          et directement utiles pour vos équipes administratives.
-
-      - title: "Un accompagnement à votre rythme"
-        description: >
-          Diagnostic ponctuel ou démarche plus globale,
-          nous avançons avec vous, étape par étape,
-          en collaboration avec vos équipes sans mobilisations lourdes ni projets interminables.
-
-    contact: "Une question ou un enjeu spécifique ?<br>Échangeons sur votre situation."
+  cta:
+    title: "Une question ou un enjeu spécifique ?"
+    subtitle: "Le premier échange est gratuit : nous prenons le temps de comprendre votre problématique avant de proposer des solutions."
+    label: "Demander un diagnostic"
+    url: "/fr/contact/"

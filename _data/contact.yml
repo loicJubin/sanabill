@@ -1,16 +1,33 @@
 fr:
   hero:
-    title: "Contactez-nous"
-    subtitle: "Nous serions ravis d'avoir de vos nouvelles. Contactez-nous pour toute question."
-  map_title: "Formulaire"
+    eyebrow: "Contact"
+    title: "Parlons de votre situation"
+    subtitle: "Une question, un enjeu spécifique ou l’envie de découvrir ZERO ? Écrivez-nous, nous revenons vers vous rapidement."
+    free_note: "Le premier échange est gratuit. Il nous permet de comprendre votre problématique avant de vous proposer des solutions."
 
-  info_title: "Informations"
+  form_title: "Décrivez votre situation"
+  form_intro: "Quelques lignes suffisent : votre établissement, le type de refus rencontrés et ce que vous aimeriez améliorer."
+  privacy_note: "Vos données servent uniquement à répondre à votre demande."
+  privacy_link: "Protection des données"
+
+
+  next_steps_title: "Et ensuite ?"
+  next_steps:
+    - label: "Réception"
+      icon: "mail"
+      text: "Nous prenons connaissance de votre message."
+    - label: "Premier échange"
+      icon: "chat"
+      text: "Nous vous proposons un premier échange gratuit pour comprendre votre problématique."
+    - label: "La suite"
+      icon: "arrow"
+      text: "Si cela fait sens, nous définissons ensemble la suite : diagnostic, démonstration de ZERO ou accompagnement."
 
   address:
     line1: "Sanabill Sàrl"
     line2: "Avenue d'Echallens 61"
     line3: "1004 Lausanne"
     line4: "Suisse"
-  
+
   email:
     address: "contact@sanabill.ch"

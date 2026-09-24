@@ -1,0 +1,3 @@
+{% comment %} KPI figure with a smaller unit, e.g. "−25 %" → −25<small>%</small>. Param: value {% endcomment %}
+{% assign kpi_number = include.value | remove: " %" | remove: "%" %}
+<span class="kpi__value">{{ kpi_number }}{% if include.value contains "%" %}<small class="kpi__unit">%</small>{% endif %}</span>

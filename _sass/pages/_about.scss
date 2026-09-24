@@ -1,0 +1,88 @@
+// ============================================
+// ABOUT
+// ============================================
+
+.facts {
+  overflow: hidden;
+
+  // Narrower card: side margins on large screens
+  @include lg {
+    margin-inline: $spacing-2xl;
+  }
+
+  background: $surface;
+  border: 1px solid $border;
+  border-radius: $radius-md;
+  box-shadow: $shadow-card;
+
+  &__row {
+    padding: $spacing-md $spacing-lg;
+
+    & + & {
+      border-top: 1px solid $border;
+    }
+  }
+
+  dt {
+    font-size: $font-xs;
+    font-weight: $font-semibold;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: $ink-muted;
+  }
+
+  dd {
+    margin-top: 0.25rem;
+    font-size: $font-xl;
+    font-weight: $font-semibold;
+    color: $ink;
+  }
+}
+
+// "Nos valeurs": manifesto rows (value name, strong statement, detail)
+.manifesto {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  border-top: 1px solid $ink;
+
+  &__row {
+    display: grid;
+    gap: 0.5rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid $border;
+
+    @include md {
+      grid-template-columns: 14rem 1fr;
+      gap: 2rem;
+      padding: 1.75rem 0;
+    }
+  }
+
+  &__title {
+    font-size: $font-sm;
+    font-weight: $font-semibold;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: $bill-blue;
+
+    @include md {
+      padding-top: 0.5rem;
+    }
+  }
+
+  &__statement {
+    font-size: clamp(1.25rem, 1rem + 1vw, 1.625rem);
+    font-weight: $font-semibold;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+    color: $ink;
+    text-wrap: balance;
+  }
+
+  &__detail {
+    max-width: 62ch;
+    margin-top: 0.5rem;
+    color: $ink-muted;
+  }
+}

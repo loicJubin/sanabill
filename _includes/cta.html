@@ -1,0 +1,9 @@
+{% comment %} Closing call-to-action band. Params: title, subtitle, label, url {% endcomment %}
+<section class="cta-band">
+  <div class="container cta-band__inner">
+    <span class="cta-band__ring" aria-hidden="true"></span>
+    <h2 class="cta-band__title">{{ include.title }}</h2>
+    {% if include.subtitle %}<p class="cta-band__subtitle">{{ include.subtitle }}</p>{% endif %}
+    <a href="{{ include.url | relative_url }}" class="btn btn--light">{{ include.label }}</a>
+  </div>
+</section>

@@ -1,41 +1,85 @@
+// ============================================
+// BUTTONS
+// ============================================
+
 .btn {
-  display: inline-block;
-  padding: 1rem 2.5rem;
-  text-decoration: none;
-  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 48px;
+  padding: 0.75rem 1.5rem;
+  font-family: inherit;
+  font-size: $font-base;
   font-weight: $font-semibold;
-  color: var(--_text-primary, --text-primary);
-  border: none;
-  border-radius: var(--radius-sm);
-  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: $radius-sm;
+  transition: background-color $transition-fast, border-color $transition-fast, transform $transition-fast, box-shadow $transition-fast;
+
+  .icon {
+    width: 18px;
+    height: 18px;
+  }
 
   &:hover {
-    transform: translateY(-2px);
-    box-shadow: $shadow-button;
+    transform: translateY(-1px);
   }
 
   &--primary {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: var(--white);
+    color: $white;
+    background: $bill-blue;
+    box-shadow: $shadow-button;
+
+    &:hover {
+      background: shade($bill-blue, 15%);
+    }
   }
 
-  &--secondary {
-    color: var(--bill-blue, grey);
-    background: var(--white, white);
+  &--ghost {
+    color: $ink;
+    background: $surface;
+    border-color: $border-strong;
+
+    &:hover {
+      border-color: $ink;
+    }
   }
 
-  &--rounded {
-    border-radius: var(--radius-full);
+  &--light {
+    color: $bill-blue;
+    background: $white;
+
+    &:hover {
+      background: $surface-muted;
+    }
   }
 
-  &--margin-bottom {
-    &-md {
-      margin-bottom: $spacing-md;
-  }
-    &-lg {
-        margin-bottom: $spacing-lg;
-      }
+  // Secondary action with a light brand tint
+  &--soft {
+    align-self: flex-start;
+    justify-self: start;
+    color: $bill-blue;
+    background: rgba($bill-blue, 0.08);
+    border-color: rgba($bill-blue, 0.2);
+
+    &:hover {
+      background: rgba($bill-blue, 0.14);
+    }
+
+    .zero-ring {
+      width: 11px;
+      height: 14px;
+      border-width: 2.5px;
+    }
   }
 
-
+  &--sm {
+    min-height: 40px;
+    padding: 0.5rem 1rem;
+    font-size: $font-sm;
+  }
 }

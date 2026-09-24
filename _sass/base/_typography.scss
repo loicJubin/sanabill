@@ -1,67 +1,99 @@
 // ============================================
-// TYPOGRAPHY SPACING
+// TYPOGRAPHY
 // ============================================
 
-.display {
-
-  &-4xl {
-    font-size: $font-3xl;
-    font-weight: $font-medium;
-    line-height: $leading-tight;
-    margin-bottom: $spacing-lg;
-    @media md {
-      font-size: $font-4xl;
-    }
-  }
-
-
- &-3 {
-    font-size: $font-3xl;
-    font-weight: $font-medium;
-    line-height: $leading-tight;
-    margin-bottom: $spacing-lg;
-  }
-
+h1, h2, h3, h4 {
+  font-weight: $font-semibold;
+  line-height: $leading-tight;
+  letter-spacing: -0.02em;
+  color: $ink;
 }
 
-.fw {
-  &-semibold{
-    font-weight: $font-semibold;
+p {
+  text-wrap: pretty;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: $spacing-sm;
+  font-size: $font-sm;
+  font-weight: $font-semibold;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: $bill-blue;
+}
+
+.section-head {
+  max-width: 44rem;
+  margin: 0 auto $spacing-xl;
+  text-align: center;
+
+  @include lg {
+    margin-bottom: $spacing-2xl;
+  }
+
+  &--left {
+    margin-left: 0;
+    text-align: left;
+  }
+
+  &__title {
+    font-size: clamp(1.625rem, 1.2rem + 1.6vw, 2.375rem);
+    text-wrap: balance;
+  }
+
+  &__subtitle {
+    margin-top: $spacing-sm;
+    font-size: $font-lg;
+    color: $ink-muted;
   }
 }
 
-// Flow content - only bottom margins
-// (This creates predictable vertical rhythm)
+.prose p + p {
+  margin-top: $spacing-sm;
+}
 
-//h1 {
-//  font-size: $font-5xl;
-//  font-weight: $font-bold;
-//  line-height: $leading-tight;
-//  margin-bottom: $spacing-xl;
-//}
-//
-//h2 {
-//  font-size: $font-4xl;
-//  font-weight: $font-bold;
-//  line-height: $leading-tight;
-//  margin-bottom: $spacing-lg;
-//}
-//
-//h3 {
-//  font-size: $font-3xl;
-//  font-weight: $font-semibold;
-//  line-height: $leading-tight;
-//  margin-bottom: $spacing-md;
-//}
-//
-//h4 {
-//  font-size: $font-2xl;
-//  font-weight: $font-semibold;
-//  margin-bottom: $spacing-sm;
-//}
-//
-//h5,h6 {
-//  font-size: $font-lg;
-//  font-weight: $font-medium;
-//  margin-bottom: $spacing-sm;
-//}
+.prose p {
+  color: $ink-muted;
+  font-size: $font-lg;
+}
+
+.prose .section-head__title {
+  margin-bottom: $spacing-md;
+}
+
+.footnote {
+  margin-top: $spacing-sm;
+  font-size: $font-sm;
+  font-style: italic;
+  color: $ink-muted;
+}
+
+.lead-quote {
+  margin-top: $spacing-2xl;
+  padding-left: $spacing-md;
+  font-size: $font-xl;
+  line-height: $leading-normal;
+  color: $ink;
+  border-left: 3px solid $bill-blue;
+}
+
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: $font-semibold;
+  text-decoration: none;
+
+  .icon {
+    width: 18px;
+    height: 18px;
+    transition: transform $transition-fast;
+  }
+
+  &:hover .icon {
+    transform: translateX(3px);
+  }
+}
