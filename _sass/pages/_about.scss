@@ -4,6 +4,12 @@
 
 .facts {
   overflow: hidden;
+
+  // Narrower card: side margins on large screens
+  @include lg {
+    margin-inline: $spacing-2xl;
+  }
+
   background: $surface;
   border: 1px solid $border;
   border-radius: $radius-md;
