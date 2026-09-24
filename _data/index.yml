@@ -20,7 +20,7 @@ fr:
     items:
       - name: "Hôpital ophtalmique Jules-Gonin"
         url: "https://www.ophtalmique.ch/"
-        logo: "/assets/images/partners/HoJGnoir.gif"
+        logo: "/assets/images/partners/hojg.webp"
     facts:
       - "Entreprise suisse"
       - "Technologies open source"
