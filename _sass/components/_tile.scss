@@ -203,3 +203,61 @@ $status-ok-bg: #e7f5ec;
     box-shadow: 0 0 0 5px transparent;
   }
 }
+
+.tile-brick {
+  fill: $bill-blue;
+
+  &--base {
+    fill: $border-strong;
+  }
+
+  &--step2 {
+    opacity: 0.6;
+  }
+
+  &--step3 {
+    opacity: 0.3;
+  }
+
+  &--next {
+    fill: none;
+    stroke: $bill-blue;
+    stroke-width: 1.5;
+    stroke-dasharray: 4 3;
+  }
+}
+
+.tile-home {
+  fill: none;
+  stroke: $bill-blue;
+  stroke-width: 2.5;
+  stroke-linejoin: round;
+}
+
+.tile-db {
+  fill: $bill-blue;
+
+  &--top {
+    fill: #6b3cff;
+  }
+
+  &__line {
+    fill: none;
+    stroke: $white;
+    stroke-width: 2;
+  }
+}
+
+.tile__viz .tile-rail {
+  fill: none;
+  stroke: #b3b8c4;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.tile__viz .tile-path {
+  fill: none;
+  stroke: $bill-blue;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+}

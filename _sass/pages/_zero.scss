@@ -17,6 +17,74 @@
   }
 }
 
+// Hero: results shown in a ZERO window (figure, label, bar)
+.results-panel {
+  &__body {
+    padding: 0.5rem 1.25rem 0.75rem;
+  }
+
+  &__title {
+    padding: 0.875rem 0 0.25rem;
+    font-size: $font-xs;
+    font-weight: $font-semibold;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: $ink-muted;
+  }
+
+  &__list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: 7.5rem 1fr;
+    gap: 0.25rem 1rem;
+    align-items: center;
+    padding: 0.875rem 0;
+    border-bottom: 1px solid $border;
+
+    &:last-child {
+      border-bottom: 0;
+    }
+
+    .kpi__value {
+      font-size: 2rem;
+    }
+
+    @include sm {
+      grid-template-columns: 7.5rem 1fr 5.5rem;
+    }
+  }
+
+  &__label {
+    font-size: $font-sm;
+    color: $ink-muted;
+  }
+
+  // Bar under the label on phones, in its own column from 640px
+  &__bar {
+    grid-column: 2;
+    height: 8px;
+    overflow: hidden;
+    background: $border;
+    border-radius: $radius-full;
+
+    @include sm {
+      grid-column: auto;
+    }
+
+    i {
+      display: block;
+      height: 100%;
+      background: linear-gradient(90deg, #0b97c8, $bill-blue);
+      border-radius: $radius-full;
+    }
+  }
+}
+
 // Feature table, styled like a ZERO data table
 .feature-table {
   width: 100%;

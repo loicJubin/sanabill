@@ -1,7 +1,7 @@
 {% comment %}
   Card styled like a ZERO dashboard tile.
   Params: label, status, tone ("alert" | "ok"), viz, title, text
-  viz: files | timeline | questions (illustrations), flat | steps | solid | steady | rising (charts)
+  viz: files | timeline | questions | bricks | data-home | rails (illustrations), flat | steps | solid | steady | rising (charts)
 {% endcomment %}
 <article class="tile">
   <div class="tile__top">
@@ -9,7 +9,7 @@
     <span class="tile__status tile__status--{{ include.tone | default: 'ok' }}">{{ include.status }}</span>
   </div>
   <h3 class="tile__title">{{ include.title }}</h3>
-  {% assign art = "files,timeline,questions" | split: "," %}
+  {% assign art = "files,timeline,questions,bricks,data-home,rails" | split: "," %}
   <div class="tile__viz{% if art contains include.viz %} tile__viz--art{% endif %}" aria-hidden="true">
     {% case include.viz %}
     {% when 'files' %}
@@ -47,6 +47,37 @@
         <text class="tile-q tile-q--soft" x="6" y="76" font-size="22">Quand ?</text>
         <text class="tile-q" x="112" y="100" font-size="34">Pourquoi ?</text>
         <text class="tile-q tile-q--faint" x="222" y="28" font-size="16">Qui ?</text>
+      </svg>
+    {% when 'bricks' %}
+      {% comment %} Your base stays; ZERO adds bricks one by one {% endcomment %}
+      <svg viewBox="0 0 300 108" focusable="false">
+        <rect class="tile-brick tile-brick--base" x="10" y="84" width="280" height="22" rx="3" />
+        {% for i in (0..9) %}<rect class="tile-brick tile-brick--base" x="{{ i | times: 28 | plus: 17 }}" y="78" width="14" height="7" rx="2" />{% endfor %}
+        {% assign bricks = "24,94,164" | split: "," %}
+        {% for x in bricks %}
+          {% assign xi = x | plus: 0 %}
+          <g class="tile-brick tile-brick--step{{ forloop.index }}">
+            <rect x="{{ xi }}" y="56" width="56" height="22" rx="3" />
+            <rect x="{{ xi | plus: 7 }}" y="50" width="14" height="7" rx="2" />
+            <rect x="{{ xi | plus: 35 }}" y="50" width="14" height="7" rx="2" />
+          </g>
+        {% endfor %}
+        <rect class="tile-brick--next" x="234" y="56" width="56" height="22" rx="3" />
+      </svg>
+    {% when 'data-home' %}
+      {% comment %} Your data stays at home {% endcomment %}
+      <svg viewBox="0 0 300 108" focusable="false">
+        <path class="tile-home" d="M80 52 L150 6 L220 52 V104 H80 Z" />
+        <path class="tile-db" d="M125 50 v38 a25 7 0 0 0 50 0 v-38 z" />
+        <ellipse class="tile-db tile-db--top" cx="150" cy="50" rx="25" ry="7" />
+        <path class="tile-db__line" d="M125 69 a25 7 0 0 0 50 0" />
+      </svg>
+    {% when 'rails' %}
+      {% comment %} Guidelines, not rails: the path stays free between them {% endcomment %}
+      <svg viewBox="0 0 300 108" focusable="false">
+        <path class="tile-rail" d="M10 20 H290" />
+        <path class="tile-rail" d="M10 90 H290" />
+        <path class="tile-path" d="M10 55 C 50 30, 80 80, 120 55 S 190 28, 230 60 S 275 72, 290 50" />
       </svg>
     {% when 'solid' %}
       <div class="tile__bar tile__bar--solid"><span></span></div>

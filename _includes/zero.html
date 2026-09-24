@@ -12,26 +12,25 @@
         <a href="#fonctionnalites" class="btn btn--ghost">{{ text.cta_secondary }}</a>
       </div>
     </div>
-    <figure class="app-frame zero-hero__visual">
-      {% include app-bar.html %}
-      <img src="{{ '/assets/images/pilotage_zero.webp' | relative_url }}" alt="{{ text.hero_image_alt }}" width="1000" height="539" fetchpriority="high" />
-    </figure>
-  </div>
-</section>
-
-{% comment %} Stats {% endcomment %}
-<section class="section section--tight" aria-labelledby="stats-title">
-  <div class="container">
-    <h2 class="sr-only" id="stats-title">{{ text.stats_title }}</h2>
-    <div class="kpi-grid kpi-grid--4">
-      {% for stat in text.stats %}
-        <div class="kpi">
-          {% include kpi-value.html value=stat.number %}
-          <span class="kpi__label">{{ stat.label }}</span>
+    <div class="zero-hero__visual">
+      <section class="app-frame results-panel" aria-labelledby="results-title">
+        {% include app-bar.html %}
+        <div class="results-panel__body">
+          <h2 class="results-panel__title" id="results-title">{{ text.stats_title }}*</h2>
+          <ul class="results-panel__list">
+            {% for stat in text.stats %}
+              {% assign bar = stat.number | remove: "−" | remove: "-" | remove: " %" | remove: "%" %}
+              <li class="results-panel__row">
+                {% include kpi-value.html value=stat.number %}
+                <span class="results-panel__label">{{ stat.label | remove: "*" }}</span>
+                <span class="results-panel__bar" aria-hidden="true"><i style="width: {{ bar }}%"></i></span>
+              </li>
+            {% endfor %}
+          </ul>
         </div>
-      {% endfor %}
+      </section>
+      <p class="footnote">{{ text.stats_disclaimers }}</p>
     </div>
-    <p class="footnote">{{ text.stats_disclaimers }}</p>
   </div>
 </section>
 

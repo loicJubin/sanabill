@@ -8,7 +8,6 @@ fr:
     le pilotage et soutenir les équipes administratives et financières au quotidien.
   cta_primary: "Échanger autour de ZERO"
   cta_secondary: "Voir les fonctionnalités"
-  hero_image_alt: "Tableau de bord ZERO : contestations en cours, classification, distribution, traitement, validation et paiement, avec montants en CHF"
 
   stats_title: "Résultats observés"
   stats:
@@ -72,17 +71,17 @@ fr:
       - title: "Intégration progressive"
         label: "Déploiement"
         status: "Progressif"
-        viz: "steps"
+        viz: "bricks"
         description: "ZERO s’adapte à vos systèmes de facturation existants et s’adopte étape par étape."
       - title: "Vos données vous appartiennent"
         label: "Propriété des données"
         status: "Chez vous"
-        viz: "solid"
+        viz: "data-home"
         description: "Basé sur des technologies open source : vous restez pleinement propriétaire de vos données et de leur usage."
       - title: "Un cadre, pas une contrainte"
         label: "Pratiques existantes"
         status: "Respectées"
-        viz: "steady"
+        viz: "rails"
         description: "Pas d’automatisation à tout prix : un cadre clair pour l’équipe, qui respecte vos pratiques."
 
   # Citations utilisateurs : à n'afficher qu'une fois validées par les personnes concernées.
