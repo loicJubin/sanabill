@@ -26,11 +26,17 @@
 <section class="section section--muted">
   <div class="container">
     {% include section-head.html eyebrow=text.values_eyebrow title=text.values_title %}
-    <div class="grid grid--values">
+    <ul class="manifesto">
       {% for value in text.values %}
-        {% include tile.html label=value.label status=value.status tone="ok" viz=value.viz title=value.title text=value.description %}
+        <li class="manifesto__row">
+          <h3 class="manifesto__title">{{ value.title }}</h3>
+          <div>
+            <p class="manifesto__statement">{{ value.statement }}</p>
+            <p class="manifesto__detail">{{ value.detail }}</p>
+          </div>
+        </li>
       {% endfor %}
-    </div>
+    </ul>
   </div>
 </section>
 

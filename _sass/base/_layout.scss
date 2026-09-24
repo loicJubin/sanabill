@@ -60,12 +60,10 @@
   @include md {
     &--3 { grid-template-columns: repeat(3, 1fr); }
     &--4 { grid-template-columns: repeat(2, 1fr); }
-    &--values { grid-template-columns: repeat(2, 1fr); }
   }
 
   @include lg {
     &--4 { grid-template-columns: repeat(4, 1fr); }
-    &--values { grid-template-columns: repeat(3, 1fr); }
   }
 }
 

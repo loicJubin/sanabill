@@ -82,38 +82,8 @@ $status-ok-bg: #e7f5ec;
       height: 44px;
     }
 
-    polyline {
-      fill: none;
-      stroke: $bill-blue;
-      stroke-width: 2;
-      stroke-linejoin: round;
-      stroke-linecap: round;
-      vector-effect: non-scaling-stroke;
-    }
-
-    .is-dashed {
-      stroke: $border-strong;
-      stroke-dasharray: 4 4;
-    }
   }
 
-  &__bar {
-    display: flex;
-    gap: 4px;
-    width: 100%;
-    height: 12px;
-    margin-bottom: 12px;
-
-    span {
-      background: $border-strong;
-      border-radius: 3px;
-    }
-
-    &--solid span {
-      flex: 1;
-      background: $gradient-primary;
-    }
-  }
 
   // Illustrations (Le constat): scale with the tile width
   &__viz--art {

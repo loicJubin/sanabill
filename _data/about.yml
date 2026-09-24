@@ -25,34 +25,24 @@ fr:
 
   values:
     - title: "Expertise métier"
-      label: "Point de départ"
-      status: "Le terrain"
-      viz: "rising"
-      description: "Nous partons toujours des réalités du terrain. Les enjeux administratifs de la santé exigent une compréhension fine des processus, des contraintes et des responsabilités."
+      statement: "Nous partons toujours des réalités du terrain."
+      detail: "Les enjeux administratifs de la santé exigent une compréhension fine des processus, des contraintes et des responsabilités."
 
     - title: "Partenariat"
-      label: "Mode de travail"
-      status: "Avec vos équipes"
-      viz: "steady"
-      description: "Nous travaillons avec vos équipes, pas à leur place. Chaque démarche est construite en collaboration et à votre rythme."
+      statement: "Nous travaillons avec vos équipes, pas à leur place."
+      detail: "Chaque démarche est construite en collaboration et à votre rythme."
 
     - title: "Simplicité et pragmatisme"
-      label: "Complexité"
-      status: "Minimale"
-      viz: "flat"
-      description: "Nous privilégions des solutions claires, progressives et directement utiles, sans projets lourds ni complexité excessive."
+      statement: "Des solutions claires, progressives et directement utiles."
+      detail: "Sans projets lourds ni complexité excessive."
 
     - title: "Souveraineté des données"
-      label: "Données"
-      status: "Open source"
-      viz: "solid"
-      description: "Nos solutions s’appuient sur des technologies open source et garantissent que vous restez pleinement propriétaire de vos données et de leur usage."
+      statement: "Vous restez pleinement propriétaire de vos données."
+      detail: "Nos solutions s’appuient sur des technologies open source."
 
     - title: "Ancrage suisse"
-      label: "Implantation"
-      status: "Lausanne"
-      viz: "steps"
-      description: "Sanabill est une entreprise suisse, engagée auprès des acteurs locaux de la santé, avec une exigence élevée en matière de qualité, de fiabilité et de conformité."
+      statement: "Une entreprise suisse, engagée auprès des acteurs locaux de la santé."
+      detail: "Avec une exigence élevée en matière de qualité, de fiabilité et de conformité."
 
   cta:
     title: "Prêt à optimiser votre gestion administrative ?"
