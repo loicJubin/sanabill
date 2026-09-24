@@ -123,3 +123,17 @@
     -webkit-text-fill-color: transparent;
   }
 }
+
+// Mobile: navigation pills share the full width, chevron on the right
+@media (max-width: #{$breakpoint-sm - 1px}) {
+  .anchor-nav {
+    li {
+      width: 100%;
+    }
+
+    a {
+      justify-content: space-between;
+      width: 100%;
+    }
+  }
+}

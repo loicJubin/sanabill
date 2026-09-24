@@ -25,17 +25,23 @@
     list-style: none;
   }
 
+  // Mobile menu: white panel filling the screen under the header.
+  // Absolute (not fixed): the header's backdrop-filter would otherwise
+  // shrink a fixed panel to the header's own height.
   &__menu--active {
-    position: fixed;
-    top: 68px;
+    position: absolute;
+    top: 100%;
     right: 0;
-    bottom: 0;
     left: 0;
     display: flex;
     flex-direction: column;
     gap: $spacing-xs;
+    height: calc(100vh - 68px);
+    height: calc(100dvh - 68px);
     padding: $spacing-md $spacing-sm;
+    overflow-y: auto;
     background: $surface;
+    border-top: 1px solid $border;
   }
 
   &__link {
@@ -71,6 +77,9 @@
       gap: $spacing-xs;
       padding: 0;
       background: none;
+      height: auto;
+      overflow: visible;
+      border: 0;
     }
 
     &__link {

@@ -40,6 +40,15 @@
     }
   }
 
+  // Less space below (when the next section continues the same topic)
+  &--tight-bottom {
+    padding-bottom: $spacing-xl;
+
+    @include md {
+      padding-bottom: $spacing-2xl;
+    }
+  }
+
   // Hides elements that slide in from outside the page
   &--clip {
     overflow-x: hidden;
@@ -227,5 +236,34 @@
   &__bar + img {
     padding-top: 12px;
     background: #f8fafb; // matches the top edge of the ZERO screenshots
+  }
+}
+
+// ============================================
+// MOBILE ONLY (desktop untouched)
+// ============================================
+
+@media (max-width: #{$breakpoint-sm - 1px}) {
+  // Stacked buttons share the full width: easier to reach with the thumb
+  .btn-group .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: #{$breakpoint-md - 1px}) {
+  // Taller tap areas for text links (WCAG 2.2 target size)
+  .link-arrow {
+    padding-block: 0.5rem;
+  }
+
+  .footer__list {
+    gap: 0;
+  }
+
+  .footer__list a,
+  .footer__legal a,
+  .footer__address a {
+    display: inline-block;
+    padding-block: 0.5rem;
   }
 }
