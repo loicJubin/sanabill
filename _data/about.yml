@@ -15,8 +15,8 @@ fr:
   facts:
     - label: "Siège"
       value: "Lausanne, Suisse"
-    - label: "Spécialité"
-      value: "Refus et contestations d’assurances"
+    - label: "Spécialités"
+      value: "Refus d’assurances + Optimisation & Automatisation administrative"
     - label: "Approche"
       value: "Conseil + outil ZERO"
 

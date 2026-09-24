@@ -64,9 +64,9 @@ $status-ok-bg: #e7f5ec;
     font-size: $font-2xl;
     letter-spacing: -0.03em;
 
-    // Reserve two lines in multi-column grids so the charts stay aligned
+    // Reserve lines in multi-column grids so the charts stay aligned
     @include md {
-      min-height: 2.4em;
+      min-height: 1.4em;
     }
   }
 
