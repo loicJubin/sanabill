@@ -7,7 +7,7 @@ description: >-
   Sanabill accompagne les organisations de santé suisses dans la gestion des
   refus et contestations d'assurances : conseil, structuration des processus
   et ZERO, l'outil de pilotage des refus.
-url: "https://sanabill.ch"
+url: "https://www.sanabill.ch"
 baseurl: ""
 logo: /assets/images/favicon.png
 
@@ -26,6 +26,8 @@ defaults:
     values:
       layout: default
       lang: fr
+      # Default share image (Open Graph); a page can set its own `image`
+      image: /assets/images/og-default.png
   - scope:
       path: "assets/images"
     values:

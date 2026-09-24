@@ -1,6 +1,6 @@
 # sanabill
 
-Site vitrine de [sanabill.ch](https://sanabill.ch), construit avec Jekyll (FR uniquement).
+Site vitrine de [sanabill.ch](https://www.sanabill.ch), construit avec Jekyll (FR uniquement).
 
 ## Lancer le site en local
 

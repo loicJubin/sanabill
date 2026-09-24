@@ -49,3 +49,28 @@ document.addEventListener('DOMContentLoaded', () => {
         if (event.matches) setOpen(false);
     });
 });
+
+// Umami events: clicks towards contact, e-mail links and Tally form submissions.
+// Umami attaches the current page to each event.
+(() => {
+    const track = (name, data) => {
+        if (window.umami) window.umami.track(name, data);
+    };
+
+    document.addEventListener('click', (event) => {
+        const link = event.target.closest('a[href]');
+        if (!link) return;
+        const label = link.textContent.trim();
+        if (link.protocol === 'mailto:') {
+            track('clic-email', { label });
+        } else if (link.pathname === '/fr/contact/' || link.getAttribute('href') === '#contact') {
+            track('clic-contact', { label });
+        }
+    });
+
+    window.addEventListener('message', (event) => {
+        if (event.origin !== 'https://tally.so' || typeof event.data !== 'string') return;
+        if (!event.data.includes('Tally.FormSubmitted')) return;
+        track('formulaire-envoye');
+    });
+})();
