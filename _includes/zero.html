@@ -36,7 +36,7 @@
 </section>
 
 {% comment %} Features {% endcomment %}
-<section class="section section--muted" id="fonctionnalites">
+<section class="section" id="fonctionnalites">
   <div class="container">
     {% include section-head.html eyebrow=text.features.eyebrow title=text.features.title subtitle=text.features.subtitle ring="true" %}
     {% assign cols = text.features.columns %}
@@ -62,10 +62,10 @@
 </section>
 
 {% comment %} Feature showcases {% endcomment %}
-<section class="section">
+<section class="section section--clip">
   <div class="container">
     {% for feat in text.features_showcase %}
-      <article class="showcase{% cycle '', ' showcase--reverse' %}">
+      <article class="showcase{% cycle '', ' showcase--reverse' %}" data-reveal>
         <div class="showcase__text">
           <h3 class="showcase__title">{{ feat.title }}</h3>
           <p>{{ feat.description }}</p>
