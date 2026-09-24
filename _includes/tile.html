@@ -49,20 +49,22 @@
         <text class="tile-q tile-q--faint" x="222" y="28" font-size="16">Qui ?</text>
       </svg>
     {% when 'bricks' %}
-      {% comment %} Your base stays; ZERO adds bricks one by one {% endcomment %}
+      {% comment %} Your base stays; ZERO adds bricks one by one. Bricks sit directly on the base and cover its studs. {% endcomment %}
       <svg viewBox="0 0 300 108" focusable="false">
         <rect class="tile-brick tile-brick--base" x="10" y="84" width="280" height="22" rx="3" />
-        {% for i in (0..9) %}<rect class="tile-brick tile-brick--base" x="{{ i | times: 28 | plus: 17 }}" y="78" width="14" height="7" rx="2" />{% endfor %}
+        {% comment %} Base studs aligned with the four brick slots (hidden under placed bricks, visible in the free slot) {% endcomment %}
+        {% assign studs = "31,59,101,129,171,199,241,269" | split: "," %}
+        {% for x in studs %}<rect class="tile-brick tile-brick--base" x="{{ x }}" y="78" width="14" height="7" rx="2" />{% endfor %}
         {% assign bricks = "24,94,164" | split: "," %}
         {% for x in bricks %}
           {% assign xi = x | plus: 0 %}
           <g class="tile-brick tile-brick--step{{ forloop.index }}">
-            <rect x="{{ xi }}" y="56" width="56" height="22" rx="3" />
-            <rect x="{{ xi | plus: 7 }}" y="50" width="14" height="7" rx="2" />
-            <rect x="{{ xi | plus: 35 }}" y="50" width="14" height="7" rx="2" />
+            <rect x="{{ xi }}" y="62" width="56" height="22" rx="2" />
+            <rect x="{{ xi | plus: 7 }}" y="56" width="14" height="7" rx="2" />
+            <rect x="{{ xi | plus: 35 }}" y="56" width="14" height="7" rx="2" />
           </g>
         {% endfor %}
-        <rect class="tile-brick--next" x="234" y="56" width="56" height="22" rx="3" />
+        <rect class="tile-brick--next" x="234" y="62" width="56" height="22" rx="2" />
       </svg>
     {% when 'data-home' %}
       {% comment %} Your data stays at home {% endcomment %}
